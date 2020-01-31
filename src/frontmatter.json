@@ -1,13 +1,30 @@
 {
-	"title": "Distill Example",
-	"description": "An example project using Webpack, Babel, and Svelte.",
-	"password": "svgs",
+	"title": "Communicating Complex Ideas with Interactive Articles",
+	"description": "Examining the design of interactive articles by synthesizing theory from disciplines such as education, journalism, and visualization.",
+	"password": "complex",
 	"authors": [
 		{
-			"author": "Ludwig Schubert",
-			"authorURL": "https://schubert.io/",
-			"affiliation": "OpenAI",
-			"affiliationURL": "https://openai.com"
+			"author": "Author",
+			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
+			"affiliation": "Affiliation",
+			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+		},{
+			"author": "Author",
+			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
+			"affiliation": "Affiliation",
+			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+		},
+		{
+			"author": "Author",
+			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
+			"affiliation": "Affiliation",
+			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+		},
+		{
+			"author": "Author",
+			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
+			"affiliation": "Affiliation",
+			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
 		}
 	],
 	"katex": {
