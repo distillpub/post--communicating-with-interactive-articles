@@ -7,7 +7,6 @@
 
   function handleClick() {
     count += 1;
-    console.log("inc count");
   }
 
   function reset() {
