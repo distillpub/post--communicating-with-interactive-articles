@@ -8,6 +8,6 @@ import Example from "./diagrams/svelte-example.svelte";
 const exampleTag = document.getElementById("svelte-example-dfigure");
 let example;
 exampleTag.addEventListener("ready", () => {
-	const target = exampleTag.querySelector("#svelte-example-target");
-	example = new Example({ target });
+	// const target = exampleTag.querySelector("#svelte-example-target");
+	// example = new Example({ target });
 });
