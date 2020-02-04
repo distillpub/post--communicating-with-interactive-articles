@@ -4,6 +4,7 @@ import * as _unused from "raw-loader!./index.ejs";
 
 import Example from "./diagrams/svelte-example.svelte";
 import ResearchPracticeTable from "./diagrams/research-x-practice-table.svelte"
+import TOC from "./diagrams/toc.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 
@@ -18,3 +19,6 @@ const researchPracticeTable = new ResearchPracticeTable({
 	target: document.getElementById('research-x-practice')
 });
 
+const toc = new TOC({
+	target: document.getElementById('contents')
+});

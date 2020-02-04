@@ -42,58 +42,7 @@ d-figure>figure {
 
 /* TOC */
 
-#contents nav a {
-  color: rgba(0, 0, 0, 0.8);
-  border-bottom: none;
-  text-decoration: none;
-}
-
-#contents nav ul li {
-  margin-bottom: .25em;
-}
-
-#contents nav a:hover {
-  text-decoration: underline solid rgba(0, 0, 0, 0.6);
-}
-
-#contents nav details ul {
-  margin-top: 0;
-}
-
-#contents nav details>a {
-  margin-left: 1.06em;
-}
-
-#contents nav summary, #contents nav>div, #contents nav details>a {
-  display: block;
-  outline: none;
-  margin-bottom: 0.5em;
-}
-
-#contents nav>div {
-  margin-left: 1.06em;
-}
-
-#contents nav summary {
-  cursor: context-menu;
-}
-
-#contents nav summary, #contents nav>div>a {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-a.figure-number, a.section-number {
-  border-bottom-color: hsla(206, 90%, 20%, 0.3);
-  text-transform: uppercase;
-  font-size: .85em;
-  color: hsla(206, 90%, 20%, 0.7);
-}
-
-a.figure-number::before {
-  content: "Figure ";
-}
-
-a.figure-number:hover, a.section-number:hover {
-  border-bottom-color: hsla(206, 90%, 20%, 0.6);
+#contents {
+  border-top: 1px solid #eee;
+  padding: 1.5rem 0;
 }
