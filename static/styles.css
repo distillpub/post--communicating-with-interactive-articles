@@ -1,3 +1,9 @@
+:root {
+  --gray-bg: hsl(0, 0%, 97%);
+  --gray-border: rgba(0, 0, 0, 0.1);
+  --border-radius: 5px;
+}
+
 .subgrid {
   grid-column: screen;
   display: grid;

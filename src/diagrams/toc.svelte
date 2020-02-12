@@ -43,7 +43,7 @@
     font-weight: 600;
   }
 
-  a.figure-number,
+  /* a.figure-number,
   a.section-number {
     border-bottom-color: hsla(206, 90%, 20%, 0.3);
     text-transform: uppercase;
@@ -58,7 +58,7 @@
   a.figure-number:hover,
   a.section-number:hover {
     border-bottom-color: hsla(206, 90%, 20%, 0.6);
-  }
+  } */
 </style>
 
 <nav class="l-text toc figcaption">

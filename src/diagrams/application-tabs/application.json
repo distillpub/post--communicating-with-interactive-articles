@@ -1,0 +1,138 @@
+[
+    {
+        "title": "Research Dissemination",
+        "description": "Conducting novel research requires deep understanding and expertise in a specific area. Once achieved, researchers continue contributing new knowledge for future people to use and build upon. Over time, this consistent addition of new knowledge can build up, contributing to what some have called research debt [olah2017research]. Not everyone is an expert in every field, and it can be easy to lose perspective and forget the bigger picture [matt might]. Yet research should be understood by many. Interactive articles can be used to distill the latest progress in various research fields and make their methods and results accessible and understandable to a broader audience.",
+        "opportunities": [
+            "Engage and excite broader audience with latest research progress",
+            "Remove research debt, onboard new researchers",
+            "Make faster and clearer research progress"
+        ],
+        "challenges": [
+            "No clear incentive structure for researchers",
+            "Little funding for bespoke research dissemination and communication",
+            "Not seen as a legitimate research contribution (e.g., to field, or one’s career)"
+        ],
+        "examples": [
+            {
+                "title": "Attacking Discrimination with Smarter Machine Learning",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Coeffects: Context-aware Programming Languages",
+                "description": "This PhD thesis contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
+                "url": "http://tomasp.net/coeffects/",
+                "image": "research-ex2.png"
+            },
+            {
+                "title": "What is Complexity Science?",
+                "description": "A crash course in complex systems science, created by leading experts, practitioners, and students in the field, with accompanying interactive sandboxes to simulate, control, and visualize different complex systems.",
+                "url": "https://complexityexplained.github.io/",
+                "image": "research-ex3.png"
+            }
+        ]
+    },
+    {
+        "title": "Journalism",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nihil doloremque facilis ab illo velit consequatur? Blanditiis, alias? Laborum quisquam ex sequi officia? Pariatur exercitationem quidem hic aliquam et sunt.",
+        "opportunities": [
+            "Engage and excite broader audience with latest research progress",
+            "Remove research debt, onboard new researchers",
+            "Make faster and clearer research progress"
+        ],
+        "challenges": [
+            "No clear incentive structure for researchers",
+            "Little funding for bespoke research dissemination and communication",
+            "Not seen as a legitimate research contribution (e.g., to field, or one’s career)"
+        ],
+        "examples": [
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            }
+        ]
+    },
+    {
+        "title": "Education",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nihil doloremque facilis ab illo velit consequatur? Blanditiis, alias? Laborum quisquam ex sequi officia? Pariatur exercitationem quidem hic aliquam et sunt.",
+        "opportunities": [
+            "Engage and excite broader audience with latest research progress",
+            "Remove research debt, onboard new researchers",
+            "Make faster and clearer research progress"
+        ],
+        "challenges": [
+            "No clear incentive structure for researchers",
+            "Little funding for bespoke research dissemination and communication",
+            "Not seen as a legitimate research contribution (e.g., to field, or one’s career)"
+        ],
+        "examples": [
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            }
+        ]
+    },
+    {
+        "title": "Policy Making",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nihil doloremque facilis ab illo velit consequatur? Blanditiis, alias? Laborum quisquam ex sequi officia? Pariatur exercitationem quidem hic aliquam et sunt.",
+        "opportunities": [
+            "Engage and excite broader audience with latest research progress",
+            "Remove research debt, onboard new researchers",
+            "Make faster and clearer research progress"
+        ],
+        "challenges": [
+            "No clear incentive structure for researchers",
+            "Little funding for bespoke research dissemination and communication",
+            "Not seen as a legitimate research contribution (e.g., to field, or one’s career)"
+        ],
+        "examples": [
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            },
+            {
+                "title": "Example 1",
+                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+                "image": "research-ex1.png"
+            }
+        ]
+    }
+]
