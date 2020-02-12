@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style id="distill-article-specific-styles">
-    .subgrid {
+    :root {
+  --gray-bg: hsl(0, 0%, 97%);
+  --gray-border: rgba(0, 0, 0, 0.1);
+  --border-radius: 5px;
+}
+
+.subgrid {
   grid-column: screen;
   display: grid;
   grid-template-columns: inherit;
@@ -48,64 +54,13 @@ d-figure>figure {
 
 /* TOC */
 
-#contents nav a {
-  color: rgba(0, 0, 0, 0.8);
-  border-bottom: none;
-  text-decoration: none;
+#contents {
+  border-top: 1px solid #eee;
+  padding: 1.5rem 0;
 }
-
-#contents nav ul li {
-  margin-bottom: .25em;
-}
-
-#contents nav a:hover {
-  text-decoration: underline solid rgba(0, 0, 0, 0.6);
-}
-
-#contents nav details ul {
-  margin-top: 0;
-}
-
-#contents nav details>a {
-  margin-left: 1.06em;
-}
-
-#contents nav summary, #contents nav>div, #contents nav details>a {
-  display: block;
-  outline: none;
-  margin-bottom: 0.5em;
-}
-
-#contents nav>div {
-  margin-left: 1.06em;
-}
-
-#contents nav summary {
-  cursor: context-menu;
-}
-
-#contents nav summary, #contents nav>div>a {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-a.figure-number, a.section-number {
-  border-bottom-color: hsla(206, 90%, 20%, 0.3);
-  text-transform: uppercase;
-  font-size: .85em;
-  color: hsla(206, 90%, 20%, 0.7);
-}
-
-a.figure-number::before {
-  content: "Figure ";
-}
-
-a.figure-number:hover, a.section-number:hover {
-  border-bottom-color: hsla(206, 90%, 20%, 0.6);
-}
-
   </style>
-  <script src="https://distill.pub/template.v2.js"></script>
+  <!-- <script src="https://distill.pub/template.v2.js"></script> -->
+  <script src="https://github.com/distillpub/template/releases/download/v2.6.1/template.v2.js"></script>
 </head>
 
 <body>
@@ -165,35 +120,10 @@ a.figure-number:hover, a.section-number:hover {
     <p>Examining the design of interactive articles by synthesizing theory from disciplines such as education, journalism, and visualization.</p>
   </d-title>
 
-  <div id="contents" class="base-grid" style="border-top: 1px solid #eee; padding: 1.5rem 0;">
-    <nav class="l-text toc figcaption">
-      <h3>Contents</h3>
-  
-      <div><a href="#introduction">Introduction</a></div>
-    
-      <details>
-        <summary>Interactive Writing</summary>
-        <a href="#interactive-writing"><em>navigate to "Interactive Writing"</em></a>
-        <ul>
-          <li><a href="#improving-recall">Improving Recall</a></li>
-          <li><a href="#improving-engagement">Improving Engagement</a></li>
-          <li><a href="#enabling-experience">Enabling Experience</a></li>
-          <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
-          <li><a href="#personalization">Personalization</a></li>
-        </ul>
-      </details>
-  
-      <div><a href="#applications">Applications</a></div>
-  
-      <div><a href="#challenges">Challenges of Interactive Writing</a></div>
+  <d-byline></d-byline>
 
-      <div><a href="#critical-reflections">Critical Reflections</a></div>
+  <div id="contents" class="base-grid"></div>
 
-      <div><a href="#discussion">Discussion</a></div>
-
-    </nav>
-  </div>
-  
   <d-article>
 
     <style>
@@ -236,6 +166,8 @@ a.figure-number:hover, a.section-number:hover {
           we think it could have future impact</li>
       </ul>
     </ul>
+
+    <!-- <div id="gutter-test"></div> -->
 
     <p>
       [borrowed text from parametric about we could use]
@@ -430,7 +362,10 @@ a.figure-number:hover, a.section-number:hover {
       Interactive idea: a simple stepper graphic
     </p>
 
-    <h2>Applications</h2>
+    <h2 id="applications">Applications</h2>
+
+    <div id="applications-tab" class="l-page-outset"></div>
+    <div id="tabs2" class="l-page-outset"></div>
 
     <p class="tk">
       In-depth discussion on single example mapping back to above dimensions, compact visual encoding for entire article with annotations of each aspect previously described; show this for a handful (5?) other articles
@@ -443,8 +378,8 @@ a.figure-number:hover, a.section-number:hover {
     </quote>
 
     <p>
-    Bring up the explorable examples we have from ML, tabulate how they all use the above affordances, 
-    Bring up Parametric Press: brief background (mission statement, CFP, Issue 01) and ML article
+      Bring up the explorable examples we have from ML, tabulate how they all use the above affordances, 
+      Bring up Parametric Press: brief background (mission statement, CFP, Issue 01) and ML article
     </p>
     
     <h3>Journalism [matt]</h3>
