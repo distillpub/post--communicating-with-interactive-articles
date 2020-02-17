@@ -6,6 +6,7 @@ import Example from "./diagrams/svelte-example.svelte";
 import ResearchPracticeTable from "./diagrams/research-x-practice-table.svelte"
 import TOC from "./diagrams/toc.svelte"
 import ApplicationTabs from "./diagrams/application-tabs/application-tabs.svelte"
+import Animation from "./diagrams/animation.svelte"
 import GutterTest from "./diagrams/gutter.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
@@ -31,4 +32,8 @@ const applicationTabs = new ApplicationTabs({
 
 const gutterTest = new GutterTest({
 	target: document.getElementById('gutter-test')
+});
+
+const animation = new Animation({
+	target: document.getElementById('animation')
 });
