@@ -2,6 +2,7 @@
     import { onDestroy } from 'svelte';
 
     const numOfFrames = 11;
+    const frameIntArray = Array.from(new Array(numOfFrames), (x,i) => i+1);
     let frameNumber = 1;
     let isPlaying = false;
 
@@ -22,23 +23,131 @@
         clearInterval(playInterval)
     }
 
+    function changeFrame(i) {
+        pause()
+        frameNumber = i;
+    }
+
     play();
 
 </script>
 
 <style>
-    div {
-        border: 1px solid var(--gray-border);
-        border-radius: var(--border-radius);
+    
+    #wrapper {
+        /* border: 1px solid var(--gray-border); */
+        /* border-radius: var(--border-radius); */
+        padding: 0.5em;
+    }
+
+    #frames {
+		display: grid;
+		grid-template-columns: repeat(11, 1fr);
+        grid-column-gap: 0.15em;
+        padding-bottom: 10px;
+    }
+
+    .frame {
+        width: 100%;
+        /* border-bottom: 5px solid white; */
+        filter: brightness(60%);
+        cursor: crosshair;
+    }
+
+    .active-frame {
+        border-bottom: 4px solid var(--orange);
+        padding-bottom: 2px;
+        filter: brightness(100%);
+    }
+
+    #horse-wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 2em;
+    }
+
+    #horse {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        width: 100%;
+    }
+
+    #horse-controls {
+        grid-column-start: 7;
+        grid-column-end: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        height: 3px;
+        border-radius: 2px;
+        background-color: hsla(0, 0%, 0%, 0.2);
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        cursor: pointer; /* Cursor on hover */
+        top: -6px;
+        left: -6px;
+        width: 13px;
+        height: 13px;
+        background-color: var(--orange);
+        border-radius: 50%;
+    }
+
+    .slider::-moz-range-thumb {
+        top: -6px;
+        left: -6px;
+        width: 13px;
+        height: 13px;
+        background-color: var(--orange);
+        cursor: pointer;
+    }
+
+    button {
+        /* background: none; */
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+        color: var(--orange);
     }
 
 </style>
 
-<div>
-    <img id="horse" src="../../images/animation/{frameNumber}.jpg" alt="Horse running."/>
-    <label>
-        <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause}>
-    </label>
-    <button on:click={play}>play</button>
-    {frameNumber}
+<div id="wrapper">
+    <div id="frames">
+        {#each frameIntArray as frameInt, i}
+                <img src="../../images/animation/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
+        {/each}
+    </div>
+    <div id="horse-wrapper">
+        <img id="horse" src="../../images/animation/{frameNumber}.jpg" alt="Horse running."/>
+        <div id="horse-controls">
+            <div>
+                <label>
+                    <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
+                </label>
+                <button on:click={play}><i class="material-icons" style="font-size:32px;">play_circle_outline</i></button>
+            </div>
+            <figcaption>
+             In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
+             This interactive graphic uses <i>animation</i> and <i>multiple representations</i> to illustrate this finding.
+             </figcaption>
+             <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
+        </div>
+    </div>
 </div>

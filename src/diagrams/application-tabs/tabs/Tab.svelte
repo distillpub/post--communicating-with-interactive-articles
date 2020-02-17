@@ -28,7 +28,7 @@
 	}
 	
 	.selected {
-		border-bottom: 3px solid hsl(24, 100%, 50%);
+		border-bottom: 3px solid var(--orange);
 		color: #333;
 	}
 </style>
