@@ -134,7 +134,7 @@
 <div id="wrapper">
     
     <div id="horse-wrapper">
-        <img id="horse" src="images/animation/{frameNumber}.jpg" alt="Horse running."/>
+        <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
             <figcaption>
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
