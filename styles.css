@@ -1,7 +1,9 @@
 :root {
   --gray-bg: hsl(0, 0%, 97%);
   --gray-border: rgba(0, 0, 0, 0.1);
+  --gray: rgba(0, 0, 0, 0.6);
   --border-radius: 5px;
+  --orange: hsl(24, 100%, 50%);
 }
 
 .subgrid {
