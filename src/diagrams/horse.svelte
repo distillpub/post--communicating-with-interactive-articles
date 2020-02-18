@@ -37,14 +37,14 @@
     #wrapper {
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
-        padding: 0.5em;
+        /* padding: 0.5em; */
     }
 
     #frames {
 		display: grid;
 		grid-template-columns: repeat(11, 1fr);
-        grid-column-gap: 0.15em;
-        padding-bottom: 10px;
+        grid-column-gap: 0.2em;
+        padding-top: 10px;
     }
 
     .frame {
@@ -55,7 +55,7 @@
     }
 
     .active-frame {
-        border-bottom: 4px solid var(--orange);
+        border-bottom: 3px solid var(--orange);
         padding-bottom: 2px;
         filter: brightness(100%);
     }
@@ -78,6 +78,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: left;
     }
 
     .slider {
@@ -118,7 +119,6 @@
     }
 
     button {
-        /* background: none; */
         border: none;
         padding: 0;
         cursor: pointer;
@@ -129,25 +129,30 @@
 </style>
 
 <div id="wrapper">
-    <div id="frames">
-        {#each frameIntArray as frameInt, i}
-                <img src="../../images/animation/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
-        {/each}
-    </div>
+    
     <div id="horse-wrapper">
         <img id="horse" src="../../images/animation/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
-            <div>
-                <label>
-                    <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
-                </label>
-                <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:32px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
-            </div>
             <figcaption>
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
                 This interactive graphic uses <i>animation</i> and <i>multiple representations</i> to illustrate this finding.
              </figcaption>
              <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
+            <!-- <div> -->
+            <!-- <br /> -->
+            <div style="padding-bottom: 5px;">
+                <label>
+                    <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
+                </label>
+            </div>
+            <div>
+                <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:48px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
+            </div>
         </div>
+    </div>
+    <div id="frames">
+        {#each frameIntArray as frameInt, i}
+                <img src="../../images/animation/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
+        {/each}
     </div>
 </div>
