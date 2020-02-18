@@ -1,10 +1,11 @@
 <script>
     import { onDestroy } from 'svelte';
 
-    const numOfFrames = 11;
-    const frameIntArray = Array.from(new Array(numOfFrames), (x,i) => i+1);
     let frameNumber = 1;
     let isPlaying = false;
+
+    const numOfFrames = 11;
+    const frameIntArray = Array.from(new Array(numOfFrames), (x,i) => i+1);
 
     let playInterval;
 
@@ -35,6 +36,8 @@
 <style>
     
     #wrapper {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
         /* padding: 0.5em; */
@@ -131,7 +134,7 @@
 <div id="wrapper">
     
     <div id="horse-wrapper">
-        <img id="horse" src="../../images/animation/{frameNumber}.jpg" alt="Horse running."/>
+        <img id="horse" src="images/animation/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
             <figcaption>
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
@@ -152,7 +155,7 @@
     </div>
     <div id="frames">
         {#each frameIntArray as frameInt, i}
-                <img src="../../images/animation/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
+                <img src="images/horse/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
         {/each}
     </div>
 </div>
