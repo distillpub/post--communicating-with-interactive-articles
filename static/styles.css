@@ -48,6 +48,10 @@ d-figure>figure {
   left: -48px;
 }
 
+.tk {
+  color: red;
+}
+
 /* TOC */
 
 #contents {
