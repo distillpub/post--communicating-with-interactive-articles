@@ -112,7 +112,7 @@
 	<div class="bottom">
 	{#each applicationData.examples as example}
 		<div class="example">
-			<a href={example.url}><img src="../../../static/diagrams/{example.image}"/></a>
+			<a href={example.url}><img src="../../../diagrams/{example.image}"/></a>
 			<div class="example-title"><a href={example.url}>{example.title}</a></div>
 			<div class="example-description">{example.description}</div>
 		</div>

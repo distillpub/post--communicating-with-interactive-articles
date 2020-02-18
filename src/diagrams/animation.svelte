@@ -141,11 +141,11 @@
                 <label>
                     <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
                 </label>
-                <button on:click={play}><i class="material-icons" style="font-size:32px;">play_circle_outline</i></button>
+                <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:32px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
             </div>
             <figcaption>
-             In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
-             This interactive graphic uses <i>animation</i> and <i>multiple representations</i> to illustrate this finding.
+                In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
+                This interactive graphic uses <i>animation</i> and <i>multiple representations</i> to illustrate this finding.
              </figcaption>
              <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
         </div>
