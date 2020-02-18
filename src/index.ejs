@@ -6,8 +6,7 @@
   <style id="distill-article-specific-styles">
     <%=require("../static/styles.css") %>
   </style>
-  <!-- <script src="https://distill.pub/template.v2.js"></script> -->
-  <script src="https://github.com/distillpub/template/releases/download/v2.6.1/template.v2.js"></script>
+  <script src="https://distill.pub/template.v2.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -38,351 +37,206 @@
 
     <!-- INTRO -->
     <span id="introduction"></span>
+    <p>
+    Past aspirations for the future of computing centered around empowering individuals and enhancing cognition. Alan Kay imagined the Dynabook [cite] in the hands of children across the world. Neal Stephenson wrote of interactive paper that could display videos and interfaces, and books that could teach their readers [cite]. More recent (yet considered historical by personal computing standards) concept videos envisioned a future where computers connected and assisted people in decision-making and communicating complex ideas using rich graphics and interactive user interfaces [cite Apple’s Knowledge Navigator, 1987]. While some technologies have seen mainstream adoption, such as Hypertext, unfortunately, many other ideas have fallen by the wayside during the wildfire spread of internet connectivity and the commodification of publishing platforms.
+    </p>
 
-    <ul>
-      <li>Communication is incredibly important, especially with complex topics (e.g. science, politics, machine learning)
-      </li>
-      <li>Computers have an important role to play: (short historical examples)</li>
-      <ul>
-        <li>Using computational media to communicate complex ideas can be more engaging (active learning), attract broader readership, and acclaim; include some of the most well-known examples</li>
-        <li>Plato, PHeT, explorable explanations (choose 3 examples)</li>
-      </ul>
-      <li>Who is making this media?</li>
-      <ul>
-        <li>Combination and blending of different communities coming together</li>
-        <li>Journalists, researchers, game developers, academics, web developers, designers</li>
-        <ul>
-          <li>Sprinkle in how it helps their particular audiences, e.g.:</li>
-          <ul>
-            <li>Journalists: make complex news simple and engaging</li>
-            <li>Researchers: avoid research debt</li>
-            <li>Educators: provide alternative learning format to give students hands-on experience with material</li>
-          </ul>
-        </ul>
-        <li>No standardized name: brief list of other names interactive writing has gone by</li>
-      </ul>
-      <li>There is growing excitement around interactive writing, to help people fully take advantage of this new medium, we want to:</li>
-      <ul>
-        <li>Describe design space and affordances of interactive writing with accompanying examples (many of which are
-          accessible via the web)</li>
-        <li>Discuss some application domains where interactive writing has already been successfully used, and others
-          where
-          we think it could have future impact</li>
-      </ul>
-    </ul>
+    <p>
+    Regardless, computing has changed how people communicate. Messages, news, and the influence of ideas are instant—everyone’s voice can be heard. In fact, access to digital communication technologies such as the Internet is so fundamental to daily life that their disruption by government is condemned by the United Nations Human Rights Council [cite]. Online communication is incredibly important, especially when studying and discussing complex topics, such as science, technology, and politics.
+    </p>
+
+    <p>
+    In the spirit of previous computer-assisted cognition technologies, a new type of computational communication medium has emerged that leverages active reading techniques to make complex ideas more accessible to a broad range of people. These interactive articles build on a long history, from Plato [cite] to PHeT [cite] to explorable explanations [cite], and have shown to be more engaging, attract broader readership, and acclaim than traditional media.
+    </p>
+
+    <p>
+    Who is making interactive articles?
+    </p>
+
+    <p>
+    A combination of communities with diverse skill sets have come together to create interactive articles. For example, journalists want to make complex news and investigative reporting simple and engaging. Researchers want to disseminate their work and remove research debt [olah2017research] to allow learners to quickly understand the state-of-the-art. Educators want to provide alternative learning formats to give students hands-on experience with learning material. Besides these people, others such as academics, game developers, web developers, and designers blend editorial, design, and programming skills to create and publish interactive content.
+    </p>
+
+    <p>
+    Currently, this medium has no standardized name nor definition [footnote: However, it is taking shape [wiki]]. Names include explorable explanations [victor-explorable], exploranation [ynnerman2018exploranation], explainable [visxai], explorable multiverse analyses [dragicevic2019increasing], interactive non-fiction, active essays, and glogs [case-explorable]. While these all slightly differ in their technical approach and desired audience, they all largely leverage the interactivity of the modern web.
+    </p>
+
+    <p>
+    Today there is a growing excitement around the use of interactive articles to communicate since they offer unique capabilities to help people learn and engage with complex ideas that traditional media cannot support. To help people fully take advantage of this new medium, we breakdown this collection of capabilities pulling from diverse fields of research, including human-computer interaction, information visualization, data analysis, multimedia learning, education, and data journalism, and present accompanying atomic examples that support each capability (footnote? Many of which are accessible via the web). After describing the design space of interactive articles, we discuss application domains where they have already been successful, and others where they could have future impact. Lastly, we provide critical reflections from our experience with open-source, interactive publishing at scale.
+    </p>
+
+    <p>
+    We hope this survey that ties interactive articles in practice to theory helps demonstrate and reinforce the power that interactive communication mediums have for providing new representations to understand systems, and making complex ideas more accessible to broad audiences.
+    </p>
 
     <!-- <div id="gutter-test"></div> -->
 
-    <p>
-      [borrowed text from parametric about we could use]
-    </p>
-    <p>
-      Past aspirations for the future of computing centered around empowering individuals and enhancing cognition, but many of these ideas fell to the wayside during the wildfire spread of internet connectivity and the commodification of publishing through platforms like WordPress and Facebook.
-    </p>
-
-    <p>
-      Alan Kay imagined the Dynabook in the hands of children across the world, while Neal Stephenson wrote ofinteractive paper that could display videos and interfaces, and books that could teach their readers.
-    </p>
-
-    <p>Cite hypertext in intro</p>
-
-    <p>Survey in practice, tie back to theory</p>
-
     <!-- Interactive Writing -->
 
-    <h2 id="interactive-writing">Interactive Writing</h2>
+    <h2 id="interactive-articles">The Capabilities of Interactive Articles</h2>
 
     <p>
-      Interactive articles offers unique capabilities to help people learn and engage with complex ideas that traditional media cannot support. We breakdown this collection of capabilities pulling from diverse fields of research, including human-computer interaction, information visualization, data analysis, multimedia learning, education, and data journalism, and present accompanying atomic examples that support each capability.
+      Interactive articles are much more diverse than traditional blogs, academic papers, and static media. They leverage techniques such as animation, details on demand, belief elicitation, play, interactive models and simulations. Below we discuss the ways in which interactive articles help people understand content better, including dozens of examples and example interactive graphics that demonstrate specific techniques.
     </p>
+
 
     <h3 id="improving-recall">Improving Recall</h3>
+    
+    <p>Asking a student to reflect on the material that they are studying and explain it back to themselves, a learning technique called self-explanation, is known to have a positive impact on learning outcomes [chi1989self]. By generating explanations, and refining them as new information is obtained, it is hypothesised that the student will be more engaged with the processes which they are studying [chi2000self]. When writing for an interactive environment, components can be included which prompt readers to make a prediction or reflection about the material and cause them to engage in self-explanation [kim2017explaining].</p>
 
-    <h4>Belief elicitation</h4>
-    
-    <p>
-      Asking a student to reflect on the material that they are studying and explain it back to themselves, a learning technique called self-explanation, is known to have a positive impact on learning outcomes [chi1989self]. By generating explanations, and refining them as new information is obtained, it is hypothesised that the student will be more engaged with the processes which they are studying [chi2000self]. When writing for an interactive environment, components can be included which prompt readers to make a prediction or reflection about the material and cause them to engage in self-explanation [kim2017explaining].
-    </p>
-    
-    <p>
-      While these prompts may take the form of text entry or other standard input widgets, one of the most prominent examples of this technique being used in practice comes from the New York Times “You Draw It” visualizations. In this case, readers are prompted to complete a trendline on a chart, causing them to generate an explanation for why they think the trend may move in a certain direction. Only after readers make their prediction are they shown the actual data. Kim et al. showed that using visualizations as a prompt is an effective way to encourage readers to engage in self explanation and improve their recall of the information.
-    </p>
-    
-    <p>
-      In the case of “You Draw It,” readers were also shown the predictions that others made, adding a social element to the experience. This additional social information was not shown to necessarily be effective for improving recall [kim2017data]. However, one might hypothesize that this social aspect may have other benefits such as improving reader engagement, due to the popularity of recent visual stories using this technique, e.g. in the Pudding's "Gyllenhaal Experiment" and Quartz’s "How do you draw a circle?"
-    </p>
+    <p>While these prompts may take the form of text entry or other standard input widgets, one of the most prominent examples of this technique being used in practice comes from the New York Times “You Draw It” visualizations [cite the 3]. In these visualizations, readers are prompted to complete a trendline on a chart, causing them to generate an explanation for why they think the trend may move in a certain direction. Only after readers make their prediction are they shown the actual data. Kim et al. showed that using visualizations as a prompt is an effective way to encourage readers to engage in self explanation and improve their recall of the information.</>
 
-    <h4>Retrieval Practice</h4>
-    
-    <p>
-      Prompting readers to remember previously presented material, for example through the use of quizzes, can be an effective way to improve their ability to recall it in the future [gates1922recitation]. This result from cognitive psychology, known as the testing effect [roediger2006power], can be utilized by authors writing for an interactive medium [TK insert example?]. While testing may call to mind stressful educational experiences for many, quizzes included in web articles can be low stakes: there is no need to record the results or grade readers. The effect is enhanced if feedback is given to the quiz-takers, for example by providing the correct answer after the user has recorded their response [bangert1991instructional].
-    </p>
+    <p>[FIGURE: you draw it, https://github.com/josefalcon/you-draw-it, https://bl.ocks.org/1wheel/07d9040c3422dac16bd5be741433ff1e]</p>
+    <p>[ALT VIDEO: nyt you draw it]</p>
 
-    <p>
-      The benefits of the testing effect can be further enhanced if the testing is repeated over a period of time [karpicke2008critical], assuming readers are willing to participate in the process. The idea of spaced repetition has been a popular foundation for memory building applications, for example in the Anki flash card system. More recently, authors have experimented with building spaced repetition directly into their web-based writing [cite nicky case, quantum computer], giving motivated readers the opportunity to easily opt-in to a repeated testing program over the relevant material.
-    </p>
+    <p>In the case of “You Draw It,” readers were also shown the predictions that others made, adding a social comparison element to the experience. This additional social information was not shown to necessarily be effective for improving recall [kim2017data]. However, one might hypothesize that this social aspect may have other benefits such as improving reader engagement, due to the popularity of recent visual stories using this technique, e.g. in The Pudding’s “Gyllenhaal Experiment” [cite] and Quartz’s “How do you draw a circle?” [cite].</>
+
+    <p>[VIDEO: gyllenhaal or circle]</>
+
+    <p>Prompting readers to remember previously presented material, for example through the use of quizzes, can be an effective way to improve their ability to recall it in the future [gates1922recitation]. This result from cognitive psychology, known as the testing effect [roediger2006power], can be utilized by authors writing for an interactive medium [TK insert example?]. While testing may call to mind stressful educational experiences for many, quizzes included in web articles can be low stakes: there is no need to record the results or grade readers. The effect is enhanced if feedback is given to the quiz-takers, for example by providing the correct answer after the user has recorded their response [bangert1991instructional].</p>
+
+    <p>The benefits of the testing effect can be further enhanced if the testing is repeated over a period of time [karpicke2008critical], assuming readers are willing to participate in the process. The idea of spaced repetition has been a popular foundation for memory building applications, for example in the Anki flash card system. More recently, authors have experimented with building spaced repetition directly into their web-based writing [cite nicky case, quantum computer], giving motivated readers the opportunity to easily opt-in to a repeated testing program over the relevant material.</>
+
+    <p>[VIDEO: of quantum country card]</p>
 
 
     <h3 id="improving-engagement">Improving Engagement</h3>
 
-    <h4>Animation</h4>
+    <p>[include short paragraph on aesthetics, snowfall citation]</p>
 
-    <p>
-      Animation can also be used to add drama to a graphic displaying important information, but which readers may otherwise find dry. For example, Ed Hawkins designed the Climate Spiral, which shows the average global temperature change over time. This presentation of the data resonated with a large public audience, so much so that it was displayed at the opening ceremony at the 2016 Rio Olympics.
-    </p>
+    <p>Passively, animation can be used to add drama to a graphic displaying important information, but which readers may otherwise find dry. For example, Ed Hawkins designed the Climate Spiral, which shows the average global temperature change over time. This presentation of the data resonated with a large public audience, so much so that it was displayed at the opening ceremony at the 2016 Rio Olympics. In fact, many other climate change visualizations of this same dataset use animation to build suspense and highlight the recent spike in global temperatures.</>
 
-    <p>
-      By adding variation over time, authors have access to a new dimension to encode information and an even wider design space. Consider the animated graphic in the New York Times story “Extensive Data Shows Punishing Reach of Racism for Black Boys,” which shows economic outcomes for 10,000 men who grew up in rich families. While there are many ways in which the same data could have been communicated more succinctly using a static visualization, by utilizing animation, it became possible for the authors to design a unit visualization in which each data point shown represented an individual, reminding readers that the data in this story was about real peoples’ lives.
-    <p>
+    <p>By adding variation over time, authors have access to a new dimension to encode information and an even wider design space. Consider the animated graphic in the New York Times story “Extensive Data Shows Punishing Reach of Racism for Black Boys,” which shows economic outcomes for 10,000 men who grew up in rich families. While there are many ways in which the same data could have been communicated more succinctly using a static visualization, by utilizing animation, it became possible for the authors to design a unit visualization in which each data point shown represented an individual, reminding readers that the data in this story was about real peoples’ lives.</p>
 
-    <h4>Play</h4>
+    <p>[FIGURE: animated unit visualization]</>
+    <p>[ALT VIDEO: nyt racism animation]</p>
 
-    <p>
-      As text moves away from an author-guided narrative towards a more reader-driven one [segel2010narrative], the reading experience becomes closer to that of playing a game. [parable of the polygons]
-    </p>
+    <p>Unit visualizations have also been used to evoke empathy in readers in other interactive articles covering grim topics such as gun deaths [cite 538 gun deaths] and soldier deaths in war [cite the fallen]. Surprisingly, using person-shaped glyphs has been shown not to produce additional empathic responses [cite boy CHI17], but including actual photographs of people helps readers gain interest in, remember [boykin 2016 VIS, boykin 2013 VIS], and communicate complex complex phenomena [slobin 2014, What If the Data Visualization is Actually People?] using visualizations. Correll argues that much of the power of visualization comes from abstraction, but quantization stymies empathy. He instead suggests anthropomorphizing data, borrowing journalistic and rhetoric techniques to create novel designs or interventions to foster empathy in readers when using visualizations.</>
 
-    <p>
-      The use of games to convey information has been explored in the domains of journalism [bogost2012newsgames] and education [squire2011video]. Designers of newsgames use them to help readers build empathy with their subject (for example see FT’s Uber Game) and explain complex systems consisting of multiple parts (e.g. Cutthroat Capitalism: The Game) [cite]. In educational settings the use of games has been shown to motivate students while maintaining or improving learning outcomes [virvou2005combining].
-    </p>  
+    <p>As text moves away from an author-guided narrative towards a more reader-driven one [segel2010narrative], the reading experience becomes closer to that of playing a game. For example, the Parable of the Polygons puts play at the center of the story, letting the reader manually run an algorithm that is then simulated later on in the article to demonstrate how a population of people with slight personal biases against diversity leads to social segregation [cite].</p>
 
+    <p>[VIDEO: parable of the polygons]</>
+
+    <p>The use of games to convey information has been explored in the domains of journalism [bogost2012newsgames] and education [squire2011video]. Designers of newsgames use them to help readers build empathy with their subject (for example, see FT’s Uber Game) and explain complex systems consisting of multiple parts (e.g. Cutthroat Capitalism: The Game) [cite]. In educational settings the use of games has been shown to motivate students while maintaining or improving learning outcomes [virvou2005combining].</p>
 
 
     <h3 id="enabling-experience">Enabling Experience</h3>
 
-    <h4>Animation</h4>
+    <p>Interactive articles engage readers in an experience they otherwise wouldn’t, or couldn’t have compared to reading traditional media to learn about a subject. Since experience can be subjective from person to person, an explicit definition and measure is tricky to formulate. However, for the purpose of this work, when describing experience we broadly refer to any overall effect or influence from representations, interactions, or other dynamic components gained through involvement in or exposure to it. Particular to a learning experience, this is possible regardless of the environment (e.g., traditional academic settings, or nontraditional settings), content, or learning technique (e.g., lectures, games).  </p>
 
-    <p>
-      Scientific data which is inherently time varying may be shown using an animation to allow viewers to connect more closely with the original data, as compared to seeing an abstracted static view. A classic example of this is Muybridge’s motion study [muybridge1882horse]: while the series of still images may be more effective for answering specific questions like, “does a horse lift all four of its feet off the ground when it runs,” watching the animation in slow motion gives the viewer a much more visceral sense of how it runs. A more modern example can be found in OpenAI’s reporting on their hide-and-seek agents [baker2019emergent]. The animations used instantly give the viewer a sense of how the agents are operating in that environment.
-    </p>
+    <p>While there is debate amongst researchers if animations in general are able to more effectively convey the same information compared to a well designed static graphic [tversky2002animation], animation has been shown to be effective for communicating state transitions [heer2007animated], uncertainty [hullman2015hypothetical], and causality [michotte1946perception], constructing narratives [thomas1995illusion]. Scientific data which is inherently time varying may be shown using an animation to allow viewers to connect more closely with the original data, as compared to seeing an abstracted static view. A classic example of this is Muybridge’s motion study [muybridge1882horse]: while the series of still images may be more effective for answering specific questions like, “does a horse lift all four of its feet off the ground when it runs,” watching the animation in slow motion gives the viewer a much more visceral sense of how it runs. A more modern example can be found in OpenAI’s reporting on their hide-and-seek agents [baker2019emergent]. The animations here instantly give the viewer a sense of how the agents are operating in that environment.</>
 
-    <h4>Multiple representation</h4>
-    <ul>
-      <li>Same information represented in different forms can have different impact</l>
-      <li>Accessibility (move down as a limitation?): read article, listen to article (bloomberg), watch article (video, maybe vox as example), trade-offs to each, data sonification if published in major outlet?</li>
-      <li>Multimedia  Principle + Redundancy principle - people learn better from words and pictures than from words alone. The (spoken) should not be redundant with the graphics. Good example would be edu youtube videos, e.g. 3Blue1Brown or Primer </li>
-      <li>Examples: politics election night coverage breaking down same outcome in multiple ways (CNN, 538, etc), hurricane path graphic alternatives (recent NYTimes alberto article)?</li>
-      <li>Interactive idea: pick a meaningful statistic (climate change?): show it as a {number, number + annotation/sentence, visualization}</li>
-      <li>Interactive idea: math equation v. a visualization/something visual and not notation-based</li>
-    </ul>
+    <p>[FIGURE: interactive horse motion animation]</p>
+    <div id="horse" class="l-page-outset"></div>
 
-    <p>
-      ^ forces you do better understand multiple abstractions of a single idea, once you know them you can show them at the same time and interact with them -> models and simulations 
-    </p>
+    <p>Interactive articles also communicate a single idea or concept using multiple representations. The same information represented in different forms can have different impact. For example, in mathematics often a single object has both an algebraic, notional representation and a geometric representation. A clear example of this is the definition of a circle [cite distill augmenting]. Both are useful, inform one another, and lead to different ways of thinking. This is the Multimedia Principle in action: people learn better from words and pictures rather than words or pictures alone [cite]. Interactive article examples that demonstrate this include publications’ political election coverage that break down the same outcome in multiple ways, for example, by voter demographics, geographical location, and historical perspective [cite CNN, 538, nytimes, how many others?]</>
 
-    <h4>Interactive Models and Simulations (~Interactive Documents)</h4>
+    <p>However, multiple representations should not simply repeat information for repetition’s sake. The Redundancy Principle states that eliminating redundant material and avoiding narration and “identical” text leads to better learning [Hoffman, B.(2006), Encyclopedia]. Therefore, interactive articles should not let the text be redundant with the graphics, but rather complement them through, for example through highlighting main messages. Popular video creators such as 3Blue1Brown [cite] and Primer [cite] exemplify these principles by using rich animation and narration to investigate complex topics. While these videos are praised for their approachability and rich exposition, one radical extension from traditional video content is also incorporating user input into the video while narration plays. One series of these interactive videos for “Visualizing Quaternions” lets a reader listen to narration of a live animation on screen, but at any time the reader can take control of the video and drive the animation while still listening to the narration [cite].</p>
 
-    <p>
-      Learning about complex systems often requires extensive setup to properly study: conducting scientific experiments, training machine learning models, modeling social phenomenon, digesting advanced mathematics, and researching recent political stories. This barrier to entry can deter people from engaging in complex topics, or explicitly prevent people who don’t have the necessary resources, e.g., computer hardware for intense machine learning tasks [kahng2018gan]. Interactive writing leverages active learning, reading combined with critical thinking [adler2014read], to drastically lower these barriers, helping diverse sets of people learn and explore using sandboxed models and simulations [victor2011explorable].
-    </p>
+    <p>[VIDEO: visualizing quaternions with audio?]</>
 
-    <p>
-      Science that conducts physical and computational experiments requires systematically controlling and changing parameters to observe their effect on the modeled system. In research, dissemination is typically done through static documents, where various figures show and compare the effect of varying particular parameters. However, efforts have been made to leverage interactivity in academic publishing, summarized in [dragicevic2019increasing]. Reimagining the research paper with interactive graphics [victor2011scientific], as exploranations [ynnerman2018exploranation], or as explorable multiverse analyses [dragicevic2019increasing] gives readers control over the reporting of the research findings and shows great promise in helping readers both digest new ideas and learn about existing fields that are built upon piles of research debt [olah2017research]
-    </p>
+    <p>[Accessibility (move down as a limitation?): read article, listen to article (bloomberg), watch article (video, maybe vox as example), trade-offs to each, data sonification if published in major outlet?]</p>
 
-    <p>
-      Beyond reporting statistics, interactive writing is extremely powerful when the studied systems can be modeled or simulated in real-time with interactive parameters without setup, e.g., in-browser sandboxes. This is a driving design pattern within interactive writing, and many examples exist ranging in complexity. “How You Will Die” visually simulates the average life expectancy of different groups of people, where a reader can choose the gender, race, and age of a person [yau2016how]. “On Particle Physics” allows readers to experiment with accelerating different particles through electric and magnetic fields to build intuition behind the Lorentz force and Maxwell’s equations (foundational to the field of electromagnetism)—these experiments cannot be done without mutli-million dollar machinery [bianchi2019on]. “Should Prison Sentences Be Based On Crimes That Haven’t Been Committed Yet?” shows the outcome of calculating risk assessments for recidivism where readers adjust the thresholds for determining who gets parole [barry2015should].
-    </p>
+    <p>Multiple representations forces a reader to understand multiple abstractions of a single idea. Once these are familiar and known, an author can build interfaces from multiple representations and let readers interact with them simultaneously, ultimately leading to interactive experiences demonstrate the power of interactive communication mediums. Next, we discuss such experiences where interactive articles have transformed communication and learning by using live, accessible models and simulations of complex systems and phenomenon. </>
 
-    <p>
-      The proliferation of modern machine learning techniques have greatly benefited from interactive models and simulations. Two articles, “How to Use t-SNE Effectively” and “The Beginner's Guide to Dimensionality Reduction” show the effect that hyperparameters have on creating low dimensional embeddings of high-dimensional data [wattenberg2016use, conlen2018dr]. A popular approach is to demonstrate how machine learning models work with in-browser models [smilkov2019tensorflow], for example, letting readers use their own video camera as inputs to an image classification models [barron2018designing]. Other examples are aimed at technical readers who wish to learn about deep learning. Here, interfaces allow readers to choose model hyperparameters, datasets, and training procedures that, once selected, visualize the training process and model internals to inspect the effect of varying the model configuration [smilkov2017direct, kahng2018ganlab].
-    </p>
+    <p>Learning about complex systems often requires extensive setup to properly study: conducting scientific experiments, training machine learning models, modeling social phenomenon, digesting advanced mathematics, and researching recent political stories. This barrier to entry can deter people from engaging in complex topics, or explicitly prevent people who don’t have the necessary resources, e.g., computer hardware for intense machine learning tasks [kahng2018gan]. Instead, interactive articles leverage active learning, reading combined with critical thinking [adler2014read], to drastically lower these barriers, helping diverse sets of people learn and explore using sandboxed models and simulations [victor2011explorable].</p>
+
+    <p>Science that conducts physical and computational experiments requires systematically controlling and changing parameters to observe their effect on the modeled system. In research, dissemination is typically done through static documents, where various figures show and compare the effect of varying particular parameters. However, efforts have been made to leverage interactivity in academic publishing, summarized in [dragicevic2019increasing]. Reimagining the research paper with interactive graphics [victor2011scientific], as exploranations [ynnerman2018exploranation], or as explorable multiverse analyses [dragicevic2019increasing] gives readers control over the reporting of the research findings and shows great promise in helping readers both digest new ideas and learn about existing fields that are built upon piles of research debt [olah2017research].</>
+
+    <p>Beyond reporting statistics, interactive articles are extremely powerful when the studied systems can be modeled or simulated in real-time with interactive parameters without setup, e.g., in-browser sandboxes. This is a standout design pattern within interactive articles, and many examples exist ranging in complexity. “How You Will Die” visually simulates the average life expectancy of different groups of people, where a reader can choose the gender, race, and age of a person [yau2016how]. “On Particle Physics” allows readers to experiment with accelerating different particles through electric and magnetic fields to build intuition behind the Lorentz force and Maxwell’s equations (foundational to the field of electromagnetism)—these experiments cannot be done without multi-million dollar machinery [bianchi2019on]. “Should Prison Sentences Be Based On Crimes That Haven’t Been Committed Yet?” shows the outcome of calculating risk assessments for recidivism where readers adjust the thresholds for determining who gets parole [barry2015should].</p>
+
+    <p>[FIGURE: live simulation?]</>
+    <p>[ALT VIDEO: how you will die]</p>
+
+    <p>The proliferation of modern machine learning techniques have greatly benefited from interactive models and simulations. Two articles, “How to Use t-SNE Effectively” and “The Beginner's Guide to Dimensionality Reduction” show the effect that hyperparameters have on creating low dimensional embeddings of high-dimensional data [wattenberg2016use, conlen2018dr]. A popular approach is to demonstrate how machine learning models work with in-browser models [smilkov2019tensorflow], for example, letting readers use their own video camera as inputs to an image classification models [barron2018designing]. Other examples are aimed at technical readers who wish to learn about deep learning. Here, interfaces allow readers to choose model hyperparameters, datasets, and training procedures that, once selected, visualize the training process and model internals to inspect the effect of varying the model configuration [smilkov2017direct, kahng2018ganlab].</>
+
+    <p>[VIDEO: horizontal bar of three examples (similar to application?): t-sne, teachable machines, tensorboard playground]</p>
 
 
     <h3 id="reducing-cognitive-load">Reducing Cognitive Load</h3>
     
-    <h4>Enables gestalt design</h4>
+    <p>Authors must calibrate the detail at which to discuss ideas and content to their readers expertise and interest to not overload them. When topics become multifaceted and complex, a balance must be struck between a high-level overview of a topic and its lower-level details. One ubiquitous interaction technique used to prevent a cognitive overload within a reader is “details-on-demand.” Classically, from a data analysis perspective, this technique allows users to select parts of a dataset to be shown in more detail while maintaining an overview of the whole space. This is particularly useful when a change of view is not required, so that users can inspect elements of interest on a point-by-point basis in the context of the whole [craft2005beyond]. Below we highlight areas where details-on-demand has been successfully applied to reduce the amount of information present within an interface at once.</p>
 
-    <p>
-      Tufte data ink ratio, Examples: darkhorse data ink gif, Interactive idea: before and after graphic presenting information with and without gestalt design, -> static colorized math, -> interactivity 
-    </p>
+    <p>[which videos / interactive figure to include here?]</>
 
-    <h4>Details-on-demand</h4>
+    <p>Data visualization. Details-on-demand is core to information visualization, and concludes the seminal Visual Information-Seeking Mantra: “Overview first, zoom and filter, then details-on-demand” [shneiderman1996eyes]. Successful visualizations not only provide the base representations and techniques for these three steps, but also bridge the gaps between them [keim2002information]. In practice, the solidified standard for details-on-demand in data visualization manifests as a tooltip, typically summoned on a cursor mouseover, that presents extra information in an overlay. Given that data often contains multiple attributes, tooltips can show the other attributes that are not currently encoded in a visualization. [need example]</p>
 
-    <p>
-      Authors must calibrate the detail at which to discuss ideas and content to their readers expertise and interest. When topics become multifaceted and complex, a balance must be struck between a high-level overview of a topic and its lower-level details. One ubiquitous interaction technique used to address this challenge is “details-on-demand.” Classically, from a data analysis perspective, this technique allows users to select parts of a dataset to be shown in more detail while maintaining an overview of the whole space. This is particularly useful when a change of view is not required, so that users can inspect elements of interest on a point-by-point basis in the context of the whole [craft2005beyond]. Below we highlight areas where details-on-demand has been successfully applied, including information visualizations, illustrations, mathematical notation, and text.
-    </p>
+    <p>Illustration. Details-on-demand is also used in illustrations, interactive textbooks, and museum exhibits, where highlighted segments of a figure can be selected to display additional information about the particular segment. For example, in “How does the eye work?” readers can select segments of an anatomical diagram of the human eye to learn more about specific regions, e.g., rods and cones [ala2018how]. Another example is Earth Primer, an interactive textbook on tablets that allows readers to inspect the Earth’s interior, surface, and biomes [gingold2015earth]. Each illustration contains segments the reader can tap to learn and explore in depth.</>
 
-    <p>
-      Data visualization. Details-on-demand is core to information visualization, and concludes the seminal “Visual Information-Seeking Mantra”: “Overview first, zoom and filter, then details-on-demand” [shneiderman1996eyes]. Successful visualizations not only provide the base representations and techniques for these three steps, but also bridge the gaps between them [keim2002information]. In practice, the solidified standard for details-on-demand in data visualization manifests as a tooltip, typically summoned on a cursor mouseover, that presents extra information in an overlay. Given that data often contain multiple attributes, tooltips can show the other attributes that are not currently encoded in a visualization. [Missing example, moved to personalization]
-    </p>
+    <p>Mathematical notation. Formal mathematics, a historically static medium, can benefit from details-on-demand, for example, to elucidate a reader with intuition about a particular algebraic term or present a geometric interpretation of an equation. For example, in “Colorized Math Equations,” the Fourier Transform equation is presented in both mathematical notation and plain text, but the two are linked through a mouseover that highlights which term in the equation corresponds to which word in the text [azad2017colorized]. Another example that visualizes mathematics and computation is the “Image Kernels” tutorial where a reader can mouseover a real image and observe the effect and exact computation for applying a filter over the image. This operation, called a convolution, is at the core of convolutional neural network architectures that have recently driven machine learning progress. Instead of writing down long arithmetic sums, the interface allows readers to quickly see the summation operation’s terms and output [powell2015image].</p>
 
-    <p>
-      Illustration. Details-on-demand is also used in illustrations, interactive textbooks, and museum exhibits, where highlighted segments of a figure can be selected to display additional information about the particular segment. For example, in “How does the eye work?” readers can select segments of an anatomical diagram of the human eye to learn more about specific regions, e.g., rods and cones [ala2018how]. Another example is Earth Primer, an interactive textbook on tablets that allows readers to inspect the Earth’s interior, surface, and biomes [gingold2015earth]. Each illustration contains segments the reader can tap to learn and explore in depth.
-    </p>
+    <p>Text. While not as pervasive as other types of information, text documents and other longform textual mediums have also experimented with letting readers choose a variable level of detail to read. This idea was explored as early as the 1960s in StretchText, a hypertext feature that allows a reader to reveal a more descriptive or exhaustive explanation of something by expanding or contracting the content in place [nelson1967stretchtext]. This idea has resurfaced in recent examples, including the “On Variable Level-of-detail Documents” demo [beecroft2019on], a PhD thesis turned interactive article [cite], and the call for proposals of the Parametric Press [conlen2018parametric]. One challenge that has limited this technique’s adoption is the burden it places on authors to write multiple versions of their content. For other examples of details-on-demand for text, such as application in code documentation, see this small collection of examples [basques2018ui].</>
 
-    <p>
-      Mathematical notation. Formal mathematics, a historically static medium, can benefit from details-on-demand, for example, to elucidate a reader with intuition about a particular algebraic term or present a geometric interpretation of an equation. For example, in “Colorized Math Equations,” the Fourier Transform equation is presented in both mathematical notation and plain text, but the two are linked through a mouse over that highlights which term in the equation corresponds to which word in the text [azad2017colorized]. Another example that visualizes mathematics and computation is the “Image Kernels” tutorial where a reader can mouseover a real image and observe the effect and exact computation for applying a filter over the image. This operation, called a convolution, is at the core of convolutional neural network architectures that have recently driven machine learning progress. Instead of writing down long arithmetic sums, the interface allows readers to quickly see the summation operation’s terms and output [powell2015image].
-    </p>
+    <p>Previewing content. Details-on-demand can also be used as a method for previewing content without committing to another interaction. For example, when hovering over another hyperlink on Wikipedia, a preview card is shown that can contain an image and brief description; this gives readers a quick preview of the topic without clicking through and loading a new page [wikipedia2018preview]. This idea is also not new: work from human-computer interaction explored fluid links [zellweger1998fluid, zellweger2002reading] within hypertext that present information about a particular topic in a location that does not obscure the source material. Both older and modern preview techniques use perceptually-based animation and simple tooltips to ensure their interactions are natural and lightweight feeling to readers [zellweger1998fluid]. Besides these examples, details-on-demand has become a ubiquitous design pattern, from image previews when scrubbing a video, to visualizing approximate query results in big data analysis using progressive refinement [rauschenbach1998progressive, rauschenbach1999demand, moritz2017trust].</p>
 
-    <p>
-      Text. While not as pervasive as other types of information, text documents and other longform textual mediums have also experimented with letting readers chose a variable level of detail to read. This idea was explored as early as the 1960s in StretchText, a hypertext feature that allows a reader to reveal a more descriptive or exhaustive explanation of something by expanding or contracting the content in place [nelson1967stretchtext]. This idea has resurfaced in recent examples, including the “On Variable Level-of-detail Documents” demo [beecroft2019on], and the call for proposals of the Parametric Press [conlen2018parametric]. One challenge that has limited its adoption is the burden it places on authors to write multiple versions of their content. For other examples of details-on-demand for text, such as application in code documentation, see this small collection of examples [basques2018ui].
-    </p>
-
-    <p>
-      Previewing content. Details-on-demand can also be used as a method for previewing content without committing to another interaction. For example, when hovering over another hyperlink on Wikipedia, a preview card is shown that can contain an image and brief description; this gives readers a quick preview of the topic without clicking through and loading a new page [wikipedia2018preview]. This idea is also not new: work from human-computer interaction explored fluid links [zellweger1998fluid, zellweger2002reading] within hypertext that present information about a particular topic in a location that does not obscure the source material. Both older and modern preview techniques use perceptually-based animation and simple tooltips to ensure their interactions are natural and lightweight feeling to readers [zellweger1998fluid]. Besides these examples, details-on-demand has become a ubiquitous design pattern, from image previews when scrubbing a video, to visualizing approximate query results in big data analysis using progressive refinement [rauschenbach1998progressive, rauschenbach1999demand, moritz2017trust].
-    </p>
-
-    <h4>Interactive Models and Simulations</h4>
-
-    <p>
-      [Reduce cognitive load in presentation, ganlab?]
-    </p>
-
-    <h4>Animation</h4>
-
-    <p>
-      While there is debate amongst researchers if animations in general are able to more effectively convey the same information compared to a well designed static graphic [tversky2002animation], animation has been shown to be effective for communicating state transitions [heer2007animated], uncertainty [hullman2015hypothetical], and causality [michotte1946perception], constructing narratives [thomas1995illusion].
-    </p>
 
     <h3 id="personalization">Personalization</h3>
     
-    <h4>Personalization</h4>
+    <p>Content personalization, automatically modifying text and multimedia based on reader’s individual features or input (e.g., demographics or location), is a technique that has been shown to increase engagement and learning within readers [cordova1996intrinsic] and support behavioral change [di2006authoring]. The PersaLog system gives developers tools to build such content and presents guidelines for personalization based on user research from practicing journalists [adar2017persalog]. Other work has shown that “personalized spatial analogies,” presenting distance measurements in regions where readers are geographically familiar with, help people more concretely understand new distance measurements within news stories [kim2016generating].</p>
 
-    <p>
-      Content personalization, automatically modifying text and multimedia based on reader’s individual features or input (e.g., demographics or location), is a technique that has been shown to increase engagement and learning within readers [cordova1996intrinsic] and support behavioral change [di2006authoring]. The PersaLog system gives developers tools to build such content and presents guidelines for personalization based on user research from practicing journalists [adar2017persalog]. Other work has shown that “personalized spatial analogies,” presenting distance measurements in regions where readers are geographically familiar with, help people more concretely understand new distance measurements within news stories [kim2016generating].
-    </p>
+    <p>Personalization alone has also been used as the center of interactive articles. Both “How Much Hotter Is Your Hometown Than When You Were Born?” [popovich2018how] and “Human Terrain” [daniels2018human] use location to drive stories relating to climate change and population densities respectively. Other examples ask for explicit reader input, such as a story that visualizes a reader’s net worth to challenge a reader’s assumptions if they are wealthy or not (relative to the greater population) [quealy2019are], or predicting a reader’s political party affiliation [chinoy2010quiz]. Another example is the interactive scatterplot featured in “Find Out If Your Job Will Be Automated” [whitehouse2017find]. Here, professions are plotted to inspect their likelihood of being automated against their average annual wage. The article encourages readers to use the search bar to type in their own profession to highlight it against the others.</>
 
-    <p>
-      Personalization alone has also been the center of interactive writing and other stories. Both “How Much Hotter Is Your Hometown Than When You Were Born?” [popovich2018how] and “Human Terrain” [daniels2018human] use location to drive stories relating to climate change and population densities respectively. Other examples ask for explicit reader input, such as a story that visualizes a reader’s net worth to challenge a reader’s assumptions if they are wealthy or not (relative to the greater population) [quealy2019are], or predicting a reader’s political party affiliation [chinoy2010quiz].
-    </p>
+    <p>[VIDEO: human terrain example, nytimes how hot, or bloomberg job automation?]</p>
 
-    <h4>Details-on-demand </h4>
+    <p>An interactive medium has the potential to offer readers an experience other than static, linear text. Non-linear stories, where an operator can choose their own path through the content, have the potential to provide a more personalized experience and focus on areas of user interest [sizemore2011interactive]. For example, the BBC has used this technique in both online articles [cite] and in a recent episode of Click [cite], a technology focused news television program. Non-linear stories present challenges for authors, as they must consider the myriad possible paths through the content, and consider the different possible experiences that the audience would have when pursuing different branches.</>
 
-    <p>
-      An example is the interactive scatterplot featured in “Find Out If Your Job Will Be Automated” [whitehouse2017find]. Here, professions are plotted to inspect their likelihood of being automated against their average annual wage. Since there are hundreds of professions, not every point can be labeled. Therefore, to know which points correspond to a particular profession (such as a reader wanting to find their own profession), readers can search or mouseover points to display a tooltip with the profession’s name and other information (both encoded and not) such as the level of education, the number of employees, and “computerization” rank.
-    </p>
+    <p>Another technique interactive articles often use is segmenting content into small pieces to be read in-between or alongside other graphics. While we have already discussed cognitive load theory, the Segmenting Theory, the idea that complex lessons are broken into smaller, bit-sized parts [Clark & Mayer 2011 e-learning], also supports personalization within interactive articles. Providing a reader the ability to play, pause, and scrub content allows the reader to move at their own speed, comprehending the information at a speed that works best from them. Segmenting also engages a reader’s essential processing without overloading their cognitive system [Clark & Mayer 2011 e-learning]. Multiple studies have been conducted showing that learners perform better when using sementing information, whether it be only within an animation [Dow, & Mayer 2003 microworld] or within a interface with textual descriptions [cite Mayer, Mathias, and Wetzell (2002) pictorial]. One excellent example of using segmentation and animation to personalize content delivery is “A Visual Introduction to Machine Learning,” which introduces fundamental concepts within machine learning in bite-sized pieces, while transforming a single dataset into a trained machine learning model [cite].</>
+    <p>[cite https://sites.google.com/site/cognitivetheorymmlearning/segmenting-principle]</p>
 
-    <h4>Play/Non-linear</h4>
+    <p>[VIDEO: r2d3 visual ml]</p>
 
-    <p>
-      An interactive medium has the potential to offer readers an experience other than static, linear text. Non-linear stories, where an operator can choose their own path through the content, have the potential to provide a more tailored experience and focus on areas of user interest [sizemore2011interactive]. For example, the BBC has used this technique in both online articles [cite] and in a recent episode of Click [cite], a technology focused news television program. Non-linear stories present challenges for authors, as they must consider the myriad possible paths through the content, and consider the different possible experiences that the audience would have when pursuing different branches.
-    </p>
-
-    <h4>User paced segments</h4>
-
-    <p>
-      How this fits in with cognitive load theory; 
-      Examples: (many to choose from, let’s pick both some well-done ones and some well-known ones), visual intro to ml r2d3, 538 gun deaths,; 
-      Interactive idea: a simple stepper graphic
-    </p>
 
     <h2 id="applications">Applications</h2>
 
     <div id="applications-tab" class="l-page-outset"></div>
 
-    <p>
-      
-    </p>
-
-    <div id="horse" class="l-page-outset"></div>
-
-    <p class="tk">
-      In-depth discussion on single example mapping back to above dimensions, compact visual encoding for entire article with annotations of each aspect previously described; show this for a handful (5?) other articles
-    </p>
-
-    <h3>Research Dissemination [Under construction -Fred]</h3>
-
-    <quote>
-      A good story cannot be devised, it has to be distilled.” —Raymond Chandler, pulled from Science is Storytelling in Writing Science.
-    </quote>
-
-    <p>
-      Bring up the explorable examples we have from ML, tabulate how they all use the above affordances, 
-      Bring up Parametric Press: brief background (mission statement, CFP, Issue 01) and ML article
-    </p>
-    
-    <h3>Journalism [matt]</h3>
-    <p>
-      Examples from climate change, Bloomberg article, (do you know NASA ones?), many from https://www.nytimes.com/by/nadja-popovich, Examples that include simulations and games, breakdown graphics, MTA subway
-    </p>
-
-    <h3>Education</h3>
-    
-    <p>
-      Interactive textbooks, Examples: Linear algebra I, linear algebra II, earth a primer, quantum computing, https://jackschaedler.github.io/circles-sines-signals/, https://thebookofshaders.com/,  
-    </p>
-
-    <h3>Policy-making / decision-making</h3>
-    <p>
-      Better medium than long, complicated pdf governmental reports, Examples: nicky case build a better ballot, http://graphics.wsj.com/blue-feed-red-feed/, http://worrydream.com/ClimateChange/
-    </p>
-
-    <h2 id="challenges">The Challenges of Interactive Articles in Practice</h2>
-    <p>
-      If interactive articles provide clear benefits over other mediums for communicating complex ideas, then why aren’t there more of them? Unfortunately, creating interactive articles today is challenging for a number of different reasons. [TK make stronger, “both technically and institutionally”?]
-    </p>
-
-    <p>
-      Regardless of the topic to be explained, to build an interactive article authors must have expertise in a breadth of
-      skills, such as writing, design, programming, and know how to effectively combine them. Beyond that, an author must
-      deeply understand a topic to communicate. Authoring interactive articles also often takes significantly more time and
-      effort than a blog post or traditional academic publication.
-    <p>
-
-    <p>
-      Publishing to the web brings its own challenges: while interactive articles are accessible to anyone with a browser, they are burdened by rapidly changing web technologies that could break interactive content after just a few years. For this reason, easy and accessible interactive article archival is important for authors to know their work can be confidently preserved indefinitely to support continued readership.
-    </p>
-
-    <p>
-      It is also important to remember that not everything needs to be interactive. If an idea is simple enough, it may not call for interaction. However, even in a domain where the potential communication improvement is increcremental, at scale (e.g., delivering via the web), interactive articles can still have impact. [TK example to cite here?] [TK Multimedia studies actually show large effect sizes for improvement of transfer learning in many cases]
-    </p>  
-
-    <p>Besides authoring, there are other fundamental limitations for publishing interactive articles. For example, in non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content: why should a researcher spend time on an “extra” interactive exposition of their work when they could instead publish more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s impact, legitimizing interactive artifacts requires buy-in from a collective of communities.</p>
-
-    <h3>How can we help?</h3>
-
-    <p>
-      It takes a breadth of skills to author an interactive article. Can we develop new tools to help lower the barrier to entry? While there have been great, practical strides in this direction [TK idyll, apparatus, others?], there is still opportunity for creating tools to design, develop, and evaluate interactive articles in the wild. Specific features include supporting mobile-friendly adaptations of interactive graphics, creating content for different platforms besides just the web, and tools that allow people to create interactive content without code.
-
-    </p>  
-
-    <p>Beyond technical challenges, it is currently difficult to prototype and iterate on interactive articles. </p>
-
-    <span class="tk">Resources from the emergent community? Or does that seem out of place?]</span>
-
     <h2 id="critical-reflections">Critical Reflections</h2>
 
-    <p>
-      While it has never been easier for independent writers to share their ideas online, the current generation of publishing technology mimics tools that were designed during the era of the printing press. The web offers rich dynamic capabilities, but to most authors these are off limits, residing outside the confines of restrictive content management systems. We, the authors of this article, together with a group of designers, programmers, and researchers, want to change that. To experiment with these ideas, we built The Parametric Press: a born-digital magazine dedicated to showcasing the expository power that’s possible when the interactive capabilities of dynamic media are effectively combined.
-    </p>
+    <p>While it has never been easier for writers to share their ideas online, current publishing tools largely support only static authoring and don’t offer take full advantage of the fact that the web is a dynamic medium. We want that to change. [TK sentence about things we have done before parametric … idyll, dim. reduction, kde article?, 538 work?] </p>
 
-    <p>
-      In late 2018, we invited writers to respond to a call for proposals for our first issue. Issue 01: Science + Society focuses on examining scientific and technological phenomena that stand to shape society at large, now or in the near future. We sought to cover topics that would benefit from using the interactive or otherwise dynamic capabilities of the web. Given the challenges of authoring interactive articles, we did not expect authors to submit fully developed pieces. Instead, we accepted idea submissions, and worked together with those accepted to develop the issue, by offering technical, design, and editorial assistance collectively.
-    </p>
+    <p>To explore these ideas further, we, the authors of this article, together with a group of designers, programmers, and researchers, created the Parametric Press: an annually published digital magazine that showcases the expository power that interactive dynamic media can have when used effectively. In late 2018, we invited writers to respond to a call for proposals for our first issue focusing on exploring scientific and technological phenomena that stand to shape society at large. </>
 
-    <p>
-      From its inception, one of the objectives of the Parametric Press is to showcase the new forms of media and publishing that are possible with tools available today, and inspire others to create their own dynamic writings. To that end, we made available all of the software that runs the site, including reusable components, custom data visualizations, and the publishing engine itself. To address interactive content archival, we have set up a system to publish a digital archive of all of our articles at the time that they are first published to the site. We hope to show how digital works such as ours can published confidently knowing that they will be preserved indefinitely.
-    </p>
+    <p>We sought to cover topics that would benefit from using the interactive or otherwise dynamic capabilities of the web. Given the challenges of authoring interactive articles, we didn’t ask authors to submit fully developed pieces. Instead, we accepted idea submissions, and collaborated with the authors to develop the issue, offering technical, design, and editorial assistance collectively.</p>
+
+    <p>We see the Parametric Press as a crucial connection between the often distinct worlds of research and practice. The Press serves as a platform through which to operationalize the theories put forth by education, journalism, and HCI researchers. Tools like Idyll which are designed in a research setting need to be validated and battle tested to ensure that they are of practical use; the Press facilitates this by allowing us to study its use in a real-world setting, by authors who are personally motivated to complete their task of constructing a high-quality interactive article, and care about the tooling being used as a secondary concern, if at all.</>
+
+    <p>The act of practicing that which you study, becoming a para-researcher, also allows one to identify hidden concerns that haven’t been discussed by academic researchers, or which researchers have not deemed worthy of study.</p>
+
+    <p>From its inception, one of the objectives of the Parametric Press is to showcase the new forms of media and publishing that are possible with tools available today, and inspire others to create their own dynamic writings. To that end, we made available all of the software that runs the site, including reusable components, custom data visualizations, and the publishing engine itself. To address interactive content archival, we have set up a system to publish a digital archive of all of our articles at the time that they are first published to the site. We hope to show how digital works such as ours can published confidently knowing that they will be preserved indefinitely.</>
 
     <h3>Theory x. Practice</h3>
 
-    <p>
-      Citation test <d-cite key="conlen2019launching"></d-cite>, <d-cite key="conlen2019launching,conlen2018dr,shneiderman1996eyes"></d-cite>
-    </p>
-
     <div id="research-x-practice" style="width: 100%"></div>
+
+    <h2 id="challenges">The Challenges of Interactive Articles in Practice</h2>
+
+    <p>If interactive articles provide clear benefits over other mediums for communicating complex ideas, then why aren’t there more of them? Unfortunately, creating interactive articles today is quite challenging. A successful interactive article requires combining diverse editorial, design, and programming skills. Furthermore, authoring interactive articles often takes significantly more time and effort than a static article, blog post, or even academic publication [cite distill github repo] (footnote: As a proxy, see the number of commits on an example Distill article [cite]). Because of these practical challenges, many interactive articles are created by a collective team consisting of multiple members with specialized skills.</p>
+
+    <p>Regarding technology, relatively few tools exist that support the development of such articles. Most interactive articles are created using general purpose web-development frameworks which, while expressive, can be difficult to work with for authors who aren’t also web developers. Publishing to the web also brings its own challenges: while interactive articles are accessible to anyone with a browser, they are burdened by rapidly changing web technologies that could break interactive content after just a few years. For this reason, easy and accessible interactive article archival is important for authors to know their work can be confidently preserved indefinitely to support continued readership.  Authoring interactive articles also requires designing for a diverse set of devices, for example, ensuring bespoke content can be adapted for desktop and mobile screen sizes with varying connection speeds, since accessing interactive content demands more bandwidth.</>
+
+    <p>It is also important to remember that not everything needs to be interactive. Authors should consider the audience and context of their work when deciding if use of interactivity would be valuable. In the worst case, interactivity may be distracting to readers or the functionality may go unused, the author having wasted their time implementing it. However, even in a domain where the potential communication improvement is increcremental, at scale (e.g., delivering via the web), interactive articles can still have impact. [cite nielsen book and thread] [TK Multimedia studies actually show large effect sizes for improvement of transfer learning in many cases]</p>
+
+    <p>Besides authoring, there are other non-technical limitations for publishing interactive articles. For example, in non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content: why should a researcher spend time on an “extra” interactive exposition of their work when they could instead publish more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s impact, legitimizing interactive artifacts requires buy-in from a collective of communities. [TK feels like there should be one more sentence here]</>
+
+    <p>How can we help?</p>
+
+    <p>It takes a breadth of skills to author an interactive article. Can we develop new tools to help lower the barrier to entry? While there have been great, practical strides in this direction [cite idyll, apparatus, observable, loopy, webstrates], there is still opportunity for creating tools to design, develop, and evaluate interactive articles in the wild. Specific features include supporting mobile-friendly adaptations of interactive graphics, creating content for different platforms besides just the web, and tools that allow people to create interactive content without code. Extending further, could future authoring tools also close the loop on publishing and evaluating interactive content in the wild? For example, collecting and visualizing graphic-specific interaction logs or usage statistics to inform the author of their design decisions.</>
+
+    <p>To meet these challenges has emerged a diverse community exploring and experimenting with what interactive articles could be. The Explorable Explanations [cite explorables] community is a “disorganized ‘movement’ of artists, coders & educators who want to reunite play and learning.” The hub contains 170+ interactive articles on topics ranging from art, natural sciences, social sciences, journalism, and civics. The curious can also find tools, tutorials, and meta-discussion around learning, play, and representations. Explorables also hosted a mixed in-person and online Jam [cite https://explorabl.es/jam/]: a community-based sprint focused on creating new explorable explanations. </p>
 
     <h2 id="discussion">Discussion [Research/Community Agenda/CTA]</h2>
     
     <p>
-      What we would like to see, call for action
-      Predicated on do these actual people learn? Evaluation is largely absent (sans Matt’s eurovis 2019 paper, scrolly v. stepping, sequence based mediums)
-      
-      More tools that make these easier to create
-      
-      More platforms/venues
-      
-      VISxAI 2019 (maybe mention but not needed?)
-      
-      Distill
-      
-      Parametric
-      
-      Clearer paths to submission for existing publications, standards and guidelines
-      
-      E.g. news outlets have clear instructions for pitching written pieces, less so for interactive ones Funding
+      Citation test <d-cite key="conlen2019launching"></d-cite>, <d-cite key="conlen2019launching,conlen2018dr,shneiderman1996eyes"></d-cite>
     </p>
 
+    <p>We believe in the power and untapped potential of interactive articles for making complex ideas accessible and understandable to many people who otherwise wouldn’t have the chance or desire to learn. However, there are still many problems to address before achieving this future. We conclude with some discussion around potential solutions to such problems and [TK].</>
+
+    <p>Lowering the barrier for authoring interactive articles requires better tooling, both for people with and without programming experience. While we have already mentioned a number of existing tools [cite list again?], [... TK]</p>
+
+    <p>The usefulness of interactive articles is predicated that these interactive articles actually help people learn. Evaluation is unfortunately largely absent from interactive articles. For example, would a certain story benefit from a scrollytelling format or segmented a stepper format? While recent research has quantitatively and qualitatively investigated the readership of a handful of popular interactive articles [cite idyll analytics, others?], evaluation tools and methodologies for interactive articles is an open problem. </>
+
+    <p>Many interactive articles are self-host because of a lack of platforms that support interactive publishing. Creating more outlets that allow authors to publish interactive content will help promote their development and legitimization. The few existing examples, including newer journals such as Distill [cite], academic workshops like VISxAI [cite], open-source publications like Parametric Press [cite], and live programming notebooks like Observable help, but currently target a narrow group of authors, e.g., people who have technical skills. Such platforms should also provide clear paths to submission, quality and editorial standards, and authoring guidelines. For example, news outlets have clear instructions for pitching written pieces, yet this is under-developed for interactive articles. Lastly, providing more funding for enabling interactive articles incentivizes authors… [TK]</p>
 
     <!-- <d-figure id="svelte-example-dfigure">
       <figure>

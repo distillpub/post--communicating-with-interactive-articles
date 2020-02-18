@@ -69,9 +69,9 @@
   </div>
 
   <details>
-    <summary>Interactive Writing</summary>
-    <a href="#interactive-writing">
-      <em>navigate to "Interactive Writing"</em>
+    <summary>The Capabilities of Interactive Articles</summary>
+    <a href="#interactive-articles">
+      <em>navigate to "The Capabilities of Interactive Articles"</em>
     </a>
     <ul>
       <li>
@@ -97,11 +97,11 @@
   </div>
 
   <div>
-    <a href="#challenges">Challenges of Interactive Writing</a>
+    <a href="#critical-reflections">Critical Reflections</a>
   </div>
 
   <div>
-    <a href="#critical-reflections">Critical Reflections</a>
+    <a href="#challenges">Challenges of Interactive Writing</a>
   </div>
 
   <div>
