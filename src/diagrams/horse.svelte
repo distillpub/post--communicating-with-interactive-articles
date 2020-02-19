@@ -77,7 +77,7 @@
 
     #horse-controls {
         grid-column-start: 7;
-        grid-column-end: 11;
+        grid-column-end: 13;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -127,6 +127,13 @@
         cursor: pointer;
         outline: inherit;
         color: var(--orange);
+    }
+
+    @media(min-width: 768px) {
+        #horse-controls {
+            grid-column-start: 7;
+            grid-column-end: 11;
+        }
     }
 
 </style>
