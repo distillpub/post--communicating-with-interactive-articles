@@ -23,7 +23,7 @@ const researchPracticeTable = new ResearchPracticeTable({
 });
 
 const toc = new TOC({
-	target: document.getElementById('contents')
+	target: document.getElementById('toc')
 });
 
 const applicationTabs = new ApplicationTabs({

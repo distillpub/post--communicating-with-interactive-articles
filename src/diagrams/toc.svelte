@@ -1,111 +1,116 @@
 <style>
-  nav a {
-    color: rgba(0, 0, 0, 0.8);
-    border-bottom: none;
-    text-decoration: none;
-  }
+    @media(max-width: 1000px) {
+        :global(d-contents) {
+            justify-self: start;
+            align-self: start;
+            grid-column-start: 2;
+            grid-column-end: 6;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            padding-left: 0.25em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 
-  nav ul li {
-    margin-bottom: 0.25em;
-  }
+    @media (min-width: 1000px) {
+        :global(d-contents) {
+            align-self: start;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            justify-self: end;
+            padding-right: 3em;
+            padding-left: 2em;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 
-  nav a:hover {
-    text-decoration: underline solid rgba(0, 0, 0, 0.6);
-  }
+    @media (min-width: 1180px) {
+        :global(d-contents) {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            justify-self: end;
+            padding-right: 3em;
+            padding-left: 2em;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 
-  nav details ul {
-    margin-top: 0;
-  }
+    :global(d-contents nav h3) {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
 
-  nav details > a {
-    margin-left: 1.06em;
-  }
+    :global(d-contents nav a) {
+        color: rgba(0, 0, 0, 0.8);
+        border-bottom: none;
+        text-decoration: none;
+    }
 
-  nav summary,
-  nav > div,
-  nav details > a {
-    display: block;
-    outline: none;
-    margin-bottom: 0.5em;
-  }
+    :global(d-contents li) {
+        list-style-type: none;
+    }
 
-  nav > div {
-    margin-left: 1.06em;
-  }
+    :global(d-contents ul) {
+        padding-left: 1em;
+    }
 
-  nav summary {
-    cursor: context-menu;
-  }
+    :global(d-contents nav ul li) {
+        margin-bottom: .25em;
+    }
 
-  nav summary,
-  nav > div > a {
-    font-size: 13px;
-    font-weight: 600;
-  }
+    :global(d-contents nav a:hover) {
+        text-decoration: underline solid rgba(0, 0, 0, 0.6);
+    }
 
-  /* a.figure-number,
-  a.section-number {
-    border-bottom-color: hsla(206, 90%, 20%, 0.3);
-    text-transform: uppercase;
-    font-size: 0.85em;
-    color: hsla(206, 90%, 20%, 0.7);
-  }
+    :global(d-contents nav ul) {
+        margin-top: 0;
+        margin-bottom: 6px;
+    }
 
-  a.figure-number::before {
-    content: "Figure ";
-  }
+    :global(d-contents nav>div) {
+        display: block;
+        outline: none;
+        margin-bottom: 0.5em;
+    }
 
-  a.figure-number:hover,
-  a.section-number:hover {
-    border-bottom-color: hsla(206, 90%, 20%, 0.6);
-  } */
+    :global(d-contents nav>div>a) {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    :global(d-contents nav>div>a) {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    :global(d-contents nav>div>a:hover,
+    d-contents nav>ul>li>a:hover) {
+        text-decoration: none;
+    }
 </style>
 
 <nav class="l-text toc figcaption">
-  <h3>Contents</h3>
-
-  <div>
-    <a href="#introduction">Introduction</a>
-  </div>
-
-  <details>
-    <summary>The Capabilities of Interactive Articles</summary>
-    <a href="#interactive-articles">
-      <em>navigate to "The Capabilities of Interactive Articles"</em>
-    </a>
+    <h3>Contents</h3>
+    <div><a href="#introduction">Introduction</a></div>
+    <div><a href="#applications">Applications</a></div>
+    <div><a href="#experiment-1">The Capabilities of Interactive Articles</a></div>
     <ul>
-      <li>
-        <a href="#improving-recall">Improving Recall</a>
-      </li>
-      <li>
-        <a href="#improving-engagement">Improving Engagement</a>
-      </li>
-      <li>
-        <a href="#enabling-experience">Enabling Experience</a>
-      </li>
-      <li>
-        <a href="#reducing-cognitive-load">Reducing Cognitive Load</a>
-      </li>
-      <li>
-        <a href="#personalization">Personalization</a>
-      </li>
+      <li><a href="#improving-recall">Improving Recall</a></li>
+      <li><a href="#improving-engagement">Improving Engagement</a></li>
+      <li><a href="#enabling-experience">Enabling Experience</a></li>
+      <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
+      <li><a href="#personalization">Personalization</a></li>
     </ul>
-  </details>
-
-  <div>
-    <a href="#applications">Applications</a>
-  </div>
-
-  <div>
-    <a href="#critical-reflections">Critical Reflections</a>
-  </div>
-
-  <div>
-    <a href="#challenges">Challenges of Interactive Writing</a>
-  </div>
-
-  <div>
-    <a href="#discussion">Discussion</a>
-  </div>
-
+    <div><a href="#critical-reflections">Critical Reflections</a></div>
+    <div><a href="#challenges">Challenges of Interactive Writing</a></div>
+    <div><a href="#discussion">Discussion</a></div>
 </nav>
