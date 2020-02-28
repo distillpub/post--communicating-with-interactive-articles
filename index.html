@@ -54,6 +54,10 @@ d-figure>figure {
   left: -48px;
 }
 
+.tk {
+  color: red;
+}
+
 /* TOC */
 
 #contents {
@@ -124,20 +128,12 @@ d-figure>figure {
 
   <d-byline></d-byline>
 
-  <div id="contents" class="base-grid"></div>
-
   <d-article>
-
-    <style>
-      .tk {
-        color: red;
-      }
-    </style>
+    <d-contents id="toc"></d-contents>
 
     <!-- INTRO -->
-    <span id="introduction"></span>
-    <p>
-    Past aspirations for the future of computing centered around empowering individuals and enhancing cognition. Alan Kay imagined the Dynabook [cite] in the hands of children across the world. Neal Stephenson wrote of interactive paper that could display videos and interfaces, and books that could teach their readers [cite]. More recent (yet considered historical by personal computing standards) concept videos envisioned a future where computers connected and assisted people in decision-making and communicating complex ideas using rich graphics and interactive user interfaces [cite Apple’s Knowledge Navigator, 1987]. While some technologies have seen mainstream adoption, such as Hypertext, unfortunately, many other ideas have fallen by the wayside during the wildfire spread of internet connectivity and the commodification of publishing platforms.
+    <p id="introduction">
+    Past aspirations<d-cite key="popovich2018how"></d-cite> for the future of computing centered around empowering individuals and enhancing cognition. Alan Kay imagined the Dynabook [cite] in the hands of children across the world. Neal Stephenson wrote of interactive paper that could display videos and interfaces, and books that could teach their readers [cite]. More recent (yet considered historical by personal computing standards) concept videos envisioned a future where computers connected and assisted people in decision-making and communicating complex ideas using rich graphics and interactive user interfaces [cite Apple’s Knowledge Navigator, 1987]. While some technologies have seen mainstream adoption, such as Hypertext, unfortunately, many other ideas have fallen by the wayside during the wildfire spread of internet connectivity and the commodification of publishing platforms.
     </p>
 
     <p>
@@ -168,9 +164,13 @@ d-figure>figure {
     We hope this survey that ties interactive articles in practice to theory helps demonstrate and reinforce the power that interactive communication mediums have for providing new representations to understand systems, and making complex ideas more accessible to broad audiences.
     </p>
 
+    <h2 id="applications">Applications</h2>
+    
+    <div id="applications-tab" class="l-page-outset"></div>
+    
     <!-- <div id="gutter-test"></div> -->
 
-    <!-- Interactive Writing -->
+    <!-- Interactive Articles -->
 
     <h2 id="interactive-articles">The Capabilities of Interactive Articles</h2>
 
@@ -285,10 +285,6 @@ d-figure>figure {
     <p>[VIDEO: r2d3 visual ml]</p>
 
 
-    <h2 id="applications">Applications</h2>
-
-    <div id="applications-tab" class="l-page-outset"></div>
-
     <h2 id="critical-reflections">Critical Reflections</h2>
 
     <p>While it has never been easier for writers to share their ideas online, current publishing tools largely support only static authoring and don’t offer take full advantage of the fact that the web is a dynamic medium. We want that to change. [TK sentence about things we have done before parametric … idyll, dim. reduction, kde article?, 538 work?] </p>
@@ -337,6 +333,8 @@ d-figure>figure {
 
     <p>Many interactive articles are self-host because of a lack of platforms that support interactive publishing. Creating more outlets that allow authors to publish interactive content will help promote their development and legitimization. The few existing examples, including newer journals such as Distill [cite], academic workshops like VISxAI [cite], open-source publications like Parametric Press [cite], and live programming notebooks like Observable help, but currently target a narrow group of authors, e.g., people who have technical skills. Such platforms should also provide clear paths to submission, quality and editorial standards, and authoring guidelines. For example, news outlets have clear instructions for pitching written pieces, yet this is under-developed for interactive articles. Lastly, providing more funding for enabling interactive articles incentivizes authors… [TK]</p>
 
+    <div id="example-table"></div>
+    
     <!-- <d-figure id="svelte-example-dfigure">
       <figure>
         <div id="svelte-example-target"></div>
