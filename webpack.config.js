@@ -59,6 +59,10 @@ module.exports = {
 					outputPath: "images/",
 				},
 			},
+			{
+				test: /\.bib$/i,
+				use: 'raw-loader',
+			},
 		],
 	},
 	plugins: [

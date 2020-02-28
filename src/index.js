@@ -8,6 +8,7 @@ import TOC from "./diagrams/toc.svelte"
 import ApplicationTabs from "./diagrams/application-tabs/application-tabs.svelte"
 import Horse from "./diagrams/horse.svelte"
 import GutterTest from "./diagrams/gutter.svelte"
+import ExampleTable from "./diagrams/example-table.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 
@@ -36,4 +37,8 @@ const gutterTest = new GutterTest({
 
 const horse = new Horse({
 	target: document.getElementById('horse')
+});
+
+const exampleTable = new ExampleTable({
+	target: document.getElementById('example-table')
 });
