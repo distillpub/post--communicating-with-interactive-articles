@@ -1,6 +1,6 @@
 <script>
     import bibtexParse from 'bibtex-parse-js';
-    import bibString from 'static/bibliography.bib';
+    import bibString from '../../static/bibliography.bib';
 
     let bibliography = bibtexParse.toJSON(bibString);
 
