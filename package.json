@@ -8,6 +8,7 @@
 		"deploy": "cross-env NODE_ENV=production webpack --progress --hide-modules; gh-pages -d public"
 	},
 	"dependencies": {
+		"bibtex-parse-js": "0.0.24"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.8.3",
