@@ -113,7 +113,7 @@
 	{#each applicationData.examples as example}
 		<div class="example">
 			<a href={example.url}><img src="images/application-tabs/{example.image}"/></a>
-			<div class="example-title"><a href={example.url}>{example.title}</a></div>
+			<div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div>
 			<div class="example-description">{example.description}</div>
 		</div>
 	{/each}
