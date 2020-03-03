@@ -15,8 +15,12 @@
             citation.entryTags.tags = citation.entryTags.tags.split(',')
         }        
     });
-    console.log(examples)
 
+    function sort() {
+        // console.log('sort')
+        examples.sort((a,b) => (a.entryTags.year > b.entryTags.year) ? 1 : ((b.entryTags.year > a.entryTags.year) ? -1 : 0)); 
+        examples = examples
+    }
 </script>
 
 <style>
@@ -31,11 +35,29 @@
     }
 </style>
 
+<div>Number of citations: {bibliography.length}</div>
+<div>Number of article examples: {examples.length}</div>
+
 <div id="example-table-wrapper">
-    <div>Number of citations: {bibliography.length}</div>
-    <div>Number of article examples: {examples.length}</div>
-    <hr>
-    {#each examples as example}
-        <div style="text-transform: capitalize">{example.entryTags.title}<d-cite key={example.citationKey}></d-cite></div>
-	{/each}
+    <table id="research-x-practice-table">
+        <thead>
+            <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Publication</th>
+            <th scope="col" on:click={sort}>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#each examples as example}
+                <tr>
+                <td style="text-transform: capitalize">
+                    <a href={example.entryTags.url}>{example.entryTags.title}</a>
+                    <!-- <d-cite key={example.citationKey}></d-cite> -->
+                </td>
+                <td>{example.entryTags.journal}</td>
+                <td>{example.entryTags.year}</td>
+                </tr>
+            {/each}
+        </tbody>
+    </table>
 </div>
