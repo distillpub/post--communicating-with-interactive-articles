@@ -23,6 +23,15 @@
         }
     });
 
+    let sortIcon;
+    function updateSortIcon() {
+        if (sortAsc) {
+            sortIcon = "arrow_downward"
+        } else {
+            sortIcon = "arrow_upward"
+        }
+    }
+
     function sort() {
         if (lastSortKey !== sortKey) {
             sortAsc = true
@@ -37,7 +46,7 @@
             }
         }
         examples = examples
-        console.log(lastSortKey, sortKey, sortAsc)
+        updateSortIcon()
     }
 
     // initial sort on load
@@ -59,6 +68,15 @@
     th:hover {
         cursor: pointer;
     }
+
+    i {
+        vertical-align: -4px; /* hacky, center icons with table header */
+        font-size: 18px;
+    }
+
+    th {
+        white-space: nowrap
+    }
 </style>
 
 <div>Number of citations: {bibliography.length}</div>
@@ -68,9 +86,9 @@
     <table id="research-x-practice-table">
         <thead>
             <tr>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title</th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication</th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year</th>
+            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
+            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
+            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
             </tr>
         </thead>
         <tbody>
