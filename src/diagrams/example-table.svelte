@@ -19,7 +19,7 @@
 
         // give examples with no jounal string with space
         if (!citation.entryTags.journal) {
-            citation.entryTags.journal = " "
+            citation.entryTags.journal = "Self published"
         }
     });
 
@@ -33,6 +33,7 @@
     }
 
     function sort() {
+        // if sorting by different column, always sort ascending
         if (lastSortKey !== sortKey) {
             sortAsc = true
             examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? 1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? -1 : 0)); 
@@ -75,8 +76,28 @@
     }
 
     th {
-        white-space: nowrap
+        white-space: nowrap;
     }
+
+    #title-col {
+        width: 500px;
+    }
+
+    /* tr:hover {
+        background-color: #efefef;
+    } */
+
+    a {
+        border-bottom: none;
+    }
+
+    /* tr:nth-child(even) {
+        background-color: #f2f2f2;
+    } */
+
+    /* td {
+        border: none
+    } */
 </style>
 
 <div>Number of citations: {bibliography.length}</div>
@@ -86,8 +107,9 @@
     <table id="research-x-practice-table">
         <thead>
             <tr>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
+            <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
             <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
+            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
             <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
             </tr>
         </thead>
@@ -98,8 +120,8 @@
                     <a href={example.entryTags.url}>{example.entryTags.title}</a>
                     <!-- <d-cite key={example.citationKey}></d-cite> -->
                 </td>
-                <td>{example.entryTags.journal ? example.entryTags.journal : ""}</td>
-                <!-- <td>{example.entryTags.tags}</td> -->
+                <td>{example.entryTags.journal ? example.entryTags.journal : "Self published"}</td>
+                <td>{example.entryTags.tags}</td>
                 <td>{example.entryTags.year}</td>
                 </tr>
             {/each}
