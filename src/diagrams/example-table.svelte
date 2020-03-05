@@ -58,12 +58,12 @@
 <style>
     #example-table-wrapper {
         /* height: 500px; */
-        background-color: var(--gray-bg);
-        border: 1px solid var(--gray-border);
-        border-radius: var(--border-radius);
-        margin-bottom: 1em;
-        padding: 1.5em;
         /* overflow: scroll */
+        /* background-color: var(--gray-bg); */
+        /* border: 1px solid var(--gray-border); */
+        /* border-radius: var(--border-radius); */
+        margin-bottom: 1em;
+        /* padding: 1.5em; */
     }
 
     th:hover {
@@ -83,7 +83,7 @@
         width: 500px;
     }
 
-    /* tr:hover {
+    /* tbody > tr:hover {
         background-color: #efefef;
     } */
 
@@ -99,9 +99,6 @@
         border: none
     } */
 </style>
-
-<div>Number of citations: {bibliography.length}</div>
-<div>Number of article examples: {examples.length}</div>
 
 <div id="example-table-wrapper">
     <table id="research-x-practice-table">
