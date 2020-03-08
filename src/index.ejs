@@ -12,6 +12,32 @@
 
 <body>
 
+    <style>
+      video {
+        width: 100%;
+      }
+    
+      .video-d-figure {
+        grid-column-start: 8;
+        grid-column-end: 14;
+      }
+    
+      .half-text {
+        grid-column-start: 4;
+        grid-column-end: 8;
+      }
+
+      @media (max-width: 1000px) {
+      .half-text {
+        grid-column: text;
+      }
+
+      .video-d-figure {
+        grid-column: text;
+      }
+    }
+      </style>
+
   <d-front-matter>
     <script type="text/json">
       <%= JSON.stringify(require("./frontmatter.json"), null, 4) %>
@@ -37,13 +63,20 @@
     Regardless, computing has changed how people communicate. Messages, news, and the influence of ideas are instant—everyone’s voice can be heard. In fact, access to digital communication technologies such as the Internet is so fundamental to daily life that their disruption by government is condemned by the United Nations Human Rights Council [cite]. Online communication is incredibly important, especially when studying and discussing complex topics, such as science, technology, and politics.
     </p>
 
-    <p>
+    <p class="half-text">
     In the spirit of previous computer-assisted cognition technologies, a new type of computational communication medium has emerged that leverages active reading techniques to make complex ideas more accessible to a broad range of people. These interactive articles build on a long history, from Plato [cite] to PHeT [cite] to explorable explanations [cite], and have shown to be more engaging, attract broader readership, and acclaim than traditional media.
     </p>
 
-    <p>
-    Who is making interactive articles?
-    </p>
+    <d-figure class="video-d-figure">
+      <figure>
+        <video autoplay controls>
+          <source src="images/example1.mov" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <figcaption>And a static figcaption. You can use citations<d-cite key="conlen2019launching"></d-cite> in this
+          figcaption, but not in text added by javascript.</figcaption>
+      </figure>
+    </d-figure>
 
     <p>
     A combination of communities with diverse skill sets have come together to create interactive articles. For example, journalists want to make complex news and investigative reporting simple and engaging. Researchers want to disseminate their work and remove research debt [olah2017research] to allow learners to quickly understand the state-of-the-art. Educators want to provide alternative learning formats to give students hands-on experience with learning material. Besides these people, others such as academics, game developers, web developers, and designers blend editorial, design, and programming skills to create and publish interactive content.
@@ -86,8 +119,10 @@
     <p>[ALT VIDEO: nyt you draw it]</p>
 
     <p>In the case of “You Draw It,” readers were also shown the predictions that others made, adding a social comparison element to the experience. This additional social information was not shown to necessarily be effective for improving recall [kim2017data]. However, one might hypothesize that this social aspect may have other benefits such as improving reader engagement, due to the popularity of recent visual stories using this technique, e.g. in The Pudding’s “Gyllenhaal Experiment” [cite] and Quartz’s “How do you draw a circle?” [cite].</>
-
-    <p>[VIDEO: gyllenhaal or circle]</>
+    
+    <!-- <div class="l-body side">asdf</div> -->
+    
+    <p>[VIDEO: gyllenhaal or circle]</p>
 
     <p>Prompting readers to remember previously presented material, for example through the use of quizzes, can be an effective way to improve their ability to recall it in the future [gates1922recitation]. This result from cognitive psychology, known as the testing effect [roediger2006power], can be utilized by authors writing for an interactive medium [TK insert example?]. While testing may call to mind stressful educational experiences for many, quizzes included in web articles can be low stakes: there is no need to record the results or grade readers. The effect is enhanced if feedback is given to the quiz-takers, for example by providing the correct answer after the user has recorded their response [bangert1991instructional].</p>
 
