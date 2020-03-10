@@ -102,7 +102,7 @@
     <h3>Contents</h3>
     <div><a href="#introduction">Introduction</a></div>
     <div><a href="#applications">Applications</a></div>
-    <div><a href="#experiment-1">The Theory and Practice of Interactive Articles</a></div>
+    <div><a href="#experiment-1">Interactive Articles: Theory and Practice</a></div>
     <ul>
       <li><a href="#improving-recall">Improving Recall</a></li>
       <li><a href="#improving-engagement">Improving Engagement</a></li>

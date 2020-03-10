@@ -15,21 +15,21 @@
         "examples": [
             {
                 "title": "Attacking Discrimination with Smarter Machine Learning",
-                "description": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "caption": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
                 "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
                 "image": "research-ex1.png",
                 "bibtex": "wattenberg2016attacking"
             },
             {
                 "title": "Coeffects: Context-aware Programming Languages",
-                "description": "This PhD thesis contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
+                "caption": "This PhD thesis contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
                 "url": "http://tomasp.net/coeffects/",
                 "image": "research-ex2.png",
                 "bibtex": "petricek2017coeffects"
             },
             {
                 "title": "What is Complexity Science?",
-                "description": "A crash course in complex systems science, created by leading experts, practitioners, and students in the field, with accompanying interactive sandboxes to simulate, control, and visualize different complex systems.",
+                "caption": "A crash course in complex systems science, created by leading experts, practitioners, and students in the field, with accompanying interactive sandboxes to simulate, control, and visualize different complex systems.",
                 "url": "https://complexityexplained.github.io/",
                 "image": "research-ex3.png",
                 "bibtex": "dedomenico2019complexity"
@@ -52,21 +52,21 @@
         "examples": [
             {
                 "title": "What’s Really Warming the World?",
-                "description": "A segmented-story that layers different natural and industrial factors recorded since 1880 on the same axis to compare and contrast which factors are correlated with the increase of the global temperature rise.",
+                "caption": "A segmented-story that layers different natural and industrial factors recorded since 1880 on the same axis to compare and contrast which factors are correlated with the increase of the global temperature rise.",
                 "url": "https://www.bloomberg.com/graphics/2015-whats-warming-the-world/",
                 "image": "placeholder.png",
                 "bibtex": "roston2015whats"
             },
             {
                 "title": "You Draw It: How Family Income Predicts Children’s College Chances",
-                "description": "An article with an empty visualization that prompts the reader to draw the line that describes the relationship between family income and the percentage of children who attend college, challenging one’s prior belief about the data.",
+                "caption": "An article with an empty visualization that prompts the reader to draw the line that describes the relationship between family income and the percentage of children who attend college, challenging one’s prior belief about the data.",
                 "url": "https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html",
                 "image": "placeholder.png",
                 "bibtex": "aisch2015you"
             },
             {
                 "title": "The Uber Game",
-                "description": "TK",
+                "caption": "TK",
                 "url": "https://ig.ft.com/uber-game/",
                 "image": "placeholder.png",
                 "bibtex": "blood2017uber"
@@ -89,21 +89,21 @@
         "examples": [
             {
                 "title": "Let’s Learn About Waveforms",
-                "description": "An interactive guide that introduces and explores waveforms without requiring prior knowledge. The article lets readers play with different waveforms using sound to understand their basic physics and relationship to music and harmony.",
+                "caption": "An interactive guide that introduces and explores waveforms without requiring prior knowledge. The article lets readers play with different waveforms using sound to understand their basic physics and relationship to music and harmony.",
                 "url": "https://pudding.cool/2018/02/waveforms/",
                 "image": "placeholder.png",
                 "bibtex": "comeau2018lets"
             },
             {
                 "title": "The Book of Shaders",
-                "description": "A step-by-step guide that walks a reader through the notoriously challenging topic of computer graphics fragment shaders using interactive code examples.",
+                "caption": "A step-by-step guide that walks a reader through the notoriously challenging topic of computer graphics fragment shaders using interactive code examples.",
                 "url": "https://thebookofshaders.com/",
                 "image": "placeholder.png",
                 "bibtex": "vivo2015book"
             },
             {
                 "title": "EconGraphs",
-                "description": "While most interactive textbooks are about mathematics, this collection of key concepts from economics using interactive visualization to help econ teachers illustrate important underlying relationships within economic models.",
+                "caption": "While most interactive textbooks are about mathematics, this collection of key concepts from economics using interactive visualization to help econ teachers illustrate important underlying relationships within economic models.",
                 "url": "http://www.econgraphs.org/",
                 "image": "placeholder.png",
                 "bibtex": "makler2017econgraphs"
@@ -126,21 +126,21 @@
         "examples": [
             {
                 "title": "To Build a Better Ballot",
-                "description": "An explorable explanation that uses direct manipulation to show election outcomes under different voting methods to provide concrete tools for voting reform.",
+                "caption": "An explorable explanation that uses direct manipulation to show election outcomes under different voting methods to provide concrete tools for voting reform.",
                 "url": "https://ncase.me/ballot/",
                 "image": "placeholder.png",
                 "bibtex": "case2016build"
             },
             {
                 "title": "The Atlas Of Redistricting",
-                "description": "Visualizations of the United States and its breakdown on governmental representation and gerrymandering. Interactive toggles that redraw district boundaries compare the makeup of the US House of Representatives under different goals, both partisan and bipartisan, all without a single voter moving.",
+                "caption": "Visualizations of the United States and its breakdown on governmental representation and gerrymandering. Interactive toggles that redraw district boundaries compare the makeup of the US House of Representatives under different goals, both partisan and bipartisan, all without a single voter moving.",
                 "url": "https://projects.fivethirtyeight.com/redistricting-maps/",
                 "image": "placeholder.png",
                 "bibtex": "atlas2018bycoffe"
             },
             {
                 "title": "Is It Better to Rent or Buy?",
-                "description": "Built into this article is an interactive calculator that suggests if a reader should buy or rent a property based on a collection of user-selected costs.",
+                "caption": "Built into this article is an interactive calculator that suggests if a reader should buy or rent a property based on a collection of user-selected costs.",
                 "url": "https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html",
                 "image": "placeholder.png",
                 "bibtex": "bostock2014better"
