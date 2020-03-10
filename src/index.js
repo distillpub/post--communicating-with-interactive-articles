@@ -2,13 +2,13 @@
 import * as _unused from "raw-loader!./index.ejs";
 // TODO: disable before publishing
 
-import Example from "./diagrams/svelte-example.svelte";
 import ResearchPracticeTable from "./diagrams/research-x-practice-table.svelte"
 import TOC from "./diagrams/toc.svelte"
 import ApplicationTabs from "./diagrams/application-tabs/application-tabs.svelte"
 import Horse from "./diagrams/horse.svelte"
-import GutterTest from "./diagrams/gutter.svelte"
 import ExampleTable from "./diagrams/example-table.svelte"
+import examples from "./diagrams/examples.json"
+import Example from "./diagrams/example.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 
@@ -31,10 +31,6 @@ const applicationTabs = new ApplicationTabs({
 	target: document.getElementById('applications-tab')
 });
 
-const gutterTest = new GutterTest({
-	target: document.getElementById('gutter-test')
-});
-
 const horse = new Horse({
 	target: document.getElementById('horse')
 });
@@ -42,3 +38,39 @@ const horse = new Horse({
 const exampleTable = new ExampleTable({
 	target: document.getElementById('example-table')
 });
+
+// video examples
+new Example({
+	target: document.getElementById('example-wattenberg2016attacking'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking')}
+})
+
+new Example({
+	target: document.getElementById('example-2'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
+
+new Example({
+	target: document.getElementById('example-3'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
+
+new Example({
+	target: document.getElementById('example-4'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
+
+new Example({
+	target: document.getElementById('example-5'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
+
+new Example({
+	target: document.getElementById('example-6'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
+
+new Example({
+	target: document.getElementById('example-7'),
+	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+})
