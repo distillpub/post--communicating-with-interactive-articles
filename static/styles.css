@@ -58,3 +58,24 @@ d-figure>figure {
   border-top: 1px solid #eee;
   padding: 1.5rem 0;
 }
+
+/* video examples */
+
+.video-d-figure {
+  grid-column-start: 8;
+  grid-column-end: 14;
+}
+
+.l-body-side {
+  grid-column-start: 4;
+  grid-column-end: 8;
+}
+
+@media (max-width: 1000px) {
+  .l-body-side {
+    grid-column: text;
+  }
+  .video-d-figure {
+    grid-column: text;
+  }
+}
