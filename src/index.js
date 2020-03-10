@@ -7,8 +7,8 @@ import TOC from "./diagrams/toc.svelte"
 import ApplicationTabs from "./diagrams/application-tabs/application-tabs.svelte"
 import Horse from "./diagrams/horse.svelte"
 import ExampleTable from "./diagrams/example-table.svelte"
-import examples from "./diagrams/examples.json"
-import Example from "./diagrams/example.svelte"
+import examples from "./diagrams/video-examples.json"
+import VideoExample from "./diagrams/video-example.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 
@@ -40,37 +40,37 @@ const exampleTable = new ExampleTable({
 });
 
 // video examples
-new Example({
+new VideoExample({
 	target: document.getElementById('example-wattenberg2016attacking'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking')}
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-2'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-3'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-4'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-5'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-6'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
 
-new Example({
+new VideoExample({
 	target: document.getElementById('example-7'),
 	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
 })
