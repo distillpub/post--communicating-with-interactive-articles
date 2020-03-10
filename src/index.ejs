@@ -11,29 +11,6 @@
 </head>
 
 <body>
-
-    <style>    
-      .video-d-figure {
-        grid-column-start: 8;
-        grid-column-end: 14;
-      }
-    
-      .l-body-side {
-        grid-column-start: 4;
-        grid-column-end: 8;
-      }
-
-      @media (max-width: 1000px) {
-      .l-body-side {
-        grid-column: text;
-      }
-
-      .video-d-figure {
-        grid-column: text;
-      }
-    }
-      </style>
-
   <d-front-matter>
     <script type="text/json">
       <%= JSON.stringify(require("./frontmatter.json"), null, 4) %>
