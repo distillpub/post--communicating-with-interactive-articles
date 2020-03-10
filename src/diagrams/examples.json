@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Attacking Discrimination with Smarter Machine Learning",
+        "caption": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+        "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
+        "image": "research-ex1.png",
+        "bibtex": "wattenberg2016attacking"
+    }
+]
