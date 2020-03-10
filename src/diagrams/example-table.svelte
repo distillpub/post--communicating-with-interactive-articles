@@ -98,6 +98,10 @@
     /* td {
         border: none
     } */
+
+    /* td:hover {
+        height: 150px;
+    } */
 </style>
 
 <div id="example-table-wrapper">
