@@ -21,6 +21,15 @@
         if (!citation.entryTags.journal) {
             citation.entryTags.journal = "Self published"
         }
+
+        // author format for table
+        let tempAuthor = citation.entryTags.author
+        tempAuthor = tempAuthor.split(' and ')
+        tempAuthor.forEach((author,i) => {
+            author = author.split(',')
+            tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
+        });
+        citation.entryTags.author = tempAuthor.join(', ')
     });
 
     let sortIcon;
@@ -87,9 +96,9 @@
         background-color: #efefef;
     } */
 
-    a {
+    /* a {
         border-bottom: none;
-    }
+    } */
 
     /* tr:nth-child(even) {
         background-color: #f2f2f2;
@@ -117,13 +126,15 @@
         <tbody>
             {#each examples as example}
                 <tr>
-                <td style="text-transform: capitalize">
-                    <a href={example.entryTags.url}>{example.entryTags.title}</a>
-                    <!-- <d-cite key={example.citationKey}></d-cite> -->
-                </td>
-                <td>{example.entryTags.journal ? example.entryTags.journal : "Self published"}</td>
-                <td>{example.entryTags.tags}</td>
-                <td>{example.entryTags.year}</td>
+                    <td style="text-transform: capitalize">
+                    <a href={example.entryTags.url}>
+                        {example.entryTags.title}
+                        </a>
+                        <!-- <d-cite key={example.citationKey}></d-cite> -->
+                    </td>
+                    <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
+                    <td>{example.entryTags.tags}</td>
+                    <td>{example.entryTags.year}</td>
                 </tr>
             {/each}
         </tbody>
