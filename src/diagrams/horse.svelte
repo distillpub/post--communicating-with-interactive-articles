@@ -129,6 +129,12 @@
         color: var(--orange);
     }
 
+    .caption {
+		font-size: 0.8em;
+		line-height: 1.5em;
+		color: var(--gray);
+	}
+
     @media(min-width: 768px) {
         #horse-controls {
             grid-column-start: 7;
@@ -143,10 +149,10 @@
     <div id="horse-wrapper">
         <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
-            <figcaption>
+            <div class="caption">
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
                 This interactive graphic uses <i>user-controlled animation</i> to illustrate this finding.
-             </figcaption>
+             </div>
              <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
             <!-- <div> -->
             <!-- <br /> -->
