@@ -62,20 +62,21 @@ d-figure>figure {
 /* video examples */
 
 .video-d-figure {
-  grid-column-start: 8;
-  grid-column-end: 14;
+  float: right;
+  position: relative;
+  left: 11em;
+  margin-left: -11em;
+  width: 500px;
+  padding-left: 1em;
+  margin-bottom: 0em !important;
 }
 
-.l-body-side {
-  grid-column-start: 4;
-  grid-column-end: 8;
-}
-
-@media (max-width: 1000px) {
-  .l-body-side {
-    grid-column: text;
-  }
+@media (max-width: 1178px) {
   .video-d-figure {
-    grid-column: text;
+    float: none;
+    left: 0;
+    margin-left: none;
+    padding-left: none;
+    width: 100%;
   }
 }
