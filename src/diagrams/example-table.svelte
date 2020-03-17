@@ -108,9 +108,9 @@
         border: none
     } */
 
-    /* td:hover {
-        height: 150px;
-    } */
+    .link-icon:hover {
+        color: var(--orange);
+    }
 </style>
 
 <div id="example-table-wrapper">
@@ -118,7 +118,7 @@
         <thead>
             <tr>
             <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
+            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication (or author) <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
             <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
             <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
             </tr>
@@ -127,9 +127,8 @@
             {#each examples as example}
                 <tr>
                     <td style="text-transform: capitalize">
-                    <a href={example.entryTags.url}>
-                        {example.entryTags.title}
-                        </a>
+                        <a href={example.entryTags.url}>{example.entryTags.title}</a>
+                        <i class="material-icons link-icon">arrow_forward</i>
                         <!-- <d-cite key={example.citationKey}></d-cite> -->
                     </td>
                     <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
