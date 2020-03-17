@@ -55,7 +55,6 @@
         /* border-bottom: 5px solid white; */
         filter: brightness(60%);
         cursor: crosshair;
-        border-radius: var(--border-radius);
     }
 
     .active-frame {
@@ -74,7 +73,7 @@
         grid-column-start: 1;
         grid-column-end: 7;
         width: 100%;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
     }
 
     #horse-controls {
