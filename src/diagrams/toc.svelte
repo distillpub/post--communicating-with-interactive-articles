@@ -101,16 +101,15 @@
 <nav class="l-text toc figcaption">
     <h3>Contents</h3>
     <div><a href="#introduction">Introduction</a></div>
-    <div><a href="#applications">Applications</a></div>
-    <div><a href="#experiment-1">Interactive Articles: Theory and Practice</a></div>
+    <div><a href="#interactive-articles">Interactive Articles: Theory and Practice</a></div>
     <ul>
       <li><a href="#improving-recall">Improving Recall</a></li>
-      <li><a href="#improving-engagement">Improving Engagement</a></li>
-      <li><a href="#enabling-experience">Enabling Experience</a></li>
+      <li><a href="#engagement-and-emotion">Engagement and Emotion</a></li>
+      <li><a href="#interaction-with-systems">Interacting with Systems</a></li>
       <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
       <li><a href="#personalization">Personalization</a></li>
     </ul>
     <div><a href="#critical-reflections">Critical Reflections</a></div>
     <div><a href="#challenges">Challenges of Interactive Writing</a></div>
-    <div><a href="#discussion">Discussion</a></div>
+    <div><a href="#looking-forward">Looking Forward</a></div>
 </nav>
