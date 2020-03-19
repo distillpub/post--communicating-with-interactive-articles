@@ -48,9 +48,35 @@ d-figure>figure {
   left: -48px;
 }
 
+.tk {
+  color: red;
+}
+
 /* TOC */
 
 #contents {
   border-top: 1px solid #eee;
   padding: 1.5rem 0;
+}
+
+/* video examples */
+
+.video-d-figure {
+  float: right;
+  position: relative;
+  left: 11em;
+  margin-left: -11em;
+  width: 500px;
+  padding-left: 1em;
+  margin-bottom: 0em !important;
+}
+
+@media (max-width: 1178px) {
+  .video-d-figure {
+    float: none;
+    left: 0;
+    margin-left: none;
+    padding-left: none;
+    width: 100%;
+  }
 }
