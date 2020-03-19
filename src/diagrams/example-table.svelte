@@ -14,6 +14,7 @@
     });
 
     examples.forEach(citation => {
+        console.log(citation)
         // coerice tag string into array of strings
         citation.entryTags.tags = citation.entryTags.tags.split(',')
 
@@ -22,14 +23,16 @@
             citation.entryTags.journal = "Self published"
         }
 
-        // author format for table
-        let tempAuthor = citation.entryTags.author
-        tempAuthor = tempAuthor.split(' and ')
-        tempAuthor.forEach((author,i) => {
-            author = author.split(',')
-            tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
-        });
-        citation.entryTags.author = tempAuthor.join(', ')
+        // publication/author format for table
+        if (citation.entryTags.author) {
+            let tempAuthor = citation.entryTags.author
+            tempAuthor = tempAuthor.split(' and ')
+            tempAuthor.forEach((author,i) => {
+                author = author.split(',')
+                tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
+            });
+            citation.entryTags.author = tempAuthor.join(', ')
+        }
     });
 
     let sortIcon;
