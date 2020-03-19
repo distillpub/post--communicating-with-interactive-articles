@@ -7,23 +7,23 @@
 	.application {
 		padding: 1.5em;
 		display: grid;
-		grid-template-columns: repeat(8, 1fr);
+		grid-template-columns: repeat(12, 1fr);
 		grid-column-gap: 2em;
 	}
 
 	.left {
 		grid-column-start: 1;
-		grid-column-end: 6;
+		grid-column-end: 8;
 	}
 
 	.right {
-		grid-column-start: 6;
-		grid-column-end: 9;
+		grid-column-start: 8;
+		grid-column-end: 13;
 	}
 
 	.bottom {
 		grid-column-start: 1;
-		grid-column-end: 9;
+		grid-column-end: 13;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-column-gap: 1.5em;
@@ -37,8 +37,8 @@
 	} */
 
 	.application-opportunities, .application-challenges {
-		grid-column-start: 6;
-		grid-column-end: 9;
+		grid-column-start: 8;
+		grid-column-end: 13;
 	}
 
 	.opportunities-title, .challenges-title {
@@ -56,7 +56,7 @@
 	}
 
 	li {
-		margin-bottom: 0.8em;
+		margin-bottom: 0.5em;
 	}
 
 	.example-description {
@@ -94,7 +94,6 @@
 				{/each}
 			</ul>
 		</div>
-		<br>
 		<div class="application-challenges">
 			<h4 class="challenges-title">Challenges</h4>
 			<ul>
