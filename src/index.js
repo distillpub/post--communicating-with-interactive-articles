@@ -41,36 +41,41 @@ const exampleTable = new ExampleTable({
 
 // video examples
 new VideoExample({
-	target: document.getElementById('example-wattenberg2016attacking'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking')}
+	target: document.getElementById('example-goldenberg2019you'),
+	props: { example: examples.find(example => example.bibtex === 'goldenberg2019you')}
 })
 
 new VideoExample({
-	target: document.getElementById('example-2'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('case2014how'),
+	props: { example: examples.find(example => example.bibtex === 'case2014how') }
 })
 
 new VideoExample({
-	target: document.getElementById('example-3'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('badger2018extensive'),
+	props: { example: examples.find(example => example.bibtex === 'badger2018extensive') }
 })
 
 new VideoExample({
-	target: document.getElementById('example-4'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('webworks2009cutthroat'),
+	props: { example: examples.find(example => example.bibtex === 'webworks2009cutthroat') }
 })
 
 new VideoExample({
-	target: document.getElementById('example-5'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('barron2018designing'),
+	props: { example: examples.find(example => example.bibtex === 'barron2018designing') }
 })
 
 new VideoExample({
-	target: document.getElementById('example-6'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('sanderson2018visualizing'),
+	props: { example: examples.find(example => example.bibtex === 'sanderson2018visualizing') }
 })
 
 new VideoExample({
-	target: document.getElementById('example-7'),
-	props: { example: examples.find(example => example.bibtex === 'wattenberg2016attacking') }
+	target: document.getElementById('popovich2018how'),
+	props: { example: examples.find(example => example.bibtex === 'popovich2018how') }
+})
+
+new VideoExample({
+	target: document.getElementById('matuschak2019quantum'),
+	props: { example: examples.find(example => example.bibtex === 'matuschak2019quantum') }
 })
