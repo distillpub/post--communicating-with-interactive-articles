@@ -14,7 +14,6 @@
     });
 
     examples.forEach(citation => {
-        console.log(citation)
         // coerice tag string into array of strings
         citation.entryTags.tags = citation.entryTags.tags.split(',')
 
