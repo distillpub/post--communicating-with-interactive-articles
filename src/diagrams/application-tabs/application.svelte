@@ -111,7 +111,7 @@
 	<div class="bottom">
 	{#each applicationData.examples as example}
 		<div class="example">
-			<a href={example.url}><img src="images/application-tabs/{example.image}"/></a>
+			<a href={example.url}><img src="images/application-tabs/{example.image}" alt="Screen capture of example interactive article."/></a>
 			<div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div>
 			<div class="example-description">{example.caption}</div>
 		</div>
