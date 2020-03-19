@@ -1,7 +1,7 @@
 [
     {
         "title": "Research Dissemination",
-        "description": "Conducting novel research requires deep understanding and expertise in a specific area. Once achieved, researchers continue contributing new knowledge for future people to use and build upon. Over time, this consistent addition of new knowledge can build up, contributing to what some have called research debt [olah2017research]. Not everyone is an expert in every field, and it can be easy to lose perspective and forget the bigger picture [matt might]. Yet research should be understood by many. Interactive articles can be used to distill the latest progress in various research fields and make their methods and results accessible and understandable to a broader audience.",
+        "description": "Conducting novel research requires deep understanding and expertise in a specific area. Once achieved, researchers continue contributing new knowledge for future researchers to use and build upon. Over time, this consistent addition of new knowledge can build up, contributing to what some have called research debt. Not everyone is an expert in every field, and it can be easy to lose perspective and forget the bigger picture. Yet research should be understood by many. Interactive articles can be used to distill the latest progress in various research fields and make their methods and results accessible and understandable to a broader audience.",
         "opportunities": [
             "Engage and excite broader audience with latest research progress",
             "Remove research debt, onboard new researchers",
@@ -10,19 +10,19 @@
         "challenges": [
             "No clear incentive structure for researchers",
             "Little funding for bespoke research dissemination and communication",
-            "Not seen as a legitimate research contribution (e.g., to field, or one’s career)"
+            "Not seen as a legitimate research contribution (e.g., to the field, or one's career)"
         ],
         "examples": [
             {
                 "title": "Attacking Discrimination with Smarter Machine Learning",
-                "caption": "This companion piece to a traditional research paper uses interactive graphics to let readers adjust a machine learning model’s behavior and visualize results for a loan granting scenario.",
+                "caption": "A companion piece to a traditional research paper that uses interactive visualizations to let readers adjust a machine learning model’s behavior and explore alternative fair strategies for a loan granting scenario.",
                 "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
                 "image": "research-ex1.png",
                 "bibtex": "wattenberg2016attacking"
             },
             {
                 "title": "Coeffects: Context-aware Programming Languages",
-                "caption": "This PhD thesis contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
+                "caption": "A PhD thesis that contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
                 "url": "http://tomasp.net/coeffects/",
                 "image": "research-ex2.png",
                 "bibtex": "petricek2017coeffects"
@@ -38,16 +38,16 @@
     },
     {
         "title": "Journalism",
-        "description": "An informed public strengthens society. While many newsworthy and current events are reported daily, unfortunately the complexity and nuance of such topics are lost in the wildfire sharing of short headlines. This is effective dissemination without context. Yet many of the most impactful stories require a deep understanding of the various locations, personale, and perspectives involved. Interactive articles can be used to breakdown these complex topics into more approachable pieces, show their connections in relation to the main message, highlight the impact of investigate reports, and inform a wide readership of current events and impactful stories.",
+        "description": "An informed public strengthens society. While many newsworthy and current events are reported daily, unfortunately the complexity and nuance of such topics are lost in the wildfire sharing of short headlines. This is effective dissemination without context. Yet many of the most impactful stories require a deep understanding of the various locations, personale, and perspectives involved. Interactive articles can be used to break down these complex topics into more approachable pieces, show their connections in relation to the main message, highlight the impact of investigative reporting, and inform a wide readership of current events and impactful stories.",
         "opportunities": [
             "Tell stories from multiple dynamic perspectives and levels of detail",
             "Highlight importance of a story or report",
-            "TK"
+            "Improve reader comprehension of stories"
         ],
         "challenges": [
             "Require active reading in a reader that may be expecting bite-sized news",
             "Many readers viewing on mobile devices requires responsive design",
-            "TK"
+            "Difficult to produce at the fast pace of news cycles"
         ],
         "examples": [
             {
@@ -59,14 +59,14 @@
             },
             {
                 "title": "You Draw It: How Family Income Predicts Children’s College Chances",
-                "caption": "An article with an empty visualization that prompts the reader to draw the line that describes the relationship between family income and the percentage of children who attend college, challenging one’s prior belief about the data.",
+                "caption": "An article with a partially complete visualization that prompts the reader to draw the trendline that completes the relationship between family income and the percentage of children who attend college, challenging one’s prior belief about the data.",
                 "url": "https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html",
                 "image": "placeholder.png",
                 "bibtex": "aisch2015you"
             },
             {
                 "title": "The Uber Game",
-                "caption": "TK",
+                "caption": "A choose-your-own-adventure narrative news game that puts the reader behind the wheel and explores the economics and life of being an Uber driver.",
                 "url": "https://ig.ft.com/uber-game/",
                 "image": "placeholder.png",
                 "bibtex": "blood2017uber"
@@ -75,16 +75,16 @@
     },
     {
         "title": "Education",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nihil doloremque facilis ab illo velit consequatur? Blanditiis, alias? Laborum quisquam ex sequi officia? Pariatur exercitationem quidem hic aliquam et sunt.",
+        "description": "There are many opportunities to make increased use of computational media for educational purposes. If you are reading this article it is likely that you have tried to program a computer at some point, and know that code is easier to understand when you can execute it and watch the result rather than trying to parse cryptic static symbols. Subjects like mathematics and physics, which are symbolically dense, can also benefit from live, interactive materials to prompt active engagement from the learner. Online learning platforms (MOOCS) and even traditional lectures [rosling2006best] could benefit from this type of information design.",
         "opportunities": [
             "Reinforce learning by presenting content in multiple forms",
             "More quickly grapple complex topics that require visual or geometric interpretations",
-            "TK"
+            "Students can directly interact with systems to build intuition"
         ],
         "challenges": [
-            "TK",
-            "TK",
-            "TK"
+            "How to best incorporate into traditional learning and classroom environments ",
+            "Making interactive articles accessible to all students",
+            "Educators lack tools and skills for creation"
         ],
         "examples": [
             {
@@ -111,17 +111,17 @@
         ]
     },
     {
-        "title": "Policy Making",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nihil doloremque facilis ab illo velit consequatur? Blanditiis, alias? Laborum quisquam ex sequi officia? Pariatur exercitationem quidem hic aliquam et sunt.",
+        "title": "Policy and Decision Making",
+        "description": "When public officials are tasked with making decisions, they are not doing it in a static, unchanging world. Politicians need to make informed decisions about complex, multifaceted problems, taking into account a variety of competing constraints, and given uncertain and changing information. So why are intelligence briefings printed on dead trees? Interactive articles offer the potential of something better, something fluid which responds to system dynamics and to changing constraints, priorities, and risk tolerance levels.",
         "opportunities": [
             "Concretize complex societal issues using experimental sandboxes",
             "Inform public of past, present, and future policies and their impact",
-            "TK"
+            "Dynamic reports that respond to changing situations and priorities "
         ],
         "challenges": [
-            "Often asks for greater numeracy and graphicacy in citizens",
-            "TK",
-            "TK"
+            "May require greater numeracy and graphicacy in audience",
+            "Few existing examples of effective usage by policy makers",
+            "Danger of information overload with complex societal scenarios"
         ],
         "examples": [
             {
@@ -133,7 +133,7 @@
             },
             {
                 "title": "The Atlas Of Redistricting",
-                "caption": "Visualizations of the United States and its breakdown on governmental representation and gerrymandering. Interactive toggles that redraw district boundaries compare the makeup of the US House of Representatives under different goals, both partisan and bipartisan, all without a single voter moving.",
+                "caption": "Visualizations of the United States and its breakdown on governmental representation and gerrymandering. Interactive toggles that redraw district boundaries compare the makeup of the US House of Representatives under different goals, both partisan and bipartisan, all without a single voter relocating.",
                 "url": "https://projects.fivethirtyeight.com/redistricting-maps/",
                 "image": "placeholder.png",
                 "bibtex": "atlas2018bycoffe"
