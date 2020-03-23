@@ -17,21 +17,21 @@
                 "title": "Attacking Discrimination with Smarter Machine Learning",
                 "caption": "A companion piece to a traditional research paper that uses interactive visualizations to let readers adjust a machine learning model’s behavior and explore alternative fair strategies for a loan granting scenario.",
                 "url": "https://research.google.com/bigpicture/attacking-discrimination-in-ml/",
-                "image": "research-ex1.png",
+                "image": "research-1.png",
                 "bibtex": "wattenberg2016attacking"
             },
             {
                 "title": "Coeffects: Context-aware Programming Languages",
                 "caption": "A PhD thesis that contributes a programming language abstraction for understanding how programs access the context or environment in which they execute, and walks readers through the work using two simple context-aware languages with live in-browser demos.",
                 "url": "http://tomasp.net/coeffects/",
-                "image": "research-ex2.png",
+                "image": "research-2.png",
                 "bibtex": "petricek2017coeffects"
             },
             {
                 "title": "What is Complexity Science?",
                 "caption": "A crash course in complex systems science, created by leading experts, practitioners, and students in the field, with accompanying interactive sandboxes to simulate, control, and visualize different complex systems.",
                 "url": "https://complexityexplained.github.io/",
-                "image": "research-ex3.png",
+                "image": "research-3.png",
                 "bibtex": "dedomenico2019complexity"
             }
         ]
@@ -54,21 +54,21 @@
                 "title": "What’s Really Warming the World?",
                 "caption": "A segmented-story that layers different natural and industrial factors recorded since 1880 on the same axis to compare and contrast which factors are correlated with the increase of the global temperature rise.",
                 "url": "https://www.bloomberg.com/graphics/2015-whats-warming-the-world/",
-                "image": "placeholder.png",
+                "image": "journalism-1.png",
                 "bibtex": "roston2015whats"
             },
             {
                 "title": "You Draw It: How Family Income Predicts Children’s College Chances",
                 "caption": "An article with a partially complete visualization that prompts the reader to draw the trendline that completes the relationship between family income and the percentage of children who attend college, challenging one’s prior belief about the data.",
                 "url": "https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html",
-                "image": "placeholder.png",
+                "image": "journalism-2.png",
                 "bibtex": "aisch2015you"
             },
             {
                 "title": "The Uber Game",
                 "caption": "A choose-your-own-adventure narrative news game that puts the reader behind the wheel and explores the economics and life of being an Uber driver.",
                 "url": "https://ig.ft.com/uber-game/",
-                "image": "placeholder.png",
+                "image": "journalism-3.png",
                 "bibtex": "blood2017uber"
             }
         ]
@@ -91,21 +91,21 @@
                 "title": "Let’s Learn About Waveforms",
                 "caption": "An interactive guide that introduces and explores waveforms without requiring prior knowledge. The article lets readers play with different waveforms using sound to understand their basic physics and relationship to music and harmony.",
                 "url": "https://pudding.cool/2018/02/waveforms/",
-                "image": "placeholder.png",
+                "image": "education-1.png",
                 "bibtex": "comeau2018lets"
             },
             {
                 "title": "The Book of Shaders",
                 "caption": "A step-by-step guide that walks a reader through the notoriously challenging topic of computer graphics fragment shaders using interactive code examples.",
                 "url": "https://thebookofshaders.com/",
-                "image": "placeholder.png",
+                "image": "education-2.png",
                 "bibtex": "vivo2015book"
             },
             {
                 "title": "EconGraphs",
                 "caption": "While most interactive textbooks are about mathematics, this collection of key concepts from economics using interactive visualization to help econ teachers illustrate important underlying relationships within economic models.",
                 "url": "http://www.econgraphs.org/",
-                "image": "placeholder.png",
+                "image": "education-3.png",
                 "bibtex": "makler2017econgraphs"
             }
         ]
@@ -128,21 +128,21 @@
                 "title": "To Build a Better Ballot",
                 "caption": "An explorable explanation that uses direct manipulation to show election outcomes under different voting methods to provide concrete tools for voting reform.",
                 "url": "https://ncase.me/ballot/",
-                "image": "placeholder.png",
+                "image": "policy-decision-making-1.png",
                 "bibtex": "case2016build"
             },
             {
                 "title": "The Atlas Of Redistricting",
                 "caption": "Visualizations of the United States and its breakdown on governmental representation and gerrymandering. Interactive toggles that redraw district boundaries compare the makeup of the US House of Representatives under different goals, both partisan and bipartisan, all without a single voter relocating.",
                 "url": "https://projects.fivethirtyeight.com/redistricting-maps/",
-                "image": "placeholder.png",
+                "image": "policy-decision-making-2.png",
                 "bibtex": "atlas2018bycoffe"
             },
             {
                 "title": "Is It Better to Rent or Buy?",
                 "caption": "Built into this article is an interactive calculator that suggests if a reader should buy or rent a property based on a collection of user-selected costs.",
                 "url": "https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html",
-                "image": "placeholder.png",
+                "image": "policy-decision-making-3.png",
                 "bibtex": "bostock2014better"
             }
         ]
