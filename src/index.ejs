@@ -54,9 +54,9 @@
     <p>
       Besides these groups, others such as academics, game developers, web developers, and designers blend editorial, design, and programming skills to create and publish explorable explanations <d-cite key="victor2011explorable"></d-cite>, interactive fiction <d-cite key="aarseth1997cybertext"></d-cite>, interactive non-fiction <d-cite key="sizemore2011interactive"></d-cite>, active essays <d-cite key="yamamiya2009active"></d-cite>, and interactive games <d-cite key="bogost2012newsgames"></d-cite>. While these all slightly differ in their technical approach and target audience, they all largely leverage the interactivity of the modern web.
     </p>
-    
+
     <div id="applications-tab" class="l-page-outset"></div>
-    
+
     <p>
       Today there is a growing excitement around the use of interactive articles for communication since they offer unique capabilities to help people learn and engage with complex ideas that traditional media lacks. To help people leverage this new medium, we breakdown this collection of capabilities pulling from diverse fields of research, including human-computer interaction, information visualization, multimedia learning, education, and data journalism, and present accompanying atomic examples that support each capability <d-footnote>Many of these examples are accessible via the web.</d-footnote>. After describing the affordances of interactive articles, we provide critical reflections from our own experience with open-source, interactive publishing at scale.
     </p>
@@ -64,7 +64,7 @@
     <p>
       This style of communication---and the platforms which support it---are still in their infancy. When choosing where to publish this work, we wanted the medium to reflect the message. Journals like Distill are not only pushing the boundaries of machine learning research but also offer a space to put forth new interfaces for dissemination. This work ties together the theory and practice of authoring and publishing interactive articles. It demonstrates the power that the medium has for providing new representations and interactions to make systems and ideas more accessible to broad audiences.
     </p>
-    
+
     <!-- Interactive Articles -->
 
     <h2 id="interactive-articles">Interactive Articles: Theory and Practice</h2>
@@ -74,7 +74,7 @@
     </p>
 
     <h3 id="improving-recall">Improving Recall</h3>
-    
+
     <p>
       Asking a student to reflect on material that they are studying and explain it back to themselves---a learning technique called self-explanation---is known to have a positive impact on learning outcomes <d-cite key="chi1989self"></d-cite>. By generating explanations and refining them as new information is obtained, it is hypothesised that a student will be more engaged with the processes which they are studying <d-cite key="chi2000self"></d-cite>. When writing for an interactive environment, components can be included which prompt readers to make a prediction or reflection about the material and cause them to engage in self-explanation <d-cite key="kim2017explaining"></d-cite>.
     </p>
@@ -102,7 +102,7 @@
     <h3 id="engagement-and-emotion">Engagement and Emotion</h3>
 
     <p>
-      As visual designers are well aware, and as journalism researchers have confirmed empirically <d-cite key="greussing2019simply"></d-cite>, an audience which finds content to be aesthetically pleasing are more likely to have a positive attitude towards it. This in turn means people will spend more time engaging with content and ultimately lead to improved learning outcomes. While engagement itself may not be an end goal of most research communications, the ability to influence both audience attitude and the amount of time that is spent is a useful lever to improve learning: we know from education research that both time spent <d-cite key="fredrick1980learning"></d-cite> and emotion <d-cite key="um2012emotional"></d-cite> are predictive of learning outcomes.   
+      As visual designers are well aware, and as journalism researchers have confirmed empirically <d-cite key="greussing2019simply"></d-cite>, an audience which finds content to be aesthetically pleasing are more likely to have a positive attitude towards it. This in turn means people will spend more time engaging with content and ultimately lead to improved learning outcomes. While engagement itself may not be an end goal of most research communications, the ability to influence both audience attitude and the amount of time that is spent is a useful lever to improve learning: we know from education research that both time spent <d-cite key="fredrick1980learning"></d-cite> and emotion <d-cite key="um2012emotional"></d-cite> are predictive of learning outcomes.
     </p>
 
     <p>
@@ -155,7 +155,7 @@
       Beyond reporting statistics, interactive articles are extremely powerful when the studied systems can be modeled or simulated in real-time with interactive parameters without setup, e.g., in-browser sandboxes. This is a standout design pattern within interactive articles, and many examples exist ranging in complexity. “How You Will Die” visually simulates the average life expectancy of different groups of people, where a reader can choose the gender, race, and age of a person <d-cite key="yau2016how"></d-cite>. “On Particle Physics” allows readers to experiment with accelerating different particles through electric and magnetic fields to build intuition behind electromagnetism foundations such as the Lorentz force and Maxwell’s equations—the experiments backing these simulations cannot be done without multi-million dollar machinery <d-cite key="bianchi2019on"></d-cite>. “Should Prison Sentences Be Based On Crimes That Haven’t Been Committed Yet?” shows the outcome of calculating risk assessments for recidivism where readers adjust the thresholds for determining who gets parole <d-cite key="barry2015should"></d-cite>.
     </p>
 
-    <p>[FIGURE: live simulation: search algo, clustering algo]</p>
+    <div id="simulation-vis"></div>
 
     <p>
       <d-figure class="video-d-figure" id="barron2018designing"></d-figure>
@@ -167,20 +167,20 @@
     </p>
 
     <p>
-      The Multimedia Principle states that people learn better from words and pictures rather than words or pictures alone <d-cite key="mayer2002multimedia"></d-cite>, as people can process information through both a visual channel and auditory channel simultaneously. Popular video creators such as 3Blue1Brown <d-cite key="3blue1brown"></d-cite> and Primer <d-cite key="primer"></d-cite> exemplify these principles by using rich animation and simultaneous narration to break down complex topics. These videos additionally take advantage of the Redundancy Principle by including complementary information in the narration and in the graphics rather than repeating the same information in both channels <d-cite key="mayer2008revising"></d-cite>. 
+      The Multimedia Principle states that people learn better from words and pictures rather than words or pictures alone <d-cite key="mayer2002multimedia"></d-cite>, as people can process information through both a visual channel and auditory channel simultaneously. Popular video creators such as 3Blue1Brown <d-cite key="3blue1brown"></d-cite> and Primer <d-cite key="primer"></d-cite> exemplify these principles by using rich animation and simultaneous narration to break down complex topics. These videos additionally take advantage of the Redundancy Principle by including complementary information in the narration and in the graphics rather than repeating the same information in both channels <d-cite key="mayer2008revising"></d-cite>.
     </p>
 
     <p>
       <d-figure class="video-d-figure" id="sanderson2018visualizing"></d-figure>
-      While these videos are praised for their approachability and rich exposition, they are not interactive. One radical extension from traditional video content is also incorporating user input into the video while narration plays. A series of these interactive videos on “Visualizing Quaternions” lets a reader listen to narration of a live animation on screen, but at any time the viewer can take control of the video and manipulate the animation and graphics while simultaneously listening to the narration <d-cite key="sanderson2018visualizing"></d-cite>. 
+      While these videos are praised for their approachability and rich exposition, they are not interactive. One radical extension from traditional video content is also incorporating user input into the video while narration plays. A series of these interactive videos on “Visualizing Quaternions” lets a reader listen to narration of a live animation on screen, but at any time the viewer can take control of the video and manipulate the animation and graphics while simultaneously listening to the narration <d-cite key="sanderson2018visualizing"></d-cite>.
     </p>
 
     <p>
-      Utilizing multiple representations allows a reader to see different abstractions of a single idea. Once these are familiar and known, an author can build interfaces from multiple representations and let readers interact with them simultaneously, ultimately leading to interactive experiences that demonstrate the power of computational communication mediums. Next, we discuss such experiences where interactive articles have transformed communication and learning by making live models and simulations of complex systems and phenomena accessible. 
+      Utilizing multiple representations allows a reader to see different abstractions of a single idea. Once these are familiar and known, an author can build interfaces from multiple representations and let readers interact with them simultaneously, ultimately leading to interactive experiences that demonstrate the power of computational communication mediums. Next, we discuss such experiences where interactive articles have transformed communication and learning by making live models and simulations of complex systems and phenomena accessible.
     </p>
 
     <h3 id="reducing-cognitive-load">Reducing Cognitive Load</h3>
-    
+
     <p>
       Authors must calibrate the detail at which to discuss ideas and content to their readers expertise and interest to not overload them. When topics become multifaceted and complex, a balance must be struck between a high-level overview of a topic and its lower-level details. One interaction technique used to prevent a cognitive overload within a reader is “details-on-demand.”
     </p>
@@ -223,7 +223,7 @@
     </p>
 
     <h3 id="personalization">Personalization</h3>
-    
+
     <p>
       Content personalization—automatically modifying text and multimedia based on a reader’s individual features or input (e.g., demographics or location)—is a technique that has been shown to increase engagement and learning within readers <d-cite key="cordova1996intrinsic"></d-cite> and support behavioral change <d-cite key="di2006authoring"></d-cite>. The PersaLog system gives developers tools to build personalized content and presents guidelines for personalization based on user research from practicing journalists <d-cite key="adar2017persalog"></d-cite>. Other work has shown that “personalized spatial analogies,” presenting distance measurements in regions where readers are geographically familiar with, help people more concretely understand new distance measurements within news stories <d-cite key="kim2016generating"></d-cite>.
     </p>
@@ -239,7 +239,7 @@
 
     <p>
       <d-figure class="video-d-figure" id="matuschak2019quantum"></d-figure>
-      Another technique interactive articles often use is segmenting content into small pieces to be read in-between or alongside other graphics. While we have already discussed cognitive load theory, the Segmenting Theory, the idea that complex lessons are broken into smaller, bit-sized parts <d-cite key="clark2016learning"></d-cite>, also supports personalization within interactive articles. Providing a reader the ability to play, pause, and scrub content allows the reader to move at their own speed, comprehending the information at a speed that works best for them. Segmenting also engages a reader’s essential processing without overloading their cognitive system <d-cite key="clark2016learning"></d-cite>. 
+      Another technique interactive articles often use is segmenting content into small pieces to be read in-between or alongside other graphics. While we have already discussed cognitive load theory, the Segmenting Theory, the idea that complex lessons are broken into smaller, bit-sized parts <d-cite key="clark2016learning"></d-cite>, also supports personalization within interactive articles. Providing a reader the ability to play, pause, and scrub content allows the reader to move at their own speed, comprehending the information at a speed that works best for them. Segmenting also engages a reader’s essential processing without overloading their cognitive system <d-cite key="clark2016learning"></d-cite>.
     </p>
 
     <p>
@@ -265,7 +265,7 @@
     <div id="research-x-practice" style="width: 100%"></div>
 
     <p>
-      Through the Parametric Press, we saw the many challenges of authoring, designing, and publishing first hand, dually as researchers and practitioners. 
+      Through the Parametric Press, we saw the many challenges of authoring, designing, and publishing first hand, dually as researchers and practitioners.
     </p>
 
     <p>
@@ -277,7 +277,7 @@
     </p>
 
     <p>
-      As practitioners we pushed the boundaries of the current generation of tools designed to support the creation of interactive articles on the web. We found bugs and limitations in Idyll, a tool which was originally designed to support the creation of one-off articles that we used as a content management system to power an entire magazine issue. We were forced to write patches and plugins to work around the limitations and achieve our desired publication <d-footnote>Many of these patches have since been merged to Idyll itself. This is the power of modular open-source tooling in action.</d-footnote>. We were also forced to craft designs under a more realistic set of constraints than academics usually deal with: when creating a visualization it is not enough to choose the most effective visual encodings, the graphics also had to be aesthetically appealing, adhere to a house style, have minimal impact on page load time and runtime performance, be legible on both mobile and desktop devices, and not be overly burdensome to implement. Any extra hour spent implementing one graphic was an hour that was not spent improving some other part of the issue, such as the clarity of the text, or the overall site design. 
+      As practitioners we pushed the boundaries of the current generation of tools designed to support the creation of interactive articles on the web. We found bugs and limitations in Idyll, a tool which was originally designed to support the creation of one-off articles that we used as a content management system to power an entire magazine issue. We were forced to write patches and plugins to work around the limitations and achieve our desired publication <d-footnote>Many of these patches have since been merged to Idyll itself. This is the power of modular open-source tooling in action.</d-footnote>. We were also forced to craft designs under a more realistic set of constraints than academics usually deal with: when creating a visualization it is not enough to choose the most effective visual encodings, the graphics also had to be aesthetically appealing, adhere to a house style, have minimal impact on page load time and runtime performance, be legible on both mobile and desktop devices, and not be overly burdensome to implement. Any extra hour spent implementing one graphic was an hour that was not spent improving some other part of the issue, such as the clarity of the text, or the overall site design.
     </p>
 
     <p>
@@ -303,7 +303,7 @@
     </p>
 
     <p>
-      Beyond technical considerations, making interactive articles accessible to people with disabilities is an open challenge. The dynamic medium exacerbates this problem compared to traditional static writing, especially when articles combine multiple formats like audio, video, and text. Therefore, ensuring interactive articles are accessible to everyone will require alternative modes of presenting content (e.g. text-to-speech, video captioning, data physicalization, data sonification) and careful interaction design.   
+      Beyond technical considerations, making interactive articles accessible to people with disabilities is an open challenge. The dynamic medium exacerbates this problem compared to traditional static writing, especially when articles combine multiple formats like audio, video, and text. Therefore, ensuring interactive articles are accessible to everyone will require alternative modes of presenting content (e.g. text-to-speech, video captioning, data physicalization, data sonification) and careful interaction design.
     </p>
 
     <p>
@@ -317,7 +317,7 @@
     <h2 id="looking-forward">Looking Forward</h2>
 
     <p>
-      A diverse community has emerged to meet these challenges, exploring and experimenting with what interactive articles could be. The <a href="https://explorabl.es/">Explorable Explanations community</a> is a “disorganized ‘movement’ of artists, coders & educators who want to reunite play and learning.” Their online hub contains 170+ interactive articles on topics ranging from art, natural sciences, social sciences, journalism, and civics. The curious can also find tools, tutorials, and meta-discussion around learning, play, and representations. Explorables also hosted a mixed in-person and <a href="https://explorabl.es/jam/">online Jam</a>: a community-based sprint focused on creating new explorable explanations. 
+      A diverse community has emerged to meet these challenges, exploring and experimenting with what interactive articles could be. The <a href="https://explorabl.es/">Explorable Explanations community</a> is a “disorganized ‘movement’ of artists, coders & educators who want to reunite play and learning.” Their online hub contains 170+ interactive articles on topics ranging from art, natural sciences, social sciences, journalism, and civics. The curious can also find tools, tutorials, and meta-discussion around learning, play, and representations. Explorables also hosted a mixed in-person and <a href="https://explorabl.es/jam/">online Jam</a>: a community-based sprint focused on creating new explorable explanations.
     </p>
 
     <p>
@@ -329,11 +329,11 @@
     </p>
 
     <p>
-      The usefulness of interactive articles is predicated on the assumption that these interactive articles actually facilitate communication and learning. There is limited empirical evaluation of the effectiveness of interactive articles. The problem is exacerbated by the fact that large publishers are unwilling to share internal metrics, and laboratory studies may not generalize to real world reading trends. The New York Times provided one of the few available data points, stating that only a fraction of readers interact with non-static content, and suggested that designers should move away from interactivity <d-cite key="tse2016why"></d-cite>. However, other research found that many readers, even those on mobile devices, are interested in utilizing interactivity when it is a core part of the article's message <d-cite key="conlen2019capture"></d-cite>. This statement from the New York Times has solidified as a rule-of-thumb for designers, and many choose not to utilize interactivity because of it. This means designers are potentially choosing a suboptimal presentation of their story due to this anecdote. More research is needed in order to identify the cases in which interactivity is worth the cost of creation. 
+      The usefulness of interactive articles is predicated on the assumption that these interactive articles actually facilitate communication and learning. There is limited empirical evaluation of the effectiveness of interactive articles. The problem is exacerbated by the fact that large publishers are unwilling to share internal metrics, and laboratory studies may not generalize to real world reading trends. The New York Times provided one of the few available data points, stating that only a fraction of readers interact with non-static content, and suggested that designers should move away from interactivity <d-cite key="tse2016why"></d-cite>. However, other research found that many readers, even those on mobile devices, are interested in utilizing interactivity when it is a core part of the article's message <d-cite key="conlen2019capture"></d-cite>. This statement from the New York Times has solidified as a rule-of-thumb for designers, and many choose not to utilize interactivity because of it. This means designers are potentially choosing a suboptimal presentation of their story due to this anecdote. More research is needed in order to identify the cases in which interactivity is worth the cost of creation.
     </p>
 
     <p>
-      We believe in the power and untapped potential of interactive articles for making complex ideas accessible and understandable to many people who otherwise would not have the opportunity or desire to learn. 
+      We believe in the power and untapped potential of interactive articles for making complex ideas accessible and understandable to many people who otherwise would not have the opportunity or desire to learn.
     </p>
 
     <figcaption style="margin: 0 auto">A sortable list of the published interactive articles we discussed in our article.</figcaption>
