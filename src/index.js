@@ -9,9 +9,10 @@ import Horse from "./diagrams/horse.svelte"
 import ExampleTable from "./diagrams/example-table.svelte"
 import examples from "./diagrams/video-examples.json"
 import VideoExample from "./diagrams/video-example.svelte"
+import DetailsText from "./diagrams/details-text.svelte"
+import DetailsVis from "./diagrams/details-vis.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
-
 // const exampleTag = document.getElementById("svelte-example-dfigure");
 // let example;
 // exampleTag.addEventListener("ready", () => {
@@ -37,6 +38,14 @@ const horse = new Horse({
 
 const exampleTable = new ExampleTable({
 	target: document.getElementById('example-table')
+});
+
+const detailsText = new DetailsText({
+	target: document.getElementById('details-text')
+});
+
+const detailsVis = new DetailsVis({
+	target: document.getElementById('details-vis')
 });
 
 // video examples
@@ -79,3 +88,4 @@ new VideoExample({
 	target: document.getElementById('matuschak2019quantum'),
 	props: { example: examples.find(example => example.bibtex === 'matuschak2019quantum') }
 })
+
