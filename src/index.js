@@ -12,6 +12,7 @@ import VideoExample from "./diagrams/video-example.svelte"
 import DetailsText from "./diagrams/details-text.svelte"
 import DetailsVis from "./diagrams/details-vis.svelte"
 import SimulationVis from "./diagrams/simulation-vis.svelte"
+import YouDrawIt from "./diagrams/you-draw-it.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 // const exampleTag = document.getElementById("svelte-example-dfigure");
@@ -51,6 +52,10 @@ const detailsVis = new DetailsVis({
 
 const simulationVis = new SimulationVis({
 	target: document.getElementById('simulation-vis')
+});
+
+const youDrawIt = new YouDrawIt({
+	target: document.getElementById('you-draw-it')
 });
 
 
