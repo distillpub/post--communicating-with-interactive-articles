@@ -4,7 +4,6 @@
   // TODO - make sure we're just importing what is needed.
   import * as d3 from 'd3';
 
-
   const clamp = (a, b, c) => {
     return Math.max(a, Math.min(b, c))
   }
@@ -46,9 +45,6 @@
     const area = d3.area().x(d => x(d.year)).y1(d => y(d.debt)).y0(y(0));
     const line = d3.area().x(d => x(d.year)).y(d => y(d.debt));
 
-    // c.xAxis.ticks(4).tickFormat(ƒ())
-    // c.yAxis.ticks(5).tickFormat(d => d + '%')
-
     const xAxis = d3.axisBottom().scale(x);
     const yAxis = d3.axisLeft().scale(y);
 
@@ -58,9 +54,6 @@
 
     xAxisG.call(xAxis);
     yAxisG.call(yAxis);
-
-
-    // c.drawAxis()
 
     const clipRect = svg.append('clipPath').attr('id', 'clip').append('rect')
       .attr('width', x(2008) - 2)
@@ -97,17 +90,12 @@
         yourDataSel.attr('d', line.defined(d => d.defined)(yourData) )
 
         if (!completed && d3.mean(yourData, d => d.defined) == 1){
-
-          console.log('completed???')
           completed = true
           clipRect.transition().duration(1000).attr('width', x(2015))
-        } else {
-          console.log('not completed' )
         }
       })
 
     svg.call(drag)
-
 
 
   });
