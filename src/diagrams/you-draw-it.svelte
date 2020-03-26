@@ -2,7 +2,13 @@
   import { onMount, onDestroy } from 'svelte';
 
   // TODO - make sure we're just importing what is needed.
-  import * as d3 from 'd3';
+  // import * as d3 from 'd3';
+  import { scaleLinear } from 'd3-scale'
+  import { area } from 'd3-shape'
+  import { axisBottom, axisLeft } from 'd3-axis'
+  import { mean } from 'd3-array'
+  import { select, mouse } from 'd3-selection'
+  import { drag } from 'd3-drag'
 
   const clamp = (a, b, c) => {
     return Math.max(a, Math.min(b, c))
@@ -35,18 +41,18 @@
 
 	onMount(() => {
 
-    const svg = d3.select(_svg);
+    const svg = select(_svg);
 
     svg.append('rect').attr('width', width).attr('height', height).attr('opacity', 0);
 
-    const x = d3.scaleLinear().domain([2001, 2015]).range([0, width])
-    const y = d3.scaleLinear().domain([0, 100]).range([height, 0])
+    const x = scaleLinear().domain([2001, 2015]).range([0, width])
+    const y = scaleLinear().domain([0, 100]).range([height, 0])
 
-    const area = d3.area().x(d => x(d.year)).y1(d => y(d.debt)).y0(y(0));
-    const line = d3.area().x(d => x(d.year)).y(d => y(d.debt));
+    const Area = area().x(d => x(d.year)).y1(d => y(d.debt)).y0(y(0));
+    const line = area().x(d => x(d.year)).y(d => y(d.debt));
 
-    const xAxis = d3.axisBottom().scale(x);
-    const yAxis = d3.axisLeft().scale(y);
+    const xAxis = axisBottom().scale(x);
+    const yAxis = axisLeft().scale(y);
 
     //Append group and insert axis
     const xAxisG = svg.append("g").attr('class', 'x axis').attr("transform", "translate(0," + height + ")");
@@ -61,7 +67,7 @@
 
     const correctSel =  svg.append('g').attr('clip-path', 'url(#clip)')
 
-    correctSel.append('path').attr('class', 'area').attr('d', area(data));
+    correctSel.append('path').attr('class', 'area').attr('d', Area(data));
     correctSel.append('path').attr('class', 'line').attr('d', line(data));
     const yourDataSel = svg.append('path').attr('class', 'your-line');
 
@@ -74,9 +80,9 @@
         return d.year >= 2008;
       })
 
-    var drag = d3.drag()
+    var Drag = drag()
       .on('drag', function() {
-        const pos = d3.mouse(this)
+        const pos = mouse(this)
         const year = clamp(2009, 2016, x.invert(pos[0]))
         const debt = clamp(0, y.domain()[1], y.invert(pos[1]))
 
@@ -89,13 +95,13 @@
 
         yourDataSel.attr('d', line.defined(d => d.defined)(yourData) )
 
-        if (!completed && d3.mean(yourData, d => d.defined) == 1){
+        if (!completed && mean(yourData, d => d.defined) == 1){
           completed = true
           clipRect.transition().duration(1000).attr('width', x(2015))
         }
       })
 
-    svg.call(drag)
+    svg.call(Drag)
 
 
   });
