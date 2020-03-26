@@ -103,10 +103,10 @@
     <div><a href="#introduction">Introduction</a></div>
     <div><a href="#interactive-articles">Interactive Articles: Theory and Practice</a></div>
     <ul>
-      <li><a href="#improving-recall">Improving Recall</a></li>
       <li><a href="#engagement-and-emotion">Engagement and Emotion</a></li>
       <li><a href="#interaction-with-systems">Interacting with Systems</a></li>
-      <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
+      <li><a href="#improving-recall">Improving Recall</a></li>
+      <li><a href="#context-on-demand">Context on Demand</a></li>
       <li><a href="#personalization">Personalization</a></li>
     </ul>
     <div><a href="#critical-reflections">Critical Reflections</a></div>
