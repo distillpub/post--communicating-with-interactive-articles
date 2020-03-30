@@ -73,7 +73,6 @@
 	.example > a {
 		border-bottom: none;
 	}
-
 </style>
 
 <div class="application">

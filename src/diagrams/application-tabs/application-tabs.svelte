@@ -4,6 +4,12 @@
 	import applicationData from "./application.json"
 </script>
 
+<style>
+	#hidden-cites {
+		display: none;
+	}
+</style>
+
 <Tabs>
 	<TabList>
 		{#each applicationData as application}
@@ -20,3 +26,11 @@
 	{/each}
 
 </Tabs>
+
+<div id="hidden-cites">
+	{#each applicationData as application}
+		{#each application.examples as example}
+			<d-cite key={example.bibtex}></d-cite>
+		{/each}
+	{/each}
+</div>
