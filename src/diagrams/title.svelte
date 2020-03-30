@@ -8,20 +8,23 @@
     #title {
         font-weight: 700;
         font-size: 20px;
+        margin-bottom: 0.25em;
+        /* text-transform: uppercase */
     }
 
     #subtitle {
         margin-bottom: 1em;
         color: var(--gray);
+        line-height: 1.4em;
     }
 
     /* div {
         text-align: center
     } */
 
-    img {
+    /* img {
         padding-right: 0.5em;
-    }
+    } */
 
 </style>
 
