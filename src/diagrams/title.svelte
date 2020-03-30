@@ -10,6 +10,7 @@
         font-size: 20px;
         margin-bottom: 0.25em;
         /* text-transform: uppercase */
+        color: var(--orange);
     }
 
     #subtitle {

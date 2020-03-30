@@ -1,5 +1,7 @@
 <script>
 
+    import Title from "./title.svelte";
+
     const texts = [
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum explicabo sapiente officia cum, laborum quasi provident, praesentium ab in adipisci suscipit labore optio numquam minima, dignissimos vero omnis. Nobis, debitis!",
@@ -52,6 +54,11 @@
 </style>
 
 <div>
+
+    <Title
+        titleText="The Universal Approximation Theorem in 3 levels of detail."
+        subtitleText="Readers come with different backgrounds. What if our content could be tailored to their level of knowledge about certain topics?"
+    />
 
     <div style="display:flex">
         <div>Brief</div>

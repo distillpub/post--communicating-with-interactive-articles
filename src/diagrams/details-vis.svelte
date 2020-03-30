@@ -1,9 +1,10 @@
 <script>
 
     import { line } from "d3-shape";
-    import { scaleLinear } from "d3-scale"
-    import { max, range } from "d3-array"
-    import { csv } from "d3-fetch"
+    import { scaleLinear } from "d3-scale";
+    import { max, range } from "d3-array";
+    import { csv } from "d3-fetch";
+    import Title from "./title.svelte";
 
     const data = range(25).map(function(d, i) { return {"x": i, "y": Math.random() } })
 
@@ -40,8 +41,16 @@
     }
 </style>
 
-<svg>
-    <g id="wrapper">
-        <path d={linePath}>
-    </g>
-</svg>
+<div>
+
+    <Title
+        titleText="[TK]."
+        subtitleText="[TK]."
+    />
+    <svg>
+        <g id="wrapper">
+            <path d={linePath}>
+        </g>
+    </svg>
+
+</div>

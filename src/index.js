@@ -9,8 +9,10 @@ import Horse from "./diagrams/horse.svelte"
 import ExampleTable from "./diagrams/example-table.svelte"
 import examples from "./diagrams/video-examples.json"
 import VideoExample from "./diagrams/video-example.svelte"
-import DetailsText from "./diagrams/details-text.svelte"
 import DetailsVis from "./diagrams/details-vis.svelte"
+import DetailsIllustration from "./diagrams/details-illustration.svelte"
+import DetailsMath from "./diagrams/details-math.svelte"
+import DetailsText from "./diagrams/details-text.svelte"
 import SimulationVis from "./diagrams/simulation-vis.svelte"
 import YouDrawIt from "./diagrams/you-draw-it.svelte"
 
@@ -42,12 +44,20 @@ const exampleTable = new ExampleTable({
 	target: document.getElementById('example-table')
 });
 
-const detailsText = new DetailsText({
-	target: document.getElementById('details-text')
-});
-
 const detailsVis = new DetailsVis({
 	target: document.getElementById('details-vis')
+});
+
+const detailsIllustration = new DetailsIllustration({
+	target: document.getElementById('details-illustration')
+});
+
+const detailsMath = new DetailsMath({
+	target: document.getElementById('details-math')
+});
+
+const detailsText = new DetailsText({
+	target: document.getElementById('details-text')
 });
 
 const simulationVis = new SimulationVis({
