@@ -3,12 +3,13 @@
 
   // TODO - make sure we're just importing what is needed.
   // import * as d3 from 'd3';
-  import { scaleLinear } from 'd3-scale'
-  import { area } from 'd3-shape'
-  import { axisBottom, axisLeft } from 'd3-axis'
-  import { mean } from 'd3-array'
-  import { select, mouse } from 'd3-selection'
-  import { drag } from 'd3-drag'
+  import { scaleLinear } from 'd3-scale';
+  import { area } from 'd3-shape';
+  import { axisBottom, axisLeft } from 'd3-axis';
+  import { mean } from 'd3-array';
+  import { select, mouse } from 'd3-selection';
+  import { drag } from 'd3-drag';
+  import Title from './title.svelte';
 
   const clamp = (a, b, c) => {
     return Math.max(a, Math.min(b, c))
@@ -141,6 +142,12 @@
 </style>
 
 <div>
+
+  <Title
+    titleText="Complete the trend for [TK]."
+    subtitleText="Letting a reader first guess about data and only showing the ground truth afterwards challenges a reader's prior beliefs and has been shown to improve their recall of information."
+  />
+
   <svg
     bind:this={_svg}
     width={width}
