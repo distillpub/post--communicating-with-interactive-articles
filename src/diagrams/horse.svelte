@@ -1,5 +1,6 @@
 <script>
     import { onDestroy } from 'svelte';
+    import Title from './title.svelte'
 
     let frameNumber = 1;
     let isPlaying = false;
@@ -146,13 +147,17 @@
 </style>
 
 <div id="wrapper">
+
+    <Title
+        titleText="Does a horse lift all its feet of the ground?"
+        subtitleText="This interactive graphic uses user-controlled animation to illustrate this finding."
+    />
     
     <div id="horse-wrapper">
         <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
             <div class="caption">
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
-                This interactive graphic uses <i>user-controlled animation</i> to illustrate this finding.
              </div>
              <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
             <!-- <div> -->
