@@ -1,5 +1,5 @@
 <script>
-  export let applicationData;
+	export let applicationData;
 </script>
 
 <style>
