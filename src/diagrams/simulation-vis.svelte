@@ -48,6 +48,7 @@
       attractors: []
     });
 
+    let boidSize, boidColor;
     raf(function tick() {
       flock.separationDistance = separationDistance;
       flock.alignmentDistance = alignmentDistance;
@@ -70,11 +71,13 @@
       }
 
       flock.tick();
-      flock.boids.forEach((boid) => {
+      flock.boids.forEach((boid, i) => {
         boid[0] = clamp(boid[0], -canvas.width/2, canvas.width/2);
         boid[1] = clamp(boid[1], -canvas.height/2, canvas.height/2);
-        ctx.fillRect(boid[0], boid[1], 2, 2)
-        ctx.fillStyle = 'orange'
+        boidSize = i === 0 ? 5 : 2;
+        boidColor = i === 0 ? '#ff6600' : '#0f2e3d'
+        ctx.fillStyle = boidColor;
+        ctx.fillRect(boid[0], boid[1], boidSize, boidSize);
       });
       ctx.restore();
       if (!stopped) {
