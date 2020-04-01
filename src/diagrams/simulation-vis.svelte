@@ -15,7 +15,7 @@
   let cohesionForce = 0.1;
   let boidCount = 100;
 
-  const CANVAS_WIDTH = 800;
+  const CANVAS_WIDTH = 634;
   const CANVAS_HEIGHT = 400;
 
   const clamp = (x, min, max) => {
@@ -95,6 +95,7 @@
 		width: auto;
 		height: 100%;
     max-height: 50vh;
+    max-width: 100%;
 	}
 
   .controls {
@@ -115,7 +116,7 @@
       -webkit-transition: .2s;
       transition: opacity .2s;
       height: 3px;
-      border-radius: 3px;
+      border-radius: 2px;
       background-color: hsla(0, 0%, 0%, 0.2);
   }
 
@@ -132,7 +133,7 @@
       width: 13px;
       height: 13px;
       background-color: var(--orange);
-      border-radius: 13px;
+      border-radius: 50%;
   }
 
   .slider::-moz-range-thumb {
