@@ -13,6 +13,7 @@
   let separationForce = 0.15;
   let alignmentForce = 0.5;
   let cohesionForce = 0.1;
+  let boidCount = 100;
 
   const CANVAS_WIDTH = 800;
   const CANVAS_HEIGHT = 400;
@@ -27,6 +28,9 @@
     return x;
   }
 
+  const boidRandom = (magnitude) => {
+    return (Math.random() - 0.5) * 2 * magnitude;
+  }
 
 	onMount(() => {
     const ctx = canvas.getContext('2d');
@@ -56,6 +60,15 @@
       ctx.fillStyle = 'black';
       ctx.save();
       ctx.translate(canvas.width/2, canvas.height/2);
+
+      if (boidCount > flock.boids.length) {
+        for (let i=0; i < (boidCount-flock.boids.length); i++) {
+          flock.boids.push([boidRandom(canvas.width / 2), boidRandom(canvas.height / 2), boidRandom(10), boidRandom(10), boidRandom(5), boidRandom(5)])
+        }
+      } else if (boidCount < flock.boids.length) {
+        flock.boids = flock.boids.slice(0, boidCount);
+      }
+
       flock.tick();
       flock.boids.forEach((boid) => {
         boid[0] = clamp(boid[0], -canvas.width/2, canvas.width/2);
@@ -142,30 +155,8 @@
 
   <div class="controls">
     <div class="control">
-      Separation Distance<br/>
-        <input type=range bind:value={separationDistance} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Alignment Distance<br/>
-        <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Cohesion Distance<br/>
-        <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider">
-    </div>
-  </div>
-  <div class="controls">
-    <div class="control">
-      Separation Force<br/>
-        <input type=range bind:value={separationForce} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Alignment Force<br/>
-        <input type=range bind:value={alignmentForce} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Cohesion Force<br/>
-        <input type=range bind:value={cohesionForce} min=1 max=500 class="slider">
+      Boid Count<br/>
+        <input type=range bind:value={boidCount} min=1 max=500 class="slider" />
     </div>
   </div>
   <canvas
@@ -173,5 +164,32 @@
     width={CANVAS_WIDTH}
     height={CANVAS_HEIGHT}
   ></canvas>
-
+  <div class="controls">
+    <div class="control">
+      Separation Distance<br/>
+        <input type=range bind:value={separationDistance} min=1 max=500 class="slider" />
+    </div>
+    <div class="control">
+      Alignment Distance<br/>
+        <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider" />
+    </div>
+    <div class="control">
+      Cohesion Distance<br/>
+        <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider" />
+    </div>
+  </div>
+  <div class="controls">
+    <div class="control">
+      Separation Force<br/>
+        <input type=range bind:value={separationForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+    <div class="control">
+      Alignment Force<br/>
+        <input type=range bind:value={alignmentForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+    <div class="control">
+      Cohesion Force<br/>
+        <input type=range bind:value={cohesionForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+  </div>
 </div>
