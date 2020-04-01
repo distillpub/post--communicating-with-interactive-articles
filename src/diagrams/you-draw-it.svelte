@@ -110,13 +110,11 @@
 
 <style>
 
-  div {
-    padding: 3em 0 4em 0;
-  }
   svg {
     display: block;
     margin: 0 auto;
     overflow: visible;
+    max-width: 90%;
   }
 
   svg :global(.axis) {
@@ -150,8 +148,7 @@
 
   <svg
     bind:this={_svg}
-    width={width}
-    height={height}
+    viewBox={`0 0 ${width} ${height}`}
   ></svg>
 
 </div>
