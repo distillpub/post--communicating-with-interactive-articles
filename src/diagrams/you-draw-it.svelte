@@ -141,7 +141,7 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
 
   <Title
     titleText="Complete the trend for [TK]."
