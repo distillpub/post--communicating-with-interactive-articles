@@ -21,7 +21,7 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
 
     <Title
         titleText="Enhancing mathematics design with annotation and interactivity."

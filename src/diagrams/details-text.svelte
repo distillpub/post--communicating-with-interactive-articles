@@ -53,7 +53,7 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
 
     <Title
         titleText="The Universal Approximation Theorem in 3 levels of detail."

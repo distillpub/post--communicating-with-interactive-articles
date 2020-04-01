@@ -107,7 +107,7 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
 
   <Title
     titleText="Interacting with live simulations—no setup required."
