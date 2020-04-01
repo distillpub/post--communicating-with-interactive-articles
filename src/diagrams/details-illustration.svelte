@@ -13,7 +13,7 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
     <Title
         titleText="[TK]."
         subtitleText="[TK]."
