@@ -37,11 +37,11 @@
 <style>
 
     #wrapper {
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
+        /* margin-top: 1.5em; */
+        /* margin-bottom: 1.5em; */
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
-        /* padding: 0.5em; */
+        padding-top: 0em;
     }
 
     #frames {

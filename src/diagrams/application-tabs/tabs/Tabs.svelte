@@ -47,14 +47,15 @@
 
 <style>
 	.tabs {
-		background-color: var(--gray-bg);
+		/* background-color: var(--gray-bg);
 		border: solid 1px var(--gray-border);
-		border-radius: var(--border-radius);
-		margin-bottom: 40px;
-		margin-top: 10px;
+		border-radius: var(--border-radius); */
+		/* margin-bottom: 40px; */
+		/* margin-top: 10px; */
+		padding-top: 0em;
 	}
 </style>
 
-<div class="tabs">
+<div class="tabs interactive-container">
 	<slot></slot>
 </div>
