@@ -129,6 +129,7 @@
         cursor: pointer;
         outline: inherit;
         color: var(--orange);
+        background-color: var(--gray-bg);
     }
 
     .caption {
