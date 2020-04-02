@@ -72,10 +72,11 @@ d-figure>figure {
 }
 
 .interactive-container {
-  background-color: hsl(0, 0%, 97%);
-  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  background-color: var(--gray-bg);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--border-radius);
   /* border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); */
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   margin-bottom: 2em;
 }
 
