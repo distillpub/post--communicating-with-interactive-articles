@@ -71,6 +71,14 @@ d-figure>figure {
   margin-bottom: 0em !important;
 }
 
+.interactive-container {
+  background-color: hsl(0, 0%, 97%);
+  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  /* border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); */
+  padding: 1em 2em;
+  margin-bottom: 2em;
+}
+
 @media (max-width: 1178px) {
   .video-d-figure {
     float: none;
