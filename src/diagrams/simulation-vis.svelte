@@ -10,7 +10,27 @@
   let separationDistance = 60;
   let alignmentDistance = 180;
   let cohesionDistance = 180;
+  let separationForce = 0.15;
+  let alignmentForce = 0.5;
+  let cohesionForce = 0.1;
+  let boidCount = 100;
 
+  const CANVAS_WIDTH = 634;
+  const CANVAS_HEIGHT = 400;
+
+  const clamp = (x, min, max) => {
+    if (x < min) {
+      return max + (x - min)
+    }
+    if (x > max) {
+      return min + (x - max)
+    }
+    return x;
+  }
+
+  const boidRandom = (magnitude) => {
+    return (Math.random() - 0.5) * 2 * magnitude;
+  }
 
 	onMount(() => {
     const ctx = canvas.getContext('2d');
@@ -22,25 +42,42 @@
       separationDistance: separationDistance, // Radius at which boids avoid others
       alignmentDistance: alignmentDistance, // Radius at which boids align with others
       cohesionDistance: cohesionDistance,  // Radius at which boids approach others
-      separationForce: 0.15,  // Speed to avoid at
-      alignmentForce: 0.5,   // Speed to align with other boids
-      cohesionForce: 0.1,     // Speed to move towards other boids
+      separationForce: separationForce,  // Speed to avoid at
+      alignmentForce: alignmentForce,   // Speed to align with other boids
+      cohesionForce: cohesionForce,     // Speed to move towards other boids
       attractors: []
     });
 
+    let boidSize, boidColor;
     raf(function tick() {
       flock.separationDistance = separationDistance;
       flock.alignmentDistance = alignmentDistance;
       flock.cohesionDistance = cohesionDistance;
+      flock.separationForce = separationForce;
+      flock.alignmentForce = alignmentForce;
+      flock.cohesionForce = cohesionForce;
       ctx.fillStyle = 'white';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'black';
       ctx.save();
       ctx.translate(canvas.width/2, canvas.height/2);
+
+      if (boidCount > flock.boids.length) {
+        for (let i=0; i < (boidCount-flock.boids.length); i++) {
+          flock.boids.push([boidRandom(canvas.width / 2), boidRandom(canvas.height / 2), boidRandom(10), boidRandom(10), boidRandom(5), boidRandom(5)])
+        }
+      } else if (boidCount < flock.boids.length) {
+        flock.boids = flock.boids.slice(0, boidCount);
+      }
+
       flock.tick();
-      flock.boids.forEach((boid) => {
-        ctx.fillRect(boid[0], boid[1], 2, 2)
-        ctx.fillStyle = 'orange'
+      flock.boids.forEach((boid, i) => {
+        boid[0] = clamp(boid[0], -canvas.width/2, canvas.width/2);
+        boid[1] = clamp(boid[1], -canvas.height/2, canvas.height/2);
+        boidSize = i === 0 ? 5 : 2;
+        boidColor = i === 0 ? '#ff6600' : '#0f2e3d'
+        ctx.fillStyle = boidColor;
+        ctx.fillRect(boid[0], boid[1], boidSize, boidSize);
       });
       ctx.restore();
       if (!stopped) {
@@ -57,15 +94,21 @@
 <style>
 	canvas {
     display: block;
-    margin: 0 auto;
+    margin: 1em auto;
 		width: auto;
 		height: 100%;
     max-height: 50vh;
+    max-width: 100%;
 	}
 
   .controls {
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: space-around;
   }
 
   .slider {
@@ -107,31 +150,50 @@
 
 </style>
 
-<div>
+<div class="interactive-container">
 
   <Title
-    titleText="Interacting with live simulations—no setup required."
+    titleText="Interact with live simulations—no setup required."
     subtitleText="This Boids simulation models and visualizes the behavior of a flock of birds, and exposes parameters that a reader can manipulate to change the behavior of the simulation."
   />
 
   <div class="controls">
     <div class="control">
-      Separation Distance:
-        <input type=range bind:value={separationDistance} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Alignment Distance:
-        <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider">
-    </div>
-    <div class="control">
-      Cohesion Distance:
-        <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider">
+      Boid Count<br/>
+        <input type=range bind:value={boidCount} min=1 max=500 class="slider" />
     </div>
   </div>
   <canvas
     bind:this={canvas}
-    width={500}
-    height={500}
+    width={CANVAS_WIDTH}
+    height={CANVAS_HEIGHT}
   ></canvas>
-
+  <div class="controls">
+    <div class="control">
+      Separation Distance<br/>
+        <input type=range bind:value={separationDistance} min=1 max=500 class="slider" />
+    </div>
+    <div class="control">
+      Alignment Distance<br/>
+        <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider" />
+    </div>
+    <div class="control">
+      Cohesion Distance<br/>
+        <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider" />
+    </div>
+  </div>
+  <div class="controls">
+    <div class="control">
+      Separation Force<br/>
+        <input type=range bind:value={separationForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+    <div class="control">
+      Alignment Force<br/>
+        <input type=range bind:value={alignmentForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+    <div class="control">
+      Cohesion Force<br/>
+        <input type=range bind:value={cohesionForce} min=0.01 max=500 step=0.01 class="slider" />
+    </div>
+  </div>
 </div>

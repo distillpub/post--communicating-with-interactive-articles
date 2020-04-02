@@ -2,7 +2,7 @@
     import { onDestroy } from 'svelte';
     import Title from './title.svelte'
 
-    let frameNumber = 1;
+    let frameNumber = 2;
     let isPlaying = false;
 
     const numOfFrames = 11;
@@ -16,7 +16,7 @@
             playInterval = setInterval(() => {
                     frameNumber = frameNumber % numOfFrames;
                     frameNumber += 1;
-                }, 100);            
+                }, 100);
         }
     }
 
@@ -30,12 +30,12 @@
         frameNumber = i;
     }
 
-    play();
+    // play();
 
 </script>
 
 <style>
-    
+
     #wrapper {
         margin-top: 1.5em;
         margin-bottom: 1.5em;
@@ -146,13 +146,13 @@
 
 </style>
 
-<div id="wrapper">
+<div id="wrapper" class="interactive-container">
 
     <Title
         titleText="Does a horse lift all its feet of the ground?"
         subtitleText="This interactive graphic uses user-controlled animation to illustrate this finding."
     />
-    
+
     <div id="horse-wrapper">
         <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">

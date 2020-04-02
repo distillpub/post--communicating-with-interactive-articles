@@ -10,7 +10,7 @@
         font-size: 20px;
         margin-bottom: 0.25em;
         /* text-transform: uppercase */
-        color: var(--orange);
+        /* color: var(--orange); */
     }
 
     #subtitle {
@@ -30,7 +30,7 @@
 </style>
 
 <div>
-    
+
     <!-- <div style="display: flex"> -->
         <!-- <img src="images/pointer.svg" alt="Pointer: interactive diagram."> -->
         <div id="title">{titleText}</div>
