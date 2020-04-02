@@ -41,7 +41,7 @@
         /* margin-bottom: 1.5em; */
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
-        padding-top: 0em;
+        /* padding-top: 0em; */
     }
 
     #frames {
