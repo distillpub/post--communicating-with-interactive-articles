@@ -106,8 +106,8 @@
       <li><a href="#engagement-and-emotion">Engagement and Emotion</a></li>
       <li><a href="#interaction-with-systems">Interacting with Systems</a></li>
       <li><a href="#improving-recall">Improving Recall</a></li>
-      <li><a href="#context-on-demand">Context on Demand</a></li>
       <li><a href="#personalization">Personalization</a></li>
+      <li><a href="#context-on-demand">Context on Demand</a></li>
     </ul>
     <div><a href="#critical-reflections">Critical Reflections</a></div>
     <div><a href="#challenges">Challenges of Interactive Writing</a></div>
