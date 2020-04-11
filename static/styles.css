@@ -4,6 +4,7 @@
   --gray: rgba(0, 0, 0, 0.6);
   --border-radius: 5px;
   --orange: hsl(24, 100%, 50%);
+  --blue: hsl(200, 50%, 25%);
 }
 
 .subgrid {
