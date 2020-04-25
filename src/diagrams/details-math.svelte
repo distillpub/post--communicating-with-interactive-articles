@@ -25,7 +25,7 @@
     }
 
     .highlightVariable > path {
-        fill: var(--gray);
+        fill: var(--green);
     }
 
     .highlightNotation > path {
@@ -34,6 +34,38 @@
 
     .hidden {
         display: none;
+    }
+
+    #button-wrapper {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    button {
+        border: none;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border: 1px solid;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: var(--border-radius);
+    }
+
+    #notation-button {
+        border-color: var(--blue);
+        color: var(--blue);
+    }
+
+    #variable-button {
+        border-color: var(--green);
+        color: var(--green);
+    }
+
+    button:hover {
+        cursor: pointer;
+        /* background-color: var(--gray-bg); */
     }
 
 </style>
@@ -122,6 +154,8 @@
             </g>
         </svg>
     </div>
-    <button type="button" on:click={toggleNotation}>Toggle Notation</button>
-    <button type="button" on:click={toggleVariables}>Toggle Variables</button>
+    <div id="button-wrapper">
+        <button type="button" id="notation-button" on:click={toggleNotation}>Toggle Notation</button>
+        <button type="button" id="variable-button" on:click={toggleVariables}>Toggle Variables</button>
+    </div>
 </div>
