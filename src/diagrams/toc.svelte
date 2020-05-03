@@ -110,6 +110,6 @@
       <li><a href="#context-on-demand">Context on Demand</a></li>
     </ul>
     <div><a href="#critical-reflections">Critical Reflections</a></div>
-    <div><a href="#challenges">Challenges of Interactive Writing</a></div>
+    <div><a href="#challenges">Challenges for Authoring Interactives</a></div>
     <div><a href="#looking-forward">Looking Forward</a></div>
 </nav>
