@@ -68,13 +68,30 @@
 
 <style>
     #example-table-wrapper {
-        /* height: 500px; */
-        /* overflow: scroll */
+        /* height: 500px;
+        overflow: scroll; */
         /* background-color: var(--gray-bg); */
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
         margin-bottom: 1em;
         /* padding: 1.5em; */
+    }
+
+    table {
+          /* border-collapse: collapse;  */
+          height: 500px;
+          display: block;
+          overflow: scroll;
+    }
+
+    /* thead {
+        position: sticky;
+    } */
+
+    tbody {
+        /* overflow: scroll;
+        display: block;
+        height: 500px; */
     }
 
     th:hover {
