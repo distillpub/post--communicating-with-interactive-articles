@@ -1,14 +1,19 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
 
-  // TODO - make sure we're just importing what is needed.
-  // import * as d3 from 'd3';
-  import { scaleLinear } from 'd3-scale';
-  import { area } from 'd3-shape';
-  import { axisBottom, axisLeft } from 'd3-axis';
-  import { mean } from 'd3-array';
-  import { select, mouse } from 'd3-selection';
-  import { drag } from 'd3-drag';
+  // import { scaleLinear } from 'd3-scale';
+  // import { area } from 'd3-shape';
+  // import { axisBottom, axisLeft } from 'd3-axis';
+  // import { mean } from 'd3-array';
+  // import { select, mouse } from 'd3-selection';
+  // import { drag } from 'd3-drag';
+  // import { format } from 'd3-format';
+  // import { transition } from 'd3-transition';
+  import * as d3 from 'd3'
+  const { scaleLinear, area, axisBottom, axisLeft, mean, select, mouse, drag, format } = d3;
+
+
+  import data from '../data/co2.json';
   import Title from './title.svelte';
 
   const clamp = (a, b, c) => {
@@ -19,26 +24,13 @@
 
   let completed = false;
 
-  const data = [
-    {"year": 2001,    "debt": 31.4},
-    {"year": 2002,    "debt": 32.6},
-    {"year": 2003,    "debt": 34.5},
-    {"year": 2004,    "debt": 35.5},
-    {"year": 2005,    "debt": 35.6},
-    {"year": 2006,    "debt": 35.3},
-    {"year": 2007,    "debt": 35.2},
-    {"year": 2008,    "debt": 39.3},
-    {"year": 2009,    "debt": 52.3},
-    {"year": 2010,    "debt": 60.9},
-    {"year": 2011,    "debt": 65.9},
-    {"year": 2012,    "debt": 70.4},
-    {"year": 2013,    "debt": 72.6},
-    {"year": 2014,    "debt": 74.4},
-    {"year": 2015,    "debt": 73.6},
-  ]
 
   const height = 400;
-  const width = 800;
+  const width = 700;
+
+  const startYear = 1950;
+  const cutoffYear = 1976;
+  const endYear = 2014;
 
 	onMount(() => {
 
@@ -46,11 +38,11 @@
 
     svg.append('rect').attr('width', width).attr('height', height).attr('opacity', 0);
 
-    const x = scaleLinear().domain([2001, 2015]).range([0, width])
-    const y = scaleLinear().domain([0, 100]).range([height, 0])
+    const x = scaleLinear().domain([startYear, endYear]).range([0, width])
+    const y = scaleLinear().domain([0, 10000]).range([height, 0])
 
-    const Area = area().x(d => x(d.year)).y1(d => y(d.debt)).y0(y(0));
-    const line = area().x(d => x(d.year)).y(d => y(d.debt));
+    // const Area = area().x(d => x(d.year)).y1(d => y(d.total)).y0(y(0));
+    const line = area().x(d => x(d.year)).y(d => y(d.total));
 
     const xAxis = axisBottom().scale(x);
     const yAxis = axisLeft().scale(y);
@@ -59,37 +51,39 @@
     const xAxisG = svg.append("g").attr('class', 'x axis').attr("transform", "translate(0," + height + ")");
     const yAxisG = svg.append("g").attr('class', 'y axis');
 
-    xAxisG.call(xAxis);
+    xAxisG.call(xAxis.ticks(5).tickFormat(format("d")));
     yAxisG.call(yAxis);
 
     const clipRect = svg.append('clipPath').attr('id', 'clip').append('rect')
-      .attr('width', x(2008) - 2)
-      .attr('height', height)
+      .attr('width', x(cutoffYear) - 2)
+      .attr('height', height);
+
+    console.log(clipRect)
 
     const correctSel =  svg.append('g').attr('clip-path', 'url(#clip)')
 
-    correctSel.append('path').attr('class', 'area').attr('d', Area(data));
+    // correctSel.append('path').attr('class', 'area').attr('d', Area(data));
     correctSel.append('path').attr('class', 'line').attr('d', line(data));
     const yourDataSel = svg.append('path').attr('class', 'your-line');
 
     const yourData = data
       .map((d) => {
-        return { year: d.year, debt: d.debt, defined: 0 }
+        return { year: d.year, total: d.total, defined: 0 }
       })
       .filter((d) => {
-        if (d.year == 2008) d.defined = true
-        return d.year >= 2008;
+        if (d.year == cutoffYear) d.defined = true
+        return d.year >= cutoffYear;
       })
 
     var Drag = drag()
       .on('drag', function() {
         const pos = mouse(this)
-        const year = clamp(2009, 2016, x.invert(pos[0]))
-        const debt = clamp(0, y.domain()[1], y.invert(pos[1]))
+        const year = clamp(cutoffYear+1, endYear, x.invert(pos[0]))
+        const total = clamp(0, y.domain()[1], y.invert(pos[1]))
 
         yourData.forEach((d) => {
           if (Math.abs(d.year - year) < .5){
-            d.debt = debt
+            d.total = total
             d.defined = true
           }
         })
@@ -97,8 +91,9 @@
         yourDataSel.attr('d', line.defined(d => d.defined)(yourData) )
 
         if (!completed && mean(yourData, d => d.defined) == 1){
+          console.log('we here')
           completed = true
-          clipRect.transition().duration(1000).attr('width', x(2015))
+          clipRect.transition().duration(1000).attr('width', x(endYear))
         }
       })
 
@@ -112,7 +107,7 @@
 
   svg {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1em auto;
     overflow: visible;
     max-width: 90%;
   }
@@ -132,17 +127,27 @@
   }
 
   svg :global(.your-line) {
-    stroke: #f0f;
+    stroke: var(--orange);
     stroke-width: 3;
     stroke-dasharray: 5 5;
   }
 
+  svg :global(.x.axis text) {
+    font-size: 2em;
+  }
+
+  .caption-text {
+    margin: 2em auto 0 auto;
+    max-width: 300px;
+    font-size: 0.9em;
+    text-align: center;
+  }
 </style>
 
 <div class="interactive-container">
 
   <Title
-    titleText="Complete the trend for [TK]."
+    titleText="Complete the trend of CO2 emissions from burning fossil fuels."
     subtitleText="Letting a reader first guess about data and only showing the ground truth afterwards challenges a reader's prior beliefs and has been shown to improve their recall of information."
   />
 
@@ -150,5 +155,14 @@
     bind:this={_svg}
     viewBox={`0 0 ${width} ${height}`}
   ></svg>
+
+  <div class="caption-text">
+    {#if completed}
+      <div>How did you do?</div>
+    {:else}
+      <div>Fill in the trend to see the actual data. Measured in metric tons of CO2.</div>
+    {/if}
+  </div>
+
 
 </div>
