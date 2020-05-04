@@ -1,13 +1,17 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { scaleLinear } from 'd3-scale';
-  import { area } from 'd3-shape';
-  import { axisBottom, axisLeft } from 'd3-axis';
-  import { mean } from 'd3-array';
-  import { select, mouse } from 'd3-selection';
-  import { drag } from 'd3-drag';
-  import { format } from 'd3-format';
-  import 'd3-transition';
+
+  // import { scaleLinear } from 'd3-scale';
+  // import { area } from 'd3-shape';
+  // import { axisBottom, axisLeft } from 'd3-axis';
+  // import { mean } from 'd3-array';
+  // import { select, mouse } from 'd3-selection';
+  // import { drag } from 'd3-drag';
+  // import { format } from 'd3-format';
+  // import { transition } from 'd3-transition';
+  import * as d3 from 'd3'
+  const { scaleLinear, area, axisBottom, axisLeft, mean, select, mouse, drag, format } = d3;
+
 
   import data from '../data/co2.json';
   import Title from './title.svelte';
