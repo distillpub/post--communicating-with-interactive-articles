@@ -96,7 +96,7 @@
               })
           })
         }).catch(e => {
-          console.log('bse', e)
+          console.log('Birdsong error:', e)
         })
   })
 
