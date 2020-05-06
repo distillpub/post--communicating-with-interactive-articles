@@ -55,13 +55,16 @@
         padding-bottom: 20px;
     }
 
-    /* .explorable {
-        padding-bottom: 20px;
-    } */
-
     img {
         width: 100%;
         border: 1px solid var(--gray-border);
+        /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+        /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+    }
+
+    img:hover {
+        /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+        /* border: 1px solid rgba(1,1,1,0); */
     }
 
     .screenshot {

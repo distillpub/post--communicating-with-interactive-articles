@@ -1,17 +1,18 @@
 <script>
   import { onMount } from 'svelte';
 
-    // import { line } from "d3-shape";
-    // import { scaleLinear } from "d3-scale";
-    // import { max, range } from "d3-array";
-    // import { csv } from "d3-fetch";
+    import { line } from "d3-shape";
+    import { scaleLinear } from "d3-scale";
+    import { max, range } from "d3-array";
+    import { csv } from "d3-fetch";
+    import { select } from "d3-selection";
     import Title from "./title.svelte";
 
     import uk from '../data/uk.json'
     import * as topojson from 'topojson';
 
-    import * as d3 from 'd3';
-    import 'd3-geo';
+    // import * as d3 from 'd3';
+    import { geoAlbers, geoPath } from 'd3-geo';
 
     let _svg;
     let selectedBirdsong;
@@ -25,19 +26,19 @@
     }
 
 
-    const projection = d3.geoAlbers()
+    const projection = geoAlbers()
         .center([0, 55.4])
         .rotate([4.4, 0])
         .parallels([50, 60])
         .scale(1200 * 5)
         .translate([width / 2, height / 2]);
 
-    const path = d3.geoPath()
+    const path = geoPath()
         .projection(projection);
 
 	onMount(() => {
 
-    const svg = d3.select(_svg)
+    const svg = select(_svg)
     .attr("width", width)
         .attr("height", height);
 
@@ -57,7 +58,7 @@
           .attr("d", path)
           .attr("class", "subunit-boundary IRL");
 
-      d3.csv('british-birdsong-dataset/birdsong_metadata.csv')
+      csv('british-birdsong-dataset/birdsong_metadata.csv')
         .then((birdsongs) => {
           console.log('birdsongs', birdsongs)
 
