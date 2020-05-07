@@ -1,23 +1,148 @@
 <script>
 
     import Title from "./title.svelte";
+    import fakeImage1 from "../../static/images/fake-images/fake-image-1.svg";
+    import fakeImage2 from "../../static/images/fake-images/fake-image-2.svg";
+    import fakeImage3 from "../../static/images/fake-images/fake-image-3.svg";
+    import fakeImage4 from "../../static/images/fake-images/fake-image-4.svg";
+    import { onMount, afterUpdate } from 'svelte';
+
+    const fakeImages = [fakeImage1, fakeImage2, fakeImage3, fakeImage4]
+    const numberOfAnnotationsPerImage = 3
+
+    function assignAnnotations() {
+        document.getElementById('annotation-1').onmouseover = () => changeSelectedAnnotation((selectedImage-1)*numberOfAnnotationsPerImage + 1)
+        document.getElementById('annotation-2').onmouseover = () => changeSelectedAnnotation((selectedImage-1)*numberOfAnnotationsPerImage + 2)
+        document.getElementById('annotation-3').onmouseover = () => changeSelectedAnnotation((selectedImage-1)*numberOfAnnotationsPerImage + 3)
+        document.getElementById('annotation-1').onmouseout = () => changeAnnotationDisplay()
+        document.getElementById('annotation-2').onmouseout = () => changeAnnotationDisplay()
+        document.getElementById('annotation-3').onmouseout = () => changeAnnotationDisplay()
+    }
+
+    onMount(() => {
+        assignAnnotations()
+    })
+
+    afterUpdate(() => {
+        assignAnnotations()
+    })
+
+    let selectedImage = 1;
+    let selectedPoint = 0;
+    let annotationDisplay = false
+
+    const noAnnotationMessage = "Hover over an image callout for more information."
+
+    const annotations = [
+        "Straight hair looks painted.",
+        "Abnormal teeth size, position, and quantity.",
+        "Missing earing, and ear fringes are blurry, especially with overlapping hair.",
+        "Asymmetric facial hair.",
+        "Abnormal hairline and hair looks painted.",
+        "Mismatched decision between missing earing and its shadow.",
+        "Unresolved earing with breaks in continuity.",
+        "Smoothed noise and out of place skin tones in skin tones in a shadow.",
+        "Unresolved decision between skin wrinkles and eyelashes.",
+        "Inhuman eye characteristics in second person.",
+        "Unresolved decision between skin wrinkles and eyelashes.",
+        "Inhuman mouth characteristics in third person."
+    ]
+
+    const karras2018 = "ICLR 2018"
+    const karras2019 = "CVPR 2019"
+
+    function changeSelectedAnnotation(i) {
+        annotationDisplay = true
+        selectedPoint = i-1
+    }
+
+    function changeSelectedImage(i) {
+        selectedImage = i;
+    }
+
+    function changeAnnotationDisplay() {
+        annotationDisplay = false
+    }
 
 </script>
 
 <style>
 
-    #placeholder {
-        height: 300px;
-        background-color: lightgray
+    #thumbnail-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0.5em;
+    }
+
+    .thumbnail {
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .thumbnail:hover {
+        opacity: 1.0;
+        cursor: pointer;
+    }
+
+    #grid-wrapper {
+        display: grid;
+        grid-template-columns: 7fr 4fr;
+        grid-column-gap: 0.5rem;
+    }
+
+    .ref {
+		font-size: 0.8em;
+		line-height: 1.5em;
+        color: var(--gray);
+    }
+    
+    #caption-wrapper {
+        display: flex;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .caption {
+        border: 1px solid var(--gray-border);
+        padding: 5px 10px;
+        border-radius: var(--border-radius);
+    }
+
+    /* :global(#background) {
+        fill-opacity:0
+    } */
+
+    :global(#annotation-1, #annotation-2, #annotation-3) {
+        cursor: crosshair
     }
 
 </style>
 
 <div class="interactive-container">
     <Title
-        titleText="[TK]."
-        subtitleText="[TK]."
+        titleText="What gives away a machine-generated image?"
+        subtitleText="Interactivity on illustrations can help people get more context around certain objects that may not have clear and seperable boundaries."
     />
 
-    <div id="placeholder"></div>
+    <div id="grid-wrapper">
+        <div>
+            <div>
+                {@html fakeImages[selectedImage-1]}
+            </div>
+        </div>
+        <div>
+            <div id="thumbnail-wrapper">
+                <div on:click={() => changeSelectedImage(1)}><image class="thumbnail" src="images/fake-images/fake-image-1.png" /></div>
+                <div on:click={() => changeSelectedImage(2)}><image class="thumbnail" src="images/fake-images/fake-image-2.png" /></div>
+                <div on:click={() => changeSelectedImage(3)}><image class="thumbnail" src="images/fake-images/fake-image-3.png" /></div>
+                <div on:click={() => changeSelectedImage(4)}><image class="thumbnail" src="images/fake-images/fake-image-4.png"/></div>
+            </div>
+            <div class="ref">Images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+            <div id="caption-wrapper">
+                <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- <div style="display: hidden"><d-cite key="karras2018progressive,karras2019style"></d-cite></div> -->
