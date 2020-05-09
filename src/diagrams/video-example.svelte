@@ -10,6 +10,7 @@
 
     video {
         width: 100%;
+        border: 1px solid var(--gray-border);
     }
 
     /* .example-title {
