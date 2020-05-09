@@ -4,6 +4,9 @@
   --gray: rgba(0, 0, 0, 0.6);
   --border-radius: 5px;
   --orange: hsl(24, 100%, 50%);
+  --distill-blue: hsl(200, 50%, 25%);
+  --blue: #337699;
+  --green: #3db867;
 }
 
 .subgrid {
@@ -66,9 +69,18 @@ d-figure>figure {
   position: relative;
   left: 11em;
   margin-left: -11em;
-  width: 500px;
+  width: 450px;
   padding-left: 1em;
   margin-bottom: 0em !important;
+}
+
+.interactive-container {
+  background-color: var(--gray-bg);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--border-radius);
+  /* border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); */
+  padding: 1em 1.5em;
+  margin-bottom: 2em;
 }
 
 @media (max-width: 1178px) {
