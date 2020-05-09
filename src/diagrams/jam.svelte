@@ -51,20 +51,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1em;
-        /* border: 1px solid var(--gray-bg); */
         padding-bottom: 20px;
     }
 
     img {
         width: 100%;
         border: 1px solid var(--gray-border);
-        /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
-        /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
-    }
-
-    img:hover {
-        /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
-        /* border: 1px solid rgba(1,1,1,0); */
     }
 
     .screenshot {
@@ -75,10 +67,6 @@
         margin-bottom: 0;
         margin-top: 0;
     }
-
-    /* figcaption {
-        text-align: center;
-    } */
 
 </style>
 
@@ -91,7 +79,7 @@
             <figcaption><a href={explorable.url}>{explorable.title}</a></figcaption>
         </figure>
     {/each}
-    <figcaption style="grid-column-start: 1; grid-column-end: 5; text-align: center">
+    <figcaption>
         Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a>.
     </figcaption>
 </figure>
