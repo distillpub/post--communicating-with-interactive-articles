@@ -19,6 +19,10 @@
         document.getElementById('annotation-3').onmouseout = () => changeAnnotationDisplay()
     }
 
+    let selectedImage = 1;
+    let selectedPoint = 0;
+    let annotationDisplay = false
+
     onMount(() => {
         assignAnnotations()
     })
@@ -27,11 +31,7 @@
         assignAnnotations()
     })
 
-    let selectedImage = 1;
-    let selectedPoint = 0;
-    let annotationDisplay = false
-
-    const noAnnotationMessage = "Hover over an image callout for more information."
+    const noAnnotationMessage = "Hover for more information."
 
     const annotations = [
         "Straight hair looks painted.",
@@ -72,11 +72,17 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 0.5em;
+        /* height: 148px; */
     }
 
     .thumbnail {
         width: 100%;
         opacity: 0.5;
+        border: 1px solid var(--gray-bg);
+    }
+
+    .thumbnail-selected {
+        border-color: black;
     }
 
     .thumbnail:hover {
@@ -90,10 +96,17 @@
         grid-column-gap: 0.5rem;
     }
 
+    #side-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .ref {
 		font-size: 0.8em;
 		line-height: 1.5em;
         color: var(--gray);
+        padding-bottom: 5px;
     }
     
     #caption-wrapper {
@@ -104,9 +117,9 @@
     }
 
     .caption {
-        border: 1px solid var(--gray-border);
+        border-left: 1px solid var(--gray-border);
         padding: 5px 10px;
-        border-radius: var(--border-radius);
+        /* border-radius: var(--border-radius); */
     }
 
     /* :global(#background) {
@@ -131,18 +144,21 @@
                 {@html fakeImages[selectedImage-1]}
             </div>
         </div>
-        <div>
-            <div id="thumbnail-wrapper">
-                <div on:click={() => changeSelectedImage(1)}><image class="thumbnail" src="images/fake-images/fake-image-1.png" /></div>
-                <div on:click={() => changeSelectedImage(2)}><image class="thumbnail" src="images/fake-images/fake-image-2.png" /></div>
-                <div on:click={() => changeSelectedImage(3)}><image class="thumbnail" src="images/fake-images/fake-image-3.png" /></div>
-                <div on:click={() => changeSelectedImage(4)}><image class="thumbnail" src="images/fake-images/fake-image-4.png"/></div>
-            </div>
-            <div class="ref">Images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+        <div id="side-wrapper">
             <div id="caption-wrapper">
                 <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
+            </div>
+            <div>
+                <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+                <div id="thumbnail-wrapper">
+                    <div on:click={() => changeSelectedImage(1)}><image class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" /></div>
+                    <div on:click={() => changeSelectedImage(2)}><image class={"thumbnail"} src="images/fake-images/fake-image-2.png" /></div>
+                    <div on:click={() => changeSelectedImage(3)}><image class={"thumbnail"} src="images/fake-images/fake-image-3.png" /></div>
+                    <div on:click={() => changeSelectedImage(4)}><image class={"thumbnail"} src="images/fake-images/fake-image-4.png" /></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- <div style="display: hidden"><d-cite key="karras2018progressive,karras2019style"></d-cite></div> -->
+<!-- selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} -->
