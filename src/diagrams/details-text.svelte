@@ -51,6 +51,17 @@
         cursor: pointer;
     }
 
+    label {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .slider-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        padding-top: 5px;
+    }
+
 </style>
 
 <div class="interactive-container">
@@ -60,12 +71,12 @@
         subtitleText="Readers come with different backgrounds. What if our content could be tailored to their level of knowledge about certain topics?"
     />
 
-    <div style="display:flex">
-        <div>Brief</div>
+    <div style="display:flex; text-align:center; justify-content: center; padding-bottom: 10px;">
+        <div class="slider-label">Illustrative</div>
         <label>
             <input type=range bind:value={level} min=0 max=2 class="slider">
         </label>
-        <div>Detailed</div>
+        <div class="slider-label">Precise</div>
     </div>
 
     <p>{texts[level]}</p>
