@@ -101,7 +101,7 @@
 <nav class="l-text toc figcaption">
     <h3>Contents</h3>
     <div><a href="#introduction">Introduction</a></div>
-    <div><a href="#interactive-articles">Interactive Articles: Theory and Practice</a></div>
+    <div><a href="#interactive-articles">Interactive Articles: Theory & Practice</a></div>
     <ul>
       <li><a href="#engagement-and-emotion">Engagement and Emotion</a></li>
       <li><a href="#interaction-with-systems">Interacting with Systems</a></li>
