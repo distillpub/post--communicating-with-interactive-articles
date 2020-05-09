@@ -141,22 +141,20 @@
     @media(min-width: 768px) {
         #horse-controls {
             grid-column-start: 7;
-            grid-column-end: 11;
+            /* grid-column-end: 11; */
         }
     }
 
 </style>
 
 <div id="wrapper" class="interactive-container">
-
-    <Title
-        titleText="Does a horse lift all its feet of the ground?"
-        subtitleText="This interactive graphic uses user-controlled animation to illustrate this finding."
-    />
-
     <div id="horse-wrapper">
         <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
         <div id="horse-controls">
+            <Title
+                titleText="Does a horse lift all its feet of the ground?"
+                subtitleText="Control an animation to help illutrate your answer."
+            />
             <div class="caption">
                 In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
              </div>
