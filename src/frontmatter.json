@@ -4,27 +4,27 @@
 	"password": "complex",
 	"authors": [
 		{
-			"author": "Author",
-			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
-			"affiliation": "Affiliation",
-			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+			"author": "Fred Hohman",
+			"authorURL": "https://fredhohman.com",
+			"affiliation": "Georgia Tech",
+			"affiliationURL": "https://www.gatech.edu/"
 		},{
-			"author": "Author",
-			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
-			"affiliation": "Affiliation",
-			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+			"author": "Matthew Conlen",
+			"authorURL": "https://mathisonian.com/",
+			"affiliation": "University of Washington",
+			"affiliationURL": "http://www.washington.edu/"
 		},
 		{
-			"author": "Author",
-			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
-			"affiliation": "Affiliation",
-			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+			"author": "Jeffrey Heer",
+			"authorURL": "https://homes.cs.washington.edu/~jheer/",
+			"affiliation": "University of Washington",
+			"affiliationURL": "http://www.washington.edu/"
 		},
 		{
-			"author": "Author",
-			"authorURL": "https://fredhohman.com/post--communicating-complex-ideas/",
-			"affiliation": "Affiliation",
-			"affiliationURL": "https://fredhohman.com/post--communicating-complex-ideas/"
+			"author": "Duen Horng (Polo) Chau",
+			"authorURL": "https://poloclub.github.io/polochau/",
+			"affiliation": "Georgia Tech",
+			"affiliationURL": "https://www.gatech.edu/"
 		}
 	],
 	"katex": {
