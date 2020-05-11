@@ -54,6 +54,7 @@
     function changeSelectedAnnotation(i) {
         annotationDisplay = true
         selectedPoint = i-1
+        hideFakeImage()
     }
 
     function changeSelectedImage(i) {
@@ -62,6 +63,52 @@
 
     function changeAnnotationDisplay() {
         annotationDisplay = false
+        showFakeImage()
+    }
+
+    function hideFakeImage() {
+        document.getElementById('fake-image').classList.add("hide")
+
+        let selectedPointForSwitch = selectedPoint % 3
+
+        switch (selectedPointForSwitch) {
+            case 0:
+                document.getElementById('mask-2').classList.add("remove")
+                document.getElementById('mask-3').classList.add("remove")
+                document.getElementById('annotation-2').classList.add("remove")
+                document.getElementById('annotation-3').classList.add("remove")
+                break;
+
+            case 1:
+                document.getElementById('mask-1').classList.add("remove")
+                document.getElementById('mask-3').classList.add("remove")
+                document.getElementById('annotation-1').classList.add("remove")
+                document.getElementById('annotation-3').classList.add("remove")
+                break;
+
+            case 2:
+                document.getElementById('mask-1').classList.add("remove")
+                document.getElementById('mask-2').classList.add("remove")
+                document.getElementById('annotation-1').classList.add("remove")
+                document.getElementById('annotation-2').classList.add("remove")
+                break;
+        }
+    }
+
+    function showFakeImage() {
+        // show main background image
+        document.getElementById('fake-image').classList.remove("hide")
+
+        // show annotations
+        document.getElementById('annotation-1').classList.remove("remove")
+        document.getElementById('annotation-2').classList.remove("remove")
+        document.getElementById('annotation-3').classList.remove("remove")
+
+        // show masks
+        document.getElementById('mask-1').classList.remove("remove")
+        document.getElementById('mask-2').classList.remove("remove")
+        document.getElementById('mask-3').classList.remove("remove")
+
     }
 
 </script>
@@ -129,6 +176,18 @@
 
     :global(#annotation-1, #annotation-2, #annotation-3) {
         cursor: crosshair
+    }
+
+    /* :global(#fake-image) {
+        opacity: 0.8;
+    } */
+
+    :global(.hide) {
+        opacity: 0.5;
+    }
+
+    :global(.remove) {
+        opacity: 0;
     }
 
 </style>
