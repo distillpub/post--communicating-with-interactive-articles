@@ -1,30 +1,63 @@
-<svg class="fake-image" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="fake-image-1">
 <rect id="fake-image" width="1024" height="1024" fill="url(#pattern0)"/>
-<g id="annotation-1">
-<g id="border" filter="url(#filter0_d)">
-<circle cx="458" cy="257" r="118" stroke="white" stroke-width="6"/>
+<g id="mask-3">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="764" y="550" width="127" height="127">
+<circle id="background-3" cx="827.5" cy="613.5" r="63.5" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect id="fake-image-3" width="1024" height="1024" fill="url(#pattern1)"/>
 </g>
-<circle id="background" cx="458" cy="257" r="121" fill="white" fill-opacity="0.01"/>
+</g>
+<g id="mask-2">
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="458" y="712" width="103" height="103">
+<circle id="background-2" cx="509.5" cy="763.5" r="51.5" fill="white"/>
+</mask>
+<g mask="url(#mask1)">
+<rect id="fake-image-2" width="1024" height="1024" fill="url(#pattern2)"/>
+</g>
+</g>
+<g id="mask-1">
+<mask id="mask2" mask-type="alpha" maskUnits="userSpaceOnUse" x="337" y="136" width="242" height="242">
+<circle id="background-1" cx="458" cy="257" r="121" fill="white"/>
+</mask>
+<g mask="url(#mask2)">
+<rect id="fake-image-1_2" width="1024" height="1024" fill="url(#pattern3)"/>
+</g>
 </g>
 <g id="annotation-3">
-<g id="border_2" filter="url(#filter1_d)">
+<g id="border" filter="url(#filter0_d)">
 <circle cx="827.5" cy="613.5" r="60.5" stroke="white" stroke-width="6"/>
 </g>
-<circle id="background_2" cx="827.5" cy="613.5" r="63.5" fill="white" fill-opacity="0.01"/>
+<circle id="background" cx="827.5" cy="613.5" r="63.5" fill="white" fill-opacity="0.01"/>
 </g>
 <g id="annotation-2">
-<g id="border_3" filter="url(#filter2_d)">
+<g id="border_2" filter="url(#filter1_d)">
 <circle cx="509.5" cy="763.5" r="48.5" stroke="white" stroke-width="6"/>
 </g>
-<circle id="background_3" cx="509.5" cy="763.5" r="51.5" fill="white" fill-opacity="0.01"/>
+<circle id="background_2" cx="509.5" cy="763.5" r="51.5" fill="white" fill-opacity="0.01"/>
+</g>
+<g id="annotation-1">
+<g id="border_3" filter="url(#filter2_d)">
+<circle cx="458" cy="257" r="118" stroke="white" stroke-width="6"/>
+</g>
+<circle id="background_3" cx="458" cy="257" r="121" fill="white" fill-opacity="0.01"/>
 </g>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0" transform="scale(0.000976562)"/>
 </pattern>
-<filter id="filter0_d" x="329" y="128" width="262" height="262" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.000976562)"/>
+</pattern>
+<pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.000976562)"/>
+</pattern>
+<pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.000976562)"/>
+</pattern>
+<filter id="filter0_d" x="756" y="542" width="147" height="147" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dx="2" dy="2"/>
@@ -33,7 +66,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<filter id="filter1_d" x="756" y="542" width="147" height="147" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_d" x="450" y="704" width="123" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dx="2" dy="2"/>
@@ -42,7 +75,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<filter id="filter2_d" x="450" y="704" width="123" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter2_d" x="329" y="128" width="262" height="262" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dx="2" dy="2"/>
