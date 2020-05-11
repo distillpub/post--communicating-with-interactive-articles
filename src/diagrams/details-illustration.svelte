@@ -77,12 +77,13 @@
 
     .thumbnail {
         width: 100%;
-        opacity: 0.5;
-        border: 1px solid var(--gray-bg);
+        opacity: 0.4;
+        /* border: 1px solid var(--gray-bg); */
     }
 
     .thumbnail-selected {
-        border-color: black;
+        /* border-color: black; */
+        opacity: 0.8;
     }
 
     .thumbnail:hover {
@@ -151,14 +152,12 @@
             <div>
                 <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
                 <div id="thumbnail-wrapper">
-                    <div on:click={() => changeSelectedImage(1)}><image class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" /></div>
-                    <div on:click={() => changeSelectedImage(2)}><image class={"thumbnail"} src="images/fake-images/fake-image-2.png" /></div>
-                    <div on:click={() => changeSelectedImage(3)}><image class={"thumbnail"} src="images/fake-images/fake-image-3.png" /></div>
-                    <div on:click={() => changeSelectedImage(4)}><image class={"thumbnail"} src="images/fake-images/fake-image-4.png" /></div>
+                    <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
+                    <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
+                    <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
+                    <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- <div style="display: hidden"><d-cite key="karras2018progressive,karras2019style"></d-cite></div> -->
-<!-- selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} -->
