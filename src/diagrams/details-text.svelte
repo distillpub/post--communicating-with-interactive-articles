@@ -3,9 +3,9 @@
     import Title from "./title.svelte";
 
     const texts = [
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum explicabo sapiente officia cum, laborum quasi provident, praesentium ab in adipisci suscipit labore optio numquam minima, dignissimos vero omnis. Nobis, debitis!",
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum explicabo sapiente officia cum, laborum quasi provident, praesentium ab in adipisci suscipit labore optio numquam minima, dignissimos vero omnis. Nobis, debitis! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum explicabo sapiente officia cum, laborum quasi provident, praesentium ab in adipisci suscipit labore optio numquam minima, dignissimos vero omnis. Nobis, debitis!"
+        "Neural networks can approximate any function that exists. However, we do not have a guaranteed way to obtain such a neural network for every function.",
+        "For any function, there is guaranteed to be a neural network with a finite number (but perhaps a large number) of neurons so that for every possible input, x, the network outputs a close approximation of the function's value f(x). However, we do not have any guarantees on how to train a neural network to learn the correct mapping parameters.",
+        "From mathematical theory of artificial neural networks, the universal approximation theorem states that a feed-forward network with a single hidden layer containing a finite number (but perhaps a large number) of neurons can approximate continuous functions on compact subsets of R^n, as long as the activation function is bounded and continuous. While this says that a simple neural network can represent a wide variety of interesting functions under appropriate parameters, it does not describe how to algorithmically learn such parameters."
     ]
 
     let level = 0
