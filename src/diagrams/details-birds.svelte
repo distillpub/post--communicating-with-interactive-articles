@@ -135,11 +135,23 @@
     }
 
     .tooltip-text {
-      border: solid 2px black;
-      background: white;
+      border: solid 1px var(--gray-border);
       font-size: 14px;
       line-height: 16px;
       position: absolute;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      border-radius: var(--border-radius);
+
+      /* from distill */
+      background-color: rgba(250, 250, 250, 0.95);
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+
     }
 
     .birdname {
