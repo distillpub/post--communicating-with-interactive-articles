@@ -22,7 +22,14 @@
     const height = 800;
     function getCirclePosition(circle) {
       var elem = circle;
-      return elem.getBoundingClientRect();
+      var parentElement = elem.parentElement;
+      const crect = elem.getBoundingClientRect();
+      const prect = parentElement.getBoundingClientRect();
+
+      return {
+        x: crect.x - prect.x,
+        y: crect.y - prect.y
+      };
     }
 
 
@@ -60,7 +67,6 @@
 
       csv('british-birdsong-dataset/birdsong_metadata.csv')
         .then((birdsongs) => {
-          console.log('birdsongs', birdsongs)
 
           let selectedCircle;
           birdsongs.forEach((birdsong) => {
@@ -104,6 +110,14 @@
 </script>
 
 <style>
+
+    .bird-container {
+      position: relative;
+      height: 800px;
+    }
+    .bird-container svg {
+      position: absolute;
+    }
     svg {
         width: 100%;
         height: 800px;
@@ -125,6 +139,7 @@
       background: white;
       font-size: 14px;
       line-height: 16px;
+      position: absolute;
     }
 
     .birdname {
@@ -150,31 +165,30 @@
         subtitleText="Click on a circle below to call up a field recording of a birdsong."
     />
 
-    <svg
-      bind:this={_svg}
-      viewBox={`0 0 ${width} ${height}`}
-    ></svg>
+    <div class="bird-container">
+      <svg
+        bind:this={_svg}
+        viewBox={`0 0 ${width} ${height}`}
+      ></svg>
 
 
-    {#if selectedBirdsong}
-      <div class="tooltip-text" style={`position: absolute; left: ${selectedPosition.x - 100}px; top: ${window.scrollY + selectedPosition.y + 40}px;`}>
-        <div class="text-container">
-          <div class="birdname">
-            {selectedBirdsong.english_cname}
+      {#if selectedBirdsong}
+        <div class="tooltip-text" style={`left: ${selectedPosition.x - 100}px; top: ${selectedPosition.y + 40}px;`}>
+          <div class="text-container">
+            <div class="birdname">
+              {selectedBirdsong.english_cname}
+            </div>
+            <div>
+              Type: {selectedBirdsong.type}
+            </div>
+            <div>
+              Recording provided by {selectedBirdsong.who_provided_recording}
+            </div>
           </div>
-          <div>
-            Type: {selectedBirdsong.type}
-          </div>
-          <div>
-            Recording provided by {selectedBirdsong.who_provided_recording}
-          </div>
+          <audio controls>
+            <source src={`british-birdsong-dataset/songs/songs/xc${selectedBirdsong.file_id}.flac`} type="audio/flac" >
+          </audio>
         </div>
-         <audio controls>
-          <source src={`british-birdsong-dataset/songs/songs/xc${selectedBirdsong.file_id}.flac`} type="audio/flac" >
-        </audio>
-      </div>
-    {/if}
-
-
-
+      {/if}
+    </div>
 </div>
