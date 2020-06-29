@@ -75,7 +75,7 @@
     },
     {
         "title": "Education",
-        "description": "There are many opportunities to make increased use of computational media for educational purposes. If you are reading this article it is likely that you have tried to program a computer at some point, and know that code is easier to understand when you can execute it and watch the result rather than trying to parse cryptic static symbols. Subjects like mathematics and physics, which are symbolically dense, can also benefit from live, interactive materials to prompt active engagement from the learner. Online learning platforms (MOOCS) and even traditional lectures [rosling2006best] could benefit from this type of information design.",
+        "description": "There are many opportunities to make increased use of computational media for educational purposes. If you are reading this article it is likely that you have tried to program a computer at some point, and know that code is easier to understand when you can execute it and watch the result rather than trying to parse cryptic static symbols. Subjects like mathematics and physics, which are symbolically dense, can also benefit from live, interactive materials to prompt active engagement from the learner. Online learning platforms (MOOCS) and even traditional lectures could benefit from this type of information design.",
         "opportunities": [
             "Reinforce learning by presenting content in multiple forms",
             "More quickly grapple complex topics that require visual or geometric interpretations",
