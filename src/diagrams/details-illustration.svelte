@@ -35,17 +35,17 @@
 
     const annotations = [
         "Straight hair looks painted.",
-        "Abnormal teeth size, position, and quantity.",
+        "Unexpected teeth size, position, and quantity.",
         "Missing earing, and ear fringes are blurry, especially with overlapping hair.",
         "Asymmetric facial hair.",
-        "Abnormal hairline and hair looks painted.",
+        "Unexpected hairline and hair looks painted.",
         "Mismatched decision between missing earing and its shadow.",
         "Unresolved earing with breaks in continuity.",
         "Smoothed noise and out of place skin tones in skin tones in a shadow.",
         "Unresolved decision between skin wrinkles and eyelashes.",
-        "Inhuman eye characteristics in second person.",
+        "Unexpected eye characteristics in second person.",
         "Unresolved decision between skin wrinkles and eyelashes.",
-        "Inhuman mouth characteristics in third person."
+        "Unexpected mouth characteristics in third person."
     ]
 
     const karras2018 = "ICLR 2018"
