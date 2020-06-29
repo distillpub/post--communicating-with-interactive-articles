@@ -19,6 +19,11 @@
     .screenshot {
         border: none;
     }
+
+    figcaption {
+        grid-column: text;
+        margin-bottom: 2em;
+    }
     
 </style>
 
@@ -34,7 +39,7 @@
             <img src="images/parametric/parametric-3.png" alt="" />
         </a>
     </div>
-    <figcaption style="grid-column: text; margin-bottom: 2em;">
+    <figcaption>
         The <a href={parametricURL}>Myth of the Impartial Machine</a> was one of five articles published in the Parametric Press. The article used techniques like animation, data visualizations, explanatory diagrams, margin notes, and interactive simulations to explain how biases occur in machine learning systems.
     </figcaption>
 </figure>

@@ -68,18 +68,24 @@
         margin-top: 0;
     }
 
+    figcaption {
+        grid-column: text;
+    }
+
 </style>
 
-<figure id="jam-wrapper">
-    {#each explorables as explorable}
-        <figure class="explorable">
-            <a class="screenshot" href={explorable.url}>
-                <img src="images/jam/{explorable.image}" alt="" />
-            </a>
-            <figcaption><a href={explorable.url}>{explorable.title}</a></figcaption>
-        </figure>
-    {/each}
-    <figcaption>
-        Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a>.
+<figure>
+    <div id="jam-wrapper">
+        {#each explorables as explorable}
+            <figure class="explorable">
+                <a class="screenshot" href={explorable.url}>
+                    <img src="images/jam/{explorable.image}" alt="" />
+                </a>
+                <figcaption><a href={explorable.url}>{explorable.title}</a></figcaption>
+            </figure>
+        {/each}
+    </div>
+    <figcaption style="margin-bottom: 2em;">
+        Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
     </figcaption>
 </figure>
