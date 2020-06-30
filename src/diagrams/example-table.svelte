@@ -13,6 +13,8 @@
         return bibEntry.entryTags.howpublished === "web";
     });
 
+    console.log('examples length', examples.length);
+
     examples.forEach(citation => {
         // coerice tag string into array of strings
         citation.entryTags.tags = citation.entryTags.tags.split(',')
@@ -47,14 +49,14 @@
         // if sorting by different column, always sort ascending
         if (lastSortKey !== sortKey) {
             sortAsc = true
-            examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? 1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? -1 : 0)); 
+            examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? 1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? -1 : 0));
         } else {
             if (sortAsc) {
                 sortAsc = false
                 examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? -1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? 1 : 0));
             } else {
                 sortAsc = true
-                examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? 1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? -1 : 0)); 
+                examples.sort((a,b) => (a.entryTags[sortKey] > b.entryTags[sortKey]) ? 1 : ((b.entryTags[sortKey] > a.entryTags[sortKey]) ? -1 : 0));
             }
         }
         examples = examples
