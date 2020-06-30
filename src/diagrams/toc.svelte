@@ -109,7 +109,7 @@
       <li><a href="#personalizing-reading">Personalizing Reading</a></li>
       <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
     </ul>
-    <div><a href="#critical-reflections">Critical Reflections</a></div>
     <div><a href="#challenges">Challenges for Authoring Interactives</a></div>
+    <div><a href="#critical-reflections">Critical Reflections</a></div>
     <div><a href="#looking-forward">Looking Forward</a></div>
 </nav>

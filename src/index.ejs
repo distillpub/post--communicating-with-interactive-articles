@@ -257,6 +257,67 @@
       Details-on-demand can also be used as a method for previewing content without committing to another interaction or change of view. For example, when hovering over a hyperlink on Wikipedia, a preview card is shown that can contain an image and brief description; this gives readers a quick preview of the topic without clicking through and loading a new page <d-cite key="wikipedia2018preview"></d-cite>. This idea is also not new: work from human-computer interaction explored fluid links <d-cite key="zellweger1998fluid, zellweger2002reading"></d-cite> within hypertext that present information about a particular topic in a location that does not obscure the source material. Both older and modern preview techniques use perceptually-based animation and simple tooltips to ensure their interactions are natural and lightweight feeling to readers <d-cite key="zellweger1998fluid"></d-cite>.
     </p>
 
+    <h2 id="challenges">Challenges for Authoring Interactives</h2>
+    
+    <p>
+      If interactive articles provide clear benefits over other mediums for communicating complex ideas, then why aren't
+      they more prevalent? Unfortunately, creating interactive articles today is quite challenging. A successful interactive
+      article requires combining diverse editorial, design, and programming skills. Furthermore, authoring interactive
+      articles often takes significantly more time and effort than a static article, blog post, or even academic publication
+      <d-footnote>As a proxy, see the number of commits on an <a
+          href="https://github.com/distillpub/post--building-blocks">example Distill article</a>.</d-footnote>. Because of
+      these practical challenges, many interactive articles are created by a collective team consisting of multiple members
+      with specialized skills, for example, data analysts, scripters, editors, journalists, graphic designers, and
+      typesetters, as outlined in <d-cite key="lee2015more"></d-cite>.
+    </p>
+    
+    <p>
+      Regarding technology, relatively few tools exist that support the development of such articles. Most interactive
+      articles are created using general purpose web-development frameworks which, while expressive, can be difficult to
+      work with for authors who are not also web developers. Even for expert web developers, current tools offer lower
+      levels of abstraction than may be desired to prototype and iterate on designs. For example, the decision to use a
+      stepper or a scroller format for an interactive story will have cascading technical consequences; authoring tools
+      should better support navigation through the design space of interactive articles at a higher level of abstraction.
+    </p>
+    
+    <p>
+      Publishing to the web also brings its own challenges: while interactive articles are accessible to anyone with a
+      browser, they are burdened by rapidly changing web technologies that could break interactive content after just a few
+      years. For this reason, easy and accessible interactive article archival is important for authors to know their work
+      can be confidently preserved indefinitely to support continued readership <d-footnote>This challenge has been <a
+          href="https://twitter.com/redblobgames/status/1168520452634865665">pointed out</a> by the community.</d-footnote>.
+      Authoring interactive articles also requires designing for a diverse set of devices, for example, ensuring bespoke
+      content can be adapted for desktop and mobile screen sizes with varying connection speeds, since accessing interactive
+      content demands more bandwidth.
+    </p>
+    
+    <p>
+      Beyond technical considerations, making interactive articles accessible to people with disabilities is an open
+      challenge. The dynamic medium exacerbates this problem compared to traditional static writing, especially when
+      articles combine multiple formats like audio, video, and text. Therefore, ensuring interactive articles are accessible
+      to everyone will require alternative modes of presenting content (e.g. text-to-speech, video captioning, data
+      physicalization, data sonification) and careful interaction design.
+    </p>
+    
+    <p>
+      It is also important to remember that not everything needs to be interactive. Authors should consider the audience and
+      context of their work when deciding if use of interactivity would be valuable. In the worst case, interactivity may be
+      distracting to readers or the functionality may go unused, the author having wasted their time implementing it.
+      However, even in a domain where the potential communication improvement is increcremental <d-footnote>In reality,
+        multimedia studies show large effect sizes for improvement of transfer learning in many cases, see Chapter 12 of
+        <d-cite key="mayer2002multimedia"></d-cite>.</d-footnote>, at scale (e.g., delivering via the web), interactive
+      articles can still <a href="https://twitter.com/michael_nielsen/status/1031256363458916352?lang=en">have impact</a>
+      <d-cite key="nielsen2015neural"></d-cite>.
+    </p>
+    
+    <p>
+      Besides authoring, there are other non-technical limitations for publishing interactive articles. For example, in
+      non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content:
+      why should a researcher spend time on an "extra" interactive exposition of their work when they could instead publish
+      more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s
+      impact, legitimizing interactive artifacts requires buy-in from a collective of communities.
+    </p>
+    
     <h2 id="critical-reflections">Critical Reflections</h2>
 
     <p>
@@ -297,32 +358,6 @@
 
     <p>
       We also wanted to take the opportunity as an independent publication to serve as a concrete example for others to follow, to represent a set of best practices for publishing interactive content. To that end, we made available all of the software that runs the site, including reusable components, custom data visualizations, and the publishing engine itself.
-    </p>
-
-    <h2 id="challenges">Challenges for Authoring Interactives</h2>
-
-    <p>
-      If interactive articles provide clear benefits over other mediums for communicating complex ideas, then why aren't they more prevalent? Unfortunately, creating interactive articles today is quite challenging. A successful interactive article requires combining diverse editorial, design, and programming skills. Furthermore, authoring interactive articles often takes significantly more time and effort than a static article, blog post, or even academic publication <d-footnote>As a proxy, see the number of commits on an <a href="https://github.com/distillpub/post--building-blocks">example Distill article</a>.</d-footnote>. Because of these practical challenges, many interactive articles are created by a collective team consisting of multiple members with specialized skills, for example, data analysts, scripters, editors, journalists, graphic designers, and typesetters, as outlined in <d-cite key="lee2015more"></d-cite>.
-    </p>
-
-    <p>
-      Regarding technology, relatively few tools exist that support the development of such articles. Most interactive articles are created using general purpose web-development frameworks which, while expressive, can be difficult to work with for authors who are not also web developers. Even for expert web developers, current tools offer lower levels of abstraction than may be desired to prototype and iterate on designs. For example, the decision to use a stepper or a scroller format for an interactive story will have cascading technical consequences; authoring tools should better support navigation through the design space of interactive articles at a higher level of abstraction.
-    </p>
-
-    <p>
-      Publishing to the web also brings its own challenges: while interactive articles are accessible to anyone with a browser, they are burdened by rapidly changing web technologies that could break interactive content after just a few years. For this reason, easy and accessible interactive article archival is important for authors to know their work can be confidently preserved indefinitely to support continued readership <d-footnote>This challenge has been <a href="https://twitter.com/redblobgames/status/1168520452634865665">pointed out</a> by the community.</d-footnote>. Authoring interactive articles also requires designing for a diverse set of devices, for example, ensuring bespoke content can be adapted for desktop and mobile screen sizes with varying connection speeds, since accessing interactive content demands more bandwidth.
-    </p>
-
-    <p>
-      Beyond technical considerations, making interactive articles accessible to people with disabilities is an open challenge. The dynamic medium exacerbates this problem compared to traditional static writing, especially when articles combine multiple formats like audio, video, and text. Therefore, ensuring interactive articles are accessible to everyone will require alternative modes of presenting content (e.g. text-to-speech, video captioning, data physicalization, data sonification) and careful interaction design.
-    </p>
-
-    <p>
-      It is also important to remember that not everything needs to be interactive. Authors should consider the audience and context of their work when deciding if use of interactivity would be valuable. In the worst case, interactivity may be distracting to readers or the functionality may go unused, the author having wasted their time implementing it. However, even in a domain where the potential communication improvement is increcremental <d-footnote>In reality, multimedia studies show large effect sizes for improvement of transfer learning in many cases, see Chapter 12 of <d-cite key="mayer2002multimedia"></d-cite>.</d-footnote>, at scale (e.g., delivering via the web), interactive articles can still <a href="https://twitter.com/michael_nielsen/status/1031256363458916352?lang=en">have impact</a> <d-cite key="nielsen2015neural"></d-cite>.
-    </p>
-
-    <p>
-      Besides authoring, there are other non-technical limitations for publishing interactive articles. For example, in non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content: why should a researcher spend time on an "extra" interactive exposition of their work when they could instead publish more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s impact, legitimizing interactive artifacts requires buy-in from a collective of communities.
     </p>
 
     <h2 id="looking-forward">Looking Forward</h2>
