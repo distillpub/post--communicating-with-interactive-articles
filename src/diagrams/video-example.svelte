@@ -29,11 +29,13 @@
 
 </style>
 
-<figure>
+<figure id={example.bibtex}>
     <video controls>
         <source src={example.video} type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
     <!-- <div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
-    <figcaption>In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}</figcaption>
+    <figcaption>
+        <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
+    </figcaption>
 </figure>

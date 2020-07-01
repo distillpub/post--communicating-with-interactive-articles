@@ -115,6 +115,10 @@
 
 <style>
 
+    #wrapper {
+        grid-column: text;
+    }
+
     #thumbnail-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -192,31 +196,34 @@
 
 </style>
 
-<div class="interactive-container">
-    <Title
-        titleText="What gives away a machine-generated image?"
-        subtitleText="Interactivity on illustrations can help people get more context around certain objects that may not have clear and seperable boundaries."
-    />
+<figure class="subgrid">
+    <div id="wrapper" class="interactive-container">
+        <Title
+            titleText="What gives away a machine-generated image?"
+            subtitleText="Interactivity on illustrations can help people get more context around certain objects that may not have clear and seperable boundaries."
+        />
 
-    <div id="grid-wrapper">
-        <div>
+        <div id="grid-wrapper">
             <div>
-                {@html fakeImages[selectedImage-1]}
+                <div>
+                    {@html fakeImages[selectedImage-1]}
+                </div>
             </div>
-        </div>
-        <div id="side-wrapper">
-            <div id="caption-wrapper">
-                <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
-            </div>
-            <div>
-                <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
-                <div id="thumbnail-wrapper">
-                    <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
+            <div id="side-wrapper">
+                <div id="caption-wrapper">
+                    <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
+                </div>
+                <div>
+                    <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+                    <div id="thumbnail-wrapper">
+                        <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: <span class="tk">figcaption</span>.</figcaption>
+</figure>

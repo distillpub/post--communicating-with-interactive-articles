@@ -1,7 +1,8 @@
 <style>
   #research-x-practice-table {
     overflow-x: scroll;
-    width: 100%;
+    /* width: 100%; */
+    grid-column: text;
   }
 
   #research-x-practice-table th {
@@ -31,29 +32,35 @@
   } */
 </style>
 
-<table id="research-x-practice-table">
-  <thead>
-    <tr>
-      <th />
-      <th scope="col">Research</th>
-      <th scope="col">Practice</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Authoring</th>
-      <td>Next generation tooling</td>
-      <td>Evaluate in production setting, identify bugs</td>
-    </tr>
-    <tr>
-      <th scope="row">Designing</th>
-      <td>Developing theory, conducting laboratory studies</td>
-      <td>Evaluate specific design decisions in the wild, understand constraints</td>
-    </tr>
-    <tr>
-      <th scope="row">Publishing</th>
-      <td>Tools, guidelines, and best practices</td>
-      <td>Concrete examples for others to follow, available source code, accessible archives, DOI, branding</td>
-    </tr>
-  </tbody>
-</table>
+<figure class="subgrid">
+  <table id="research-x-practice-table">
+    <thead>
+      <tr>
+        <th />
+        <th scope="col">Research</th>
+        <th scope="col">Practice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Authoring</th>
+        <td>Next generation tooling</td>
+        <td>Evaluate in production setting, identify bugs</td>
+      </tr>
+      <tr>
+        <th scope="row">Designing</th>
+        <td>Developing theory, conducting laboratory studies</td>
+        <td>Evaluate specific design decisions in the wild, understand constraints</td>
+      </tr>
+      <tr>
+        <th scope="row">Publishing</th>
+        <td>Tools, guidelines, and best practices</td>
+        <td>Concrete examples for others to follow, available source code, accessible archives, DOI, branding</td>
+      </tr>
+    </tbody>
+  </table>
+
+    <figcaption style="grid-column: text;">
+        <a class="table-number" href="#research-x-practice">1</a>: <span>figcaption.</span>
+    </figcaption>
+</figure>

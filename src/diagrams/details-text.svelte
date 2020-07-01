@@ -14,6 +14,10 @@
 
 <style>
 
+    #wrapper {
+        grid-column: text;
+    }
+
     .slider {
         -webkit-appearance: none;
         appearance: none;
@@ -64,21 +68,24 @@
 
 </style>
 
-<div class="interactive-container">
+<figure class="subgrid">
+    <div id="wrapper" class="interactive-container">
 
-    <Title
-        titleText="The Universal Approximation Theorem in 3 levels of detail."
-        subtitleText="Readers come with different backgrounds. What if our content could be tailored to their level of knowledge about certain topics?"
-    />
+        <Title
+            titleText="The Universal Approximation Theorem in 3 levels of detail."
+            subtitleText="Readers come with different backgrounds. What if our content could be tailored to their level of knowledge about certain topics?"
+        />
 
-    <div style="display:flex; text-align:center; justify-content: center; padding-bottom: 10px;">
-        <div class="slider-label">Illustrative</div>
-        <label>
-            <input type=range bind:value={level} min=0 max=2 class="slider">
-        </label>
-        <div class="slider-label">Precise</div>
+        <div style="display:flex; text-align:center; justify-content: center; padding-bottom: 10px;">
+            <div class="slider-label">Illustrative</div>
+            <label>
+                <input type=range bind:value={level} min=0 max=2 class="slider">
+            </label>
+            <div class="slider-label">Precise</div>
+        </div>
+
+        <p>{texts[level]}</p>
+
     </div>
-
-    <p>{texts[level]}</p>
-
-</div>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-text">8</a>: <span class="tk">figcaption</span>.</figcaption>
+</figure>
