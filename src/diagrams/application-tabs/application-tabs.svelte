@@ -24,7 +24,6 @@
 			<Application applicationData={application} />
 		</TabPanel>
 	{/each}
-
 </Tabs>
 
 <div id="hidden-cites">

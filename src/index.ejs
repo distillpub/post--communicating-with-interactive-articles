@@ -55,7 +55,7 @@
       Besides these groups, others such as academics, game developers, web developers, and designers blend editorial, design, and programming skills to create and publish explorable explanations <d-cite key="victor2011explorable"></d-cite>, interactive fiction <d-cite key="aarseth1997cybertext"></d-cite>, interactive non-fiction <d-cite key="sizemore2011interactive"></d-cite>, active essays <d-cite key="yamamiya2009active"></d-cite>, and interactive games <d-cite key="bogost2012newsgames"></d-cite>. While these all slightly differ in their technical approach and target audience, they all largely leverage the interactivity of the modern web. 
     </p>
 
-    <div id="applications-tab" class="l-page-outset"></div>
+    <d-figure id="applications-tab" class="subgrid"></d-figure>
 
     <p>
       Today there is a growing excitement around the use of interactive articles for communication since they offer unique capabilities to help people learn and engage with complex ideas that traditional media lacks. To help people leverage this new medium, we breakdown this collection of capabilities pulling from diverse fields of research, including human-computer interaction, information visualization, multimedia learning, education, and data journalism, and present accompanying atomic examples that support each capability <d-footnote>Many of these examples are accessible via the web.</d-footnote>. After describing the affordances of interactive articles, we provide critical reflections from our own experience with open-source, interactive publishing at scale.
@@ -83,7 +83,7 @@
       Animations can also be used to improve engagement <d-cite key="amini2018hooked"></d-cite>. While there is debate amongst researchers if animations in general are able to more effectively convey the same information compared to a well designed static graphic <d-cite key="tversky2002animation"></d-cite>, animation has been shown to be effective specifically for communicating state transitions <d-cite key="heer2007animated"></d-cite>, uncertainty <d-cite key="hullman2015hypothetical"></d-cite>, causality <d-cite key="michotte1946perception"></d-cite>, and constructing narratives <d-cite key="thomas1995illusion"></d-cite>. A classic example of this is Muybridge’s motion study <d-cite key="muybridge1882horse"></d-cite>: while the series of still images may be more effective for answering specific questions like, "Does a horse lift all four of its feet off the ground when it runs?" watching the animation in slow motion gives the viewer a much more visceral sense of how it runs. A more modern example can be found in OpenAI’s reporting on their hide-and-seek agents <d-cite key="baker2019emergent"></d-cite>. The animations here instantly give the viewer a sense of how the agents are operating in their environment.
     </p>
 
-    <div id="horse" class="l-page"></div>
+    <d-figure id="horse" class="subgrid"></d-figure>
 
     <p>
       Passively, animation can be used to add drama to a graphic displaying important information, but which readers may otherwise find dry. Scientific data which is inherently time varying may be shown using an animation to connect viewers more closely with the original data, as compared to seeing an abstracted static view. For example, Ed Hawkins designed "Climate Spirals," which shows the average global temperature change over time <d-cite key="hawkins2016climate"></d-cite>. This presentation of the data resonated with a large public audience, so much so that it was displayed at the opening ceremony at the 2016 Rio Olympics. In fact, many other climate change visualizations of this same dataset use animation to build suspense and highlight the recent spike in global temperatures <d-cite key="roston2015whats, randall2018earths, nasa2020global, popovich2017its"></d-cite>.
@@ -131,7 +131,7 @@
       Beyond reporting statistics, interactive articles are extremely powerful when the studied systems can be modeled or simulated in real-time with interactive parameters without setup, e.g., in-browser sandboxes. This is a standout design pattern within interactive articles, and many examples exist ranging in complexity. "How You Will Die" visually simulates the average life expectancy of different groups of people, where a reader can choose the gender, race, and age of a person <d-cite key="yau2016how"></d-cite>. "On Particle Physics" allows readers to experiment with accelerating different particles through electric and magnetic fields to build intuition behind electromagnetism foundations such as the Lorentz force and Maxwell’s equations—the experiments backing these simulations cannot be done without multi-million dollar machinery <d-cite key="bianchi2019on"></d-cite>. "Should Prison Sentences Be Based On Crimes That Haven’t Been Committed Yet?" shows the outcome of calculating risk assessments for recidivism where readers adjust the thresholds for determining who gets parole <d-cite key="barry2015should"></d-cite>.
     </p>
 
-    <div id="simulation-vis"></div>
+    <d-figure id="simulation-vis" class="subgrid"></d-figure>
 
     <p>
       <d-figure class="video-d-figure" id="barron2018designing"></d-figure>
@@ -167,7 +167,7 @@
       While these prompts may take the form of text entry or other standard input widgets, one of the most prominent examples of this technique used in practice comes from the New York Times "You Draw It" visualizations <d-cite key="aisch2015you, katz2017you, buchanan2017you"></d-cite>. In these visualizations, readers are prompted to complete a trendline on a chart, causing them to generate an explanation based on their current beliefs for why they think the trend may move in a certain direction. Only after readers make their prediction are they shown the actual data. Kim et al. showed that using visualizations as a prompt is an effective way to encourage readers to engage in self explanation and improve their recall of the information <d-cite key="kim2017explaining"></d-cite>.
     </p>
 
-    <div id="you-draw-it"></div>
+    <d-figure id="you-draw-it" class="subgrid"></d-figure>
 
     <div>
       <p>
@@ -225,7 +225,7 @@
       Details-on-demand is core to information visualization, and concludes the seminal Visual Information-Seeking Mantra: "Overview first, zoom and filter, then details-on-demand" <d-cite key="shneiderman1996eyes"></d-cite>. Successful visualizations not only provide the base representations and techniques for these three steps, but also bridge the gaps between them <d-cite key="keim2002information"></d-cite>. In practice, the solidified standard for details-on-demand in data visualization manifests as a tooltip, typically summoned on a cursor mouseover, that presents extra information in an overlay. Given that datasets often contain multiple attributes, tooltips can show the other attributes that are not currently encoded visually <d-cite key="ashkenas2014how"></d-cite>.
     </p>
 
-    <div id="details-vis"></div>
+    <d-figure id="details-vis" class="subgrid"></d-figure>
     
     <h4>Illustration</h4>
 
@@ -233,7 +233,7 @@
       Details-on-demand is also used in illustrations, interactive textbooks, and museum exhibits, where highlighted segments of a figure can be selected to display additional information about the particular segment. For example, in "How does the eye work?" readers can select segments of an anatomical diagram of the human eye to learn more about specific regions, e.g., rods and cones <d-cite key="ala2018how"></d-cite>. Another example is "Earth Primer," an interactive textbook on tablets that allows readers to inspect the Earth’s interior, surface, and biomes <d-cite key="gingold2015earth"></d-cite>. Each illustration contains segments the reader can tap to learn and explore in depth.
     </p>
 
-    <div id="details-illustration"></div>
+    <d-figure id="details-illustration" class="subgrid"></d-figure>
 
     <h4>Mathematical Notation</h4>
 
@@ -241,7 +241,7 @@
       Formal mathematics, a historically static medium, can benefit from details-on-demand, for example, to elucidate a reader with intuition about a particular algebraic term or present a geometric interpretation of an equation. For example, in "Colorized Math Equations," the Fourier transform equation is presented in both mathematical notation and plain text, but the two are linked through a mouseover that highlights which term in the equation corresponds to which word in the text <d-cite key="azad2017colorized"></d-cite>. Another example that visualizes mathematics and computation is the "Image Kernels" tutorial where a reader can mouseover a real image and observe the effect and exact computation for applying a filter over the image <d-cite key="powell2015image"></d-cite>. This operation, called a convolution, is at the core of convolutional neural network architectures that have recently driven machine learning progress. Instead of writing down long arithmetic sums, the interface allows readers to quickly see the summation operation’s terms and output.
     </p>
 
-    <div id="details-math"></div>
+    <d-figure id="details-math" class="subgrid"></d-figure>
 
     <h4>Text</h4>
 
@@ -249,7 +249,7 @@
       While not as pervasive, text documents and other longform textual mediums have also experimented with letting readers choose a variable level of detail to read. This idea was explored as early as the 1960s in StretchText, a hypertext feature that allows a reader to reveal a more descriptive or exhaustive explanation of something by expanding or contracting the content in place <d-cite key="nelson1967stretchtext"></d-cite>. The idea has resurfaced in more recent examples, including "On Variable Level-of-detail Documents" <d-cite key="beecroft2016on"></d-cite>, a PhD thesis turned interactive article <d-cite key="petricek2017coeffects"></d-cite>, and the call for proposals of the Parametric Press <d-cite key="cfp2018parametric"></d-cite>. One challenge that has limited this technique’s adoption is the burden it places on authors to write multiple versions of their content. For other examples of details-on-demand for text, such as application in code documentation, see this small collection of examples <d-cite key="basques2018ui"></d-cite>.
     </p>
 
-    <div id="details-text"></div>
+    <d-figure id="details-text" class="subgrid"></d-figure>
 
     <h4>Previewing Content</h4>
 
@@ -293,7 +293,7 @@
       To explore these ideas further, two of this work's authors created the Parametric Press <d-cite key="parametric"></d-cite>: an annually published digital magazine that showcases the expository power that interactive dynamic media can have when effectively combined. In late 2018, we invited writers to respond to a call for proposals for our first issue focusing on exploring scientific and technological phenomena that stand to shape society at large. We sought to cover topics that would benefit from using the interactive or otherwise dynamic capabilities of the web. Given the challenges of authoring interactive articles, we did not ask authors to submit fully developed pieces. Instead, we accepted idea submissions, and collaborated with the authors over the course of four months to develop the issue, offering technical, design, and editorial assistance collectively to the authors that lacked experience in one of these areas. For example, we helped a writer implement visualizations, a student frame a cohesive narrative, and a scientist recap history and dissmentiate to the public.
     </p>
 
-    <div id="parametric" class="l-page-outset"></div>
+    <d-figure id="parametric" class="subgrid"></d-figure>
 
     <p>
       We see the Parametric Press as a crucial connection between the often distinct worlds of research and practice. The project serves as a platform through which to operationalize the theories put forth by education, journalism, and HCI researchers. Tools like Idyll which are designed in a research setting need to be validated and tested to ensure that they are of practical use; the Parametric Press facilitates this by allowing us to study its use in a real-world setting, by authors who are personally motivated to complete their task of constructing a high-quality interactive article, and only have secondary concerns and care about the tooling being used, if at all.
@@ -303,7 +303,7 @@
       Through the Parametric Press, we saw the many challenges of authoring, designing, and publishing first hand, dually as researchers and practitioners.
     </p>
 
-    <div id="research-x-practice" style="width: 100%"></div>
+    <d-figure id="research-x-practice" class="subgrid"></d-figure>
 
     <p>
       As researchers we can treat the project as a series of case studies, where we were observers of the motivation and workflows which were used to craft the stories, from their initial conception to their publication. Motivation to contribute to the project varied by author. Where some authors had personal investment in an issue or dataset they wanted to highlight and raise awareness to broadly, others were drawn towards the medium, recognizing its potential but not having the expterise or support to communicate interactively. We also observed how research software packages like Apparatus <d-cite key="apparatus"></d-cite>, Idyll <d-cite key="conlen2018idyll"></d-cite>, and D3 <d-cite key="bostock2011d3"></d-cite> fit into the production of interactive articles, and how authors must combine these disparate tools to create an engaging experience for readers. In one article, "On Particle Physics," an author combined two tools in a way that allowed him to create and embed dynamic graphics directly into his article without writing any code beyond basic markup. The original creator of Apparatus had not considered this type of integration before, and upon seeing the finished article <a href="https://twitter.com/qualmist/status/1128157840672051200?s=20">commented</a>, "That's fantastic! Reading that article, I had no idea that Apparatus was used. This is a very exciting proof-of-concept for unconventional explorable-explanation workflows."
@@ -331,7 +331,7 @@
       A diverse community has emerged to meet these challenges, exploring and experimenting with what interactive articles could be. The <a href="https://explorabl.es/">Explorable Explanations community</a> is a "disorganized ‘movement’ of artists, coders & educators who want to reunite play and learning." Their online hub contains 170+ interactive articles on topics ranging from art, natural sciences, social sciences, journalism, and civics. The curious can also find tools, tutorials, and meta-discussion around learning, play, and representations. Explorables also hosted a mixed in-person and <a href="https://explorabl.es/jam/">online Jam</a>: a community-based sprint focused on creating new explorable explanations.
     </p>
 
-    <div id="jam" class="l-page-outset"></div>
+    <d-figure id="jam" class="subgrid"></d-figure>
 
     <p>
       Many interactive articles are self-published due to a lack of platforms that support interactive publishing. Creating more outlets that allow authors to publish interactive content will help promote their development and legitimization. The few existing examples, including newer journals such as Distill, academic workshops like VISxAI <d-cite key="visxai"></d-cite>, open-source publications like Parametric Press <d-cite key="conlen2019launching"></d-cite>, and live programming notebooks like Observable <d-cite key="observable"></d-cite> help, but currently target a narrow group of authors, namely those who have programming skills. Such platforms should also provide clear paths to submission, quality and editorial standards, and authoring guidelines. For example, news outlets have clear instructions for pitching written pieces, yet this is under-developed for interactive articles. Lastly, there is little funding available to support the development of interactive articles and the tools that support them. Researchers do not receive grants to communicate their work, and practitioners outside of the largest news outlets are not able to afford the time and implementation investment. Providing more funding for enabling interactive articles incentivizes their creation and can contribute to a culture where readers expect digital communications to better utilize the dynamic medium.
@@ -349,9 +349,7 @@
       We believe in the power and untapped potential of interactive articles for sparking reader's desire to learn and making complex ideas accessible and understandable to many people.
     </p>
 
-    <figcaption style="margin: 0 auto">A sortable list of the published interactive articles we discussed in our article.</figcaption>
-
-    <div id="example-table" class="l-page-outset"></div>
+    <d-figure id="example-table" class="subgrid"></d-figure>
 
     <!-- <d-figure id="svelte-example-dfigure">
       <figure>

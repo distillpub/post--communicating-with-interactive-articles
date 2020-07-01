@@ -75,6 +75,7 @@
         /* border-radius: var(--border-radius); */
         margin-bottom: 1em;
         /* padding: 1.5em; */
+        grid-column: page;
     }
 
     table {
@@ -132,29 +133,35 @@
     }
 </style>
 
-<div id="example-table-wrapper">
-    <table id="research-x-practice-table">
-        <thead>
-            <tr>
-            <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication (or author) <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
-            <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
-            </tr>
-        </thead>
-        <tbody>
-            {#each examples as example}
+<figure class="subgrid">
+    <div id="example-table-wrapper">
+        <table id="research-x-practice-table">
+            <thead>
                 <tr>
-                    <td style="text-transform: capitalize">
-                        <a href={example.entryTags.url}>{example.entryTags.title}</a>
-                        <i class="material-icons link-icon">arrow_forward</i>
-                        <!-- <d-cite key={example.citationKey}></d-cite> -->
-                    </td>
-                    <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
-                    <td>{example.entryTags.tags}</td>
-                    <td>{example.entryTags.year}</td>
+                <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
+                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication (or author) <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
+                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
+                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
                 </tr>
-            {/each}
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                {#each examples as example}
+                    <tr>
+                        <td style="text-transform: capitalize">
+                            <a href={example.entryTags.url}>{example.entryTags.title}</a>
+                            <i class="material-icons link-icon">arrow_forward</i>
+                            <!-- <d-cite key={example.citationKey}></d-cite> -->
+                        </td>
+                        <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
+                        <td>{example.entryTags.tags}</td>
+                        <td>{example.entryTags.year}</td>
+                    </tr>
+                {/each}
+            </tbody>
+        </table>
+    </div>
+
+    <figcaption style="grid-column: text;">
+        <a class="table-number" href="#jam">2</a>: A sortable list of the published interactive articles we discussed in our article.
+    </figcaption>
+</figure>

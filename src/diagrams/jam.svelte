@@ -52,6 +52,7 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1em;
         padding-bottom: 20px;
+        grid-column: page;
     }
 
     img {
@@ -74,7 +75,7 @@
 
 </style>
 
-<figure>
+<figure class="subgrid">
     <div id="jam-wrapper">
         {#each explorables as explorable}
             <figure class="explorable">
@@ -85,7 +86,7 @@
             </figure>
         {/each}
     </div>
-    <figcaption style="margin-bottom: 2em;">
-        Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
+    <figcaption style="grid-column: text;">
+        <a class="figure-number" href="#jam">10</a>: Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
     </figcaption>
 </figure>
