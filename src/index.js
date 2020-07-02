@@ -17,6 +17,7 @@ import SimulationVis from "./diagrams/simulation-vis.svelte"
 import YouDrawIt from "./diagrams/you-draw-it.svelte"
 import Jam from "./diagrams/jam.svelte"
 import Parametric from "./diagrams/parametric.svelte"
+import Teaser from "./diagrams/teaser.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 // const exampleTag = document.getElementById("svelte-example-dfigure");
@@ -76,6 +77,10 @@ const jam = new Jam({
 
 const parametric = new Parametric({
 	target: document.getElementById('parametric')
+});
+
+const teaser = new Teaser({
+	target: document.getElementById('teaser')
 });
 
 // video examples
