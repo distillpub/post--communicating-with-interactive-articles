@@ -6,6 +6,7 @@
 
 <style>
     #parametric-wrapper {
+        grid-column: page;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1em;
@@ -22,7 +23,7 @@
     
 </style>
 
-<figure>
+<figure class="subgrid">
     <div id="parametric-wrapper">
         <a class="screenshot" href={parametricURL}>
             <img src="images/parametric/parametric-1.png" alt="" />
@@ -34,7 +35,7 @@
             <img src="images/parametric/parametric-3.png" alt="" />
         </a>
     </div>
-    <figcaption style="grid-column: text; margin-bottom: 2em;">
-        The <a href={parametricURL}>Myth of the Impartial Machine</a> was one of five articles published in the Parametric Press. The article used techniques like animation, data visualizations, explanatory diagrams, margin notes, and interactive simulations to explain how biases occur in machine learning systems.
+    <figcaption style="grid-column: text;">
+        <a class="figure-number" href="#parametric">9</a>: The <a href={parametricURL}>Myth of the Impartial Machine</a> was one of five articles published in the Parametric Press. The article used techniques like animation, data visualizations, explanatory diagrams, margin notes, and interactive simulations to explain how biases occur in machine learning systems.
     </figcaption>
 </figure>

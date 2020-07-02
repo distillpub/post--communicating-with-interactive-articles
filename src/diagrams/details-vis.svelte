@@ -1,56 +1,214 @@
 <script>
+  import { onMount } from 'svelte';
 
     import { line } from "d3-shape";
     import { scaleLinear } from "d3-scale";
     import { max, range } from "d3-array";
     import { csv } from "d3-fetch";
+    import { select } from "d3-selection";
     import Title from "./title.svelte";
 
-    const data = range(25).map(function(d, i) { return {"x": i, "y": Math.random() } })
+    import uk from '../data/uk.json'
+    import * as topojson from 'topojson';
 
-    const width = 400;
-    const height = 400;
+    // import * as d3 from 'd3';
+    import { geoAlbers, geoPath } from 'd3-geo';
 
-    let x = scaleLinear()
-        .domain([0, data.length-1])
-        .range([0, width]);
+    let _svg;
+    let selectedBirdsong;
+    let selectedPosition;
 
-    let y = scaleLinear()
-        .domain([0, 1])
-        .range([height, 0]);
+    const width = 1800;
+    const height = 800;
+    function getCirclePosition(circle) {
+      var elem = circle;
+      var parentElement = elem.parentElement;
+      const crect = elem.getBoundingClientRect();
+      const prect = parentElement.getBoundingClientRect();
 
-    let lineChart = line()
-        .x(function(d) { return x(d.x); })
-        .y(function(d) { return y(d.y); });
+      return {
+        x: crect.x - prect.x,
+        y: crect.y - prect.y
+      };
+    }
 
-    let linePath = lineChart(data)
+
+    const projection = geoAlbers()
+        .center([0, 55.4])
+        .rotate([4.4, 0])
+        .parallels([50, 60])
+        .scale(1200 * 5)
+        .translate([width / 2, height / 2]);
+
+    const path = geoPath()
+        .projection(projection);
+
+	onMount(() => {
+
+    const svg = select(_svg)
+    .attr("width", width)
+        .attr("height", height);
+
+      svg.selectAll(".subunit")
+          .data(topojson.feature(uk, uk.objects.europe).features)
+        .enter().append("path")
+          .attr("class", function(d) { return "subunit " + d.id; })
+          .attr("d", path);
+
+      svg.append("path")
+          .datum(topojson.mesh(uk, uk.objects.europe, function(a, b) { return a !== b && a.id !== "IRL"; }))
+          .attr("d", path)
+          .attr("class", "subunit-boundary");
+
+      svg.append("path")
+          .datum(topojson.mesh(uk, uk.objects.europe, function(a, b) { return a === b && a.id === "IRL"; }))
+          .attr("d", path)
+          .attr("class", "subunit-boundary IRL");
+
+      csv('british-birdsong-dataset/birdsong_metadata.csv')
+        .then((birdsongs) => {
+
+          let selectedCircle;
+          birdsongs.forEach((birdsong) => {
+
+            const xy = projection([+birdsong.longitute, +birdsong.latitude]);
+
+
+            const _circle = svg.append('circle')
+              .attr('cx', xy[0])
+              .attr('cy', xy[1])
+              .attr('r', 10)
+              .attr('fill', 'hsl(200, 50%, 25%)')
+              .on('mouseenter', () => {
+                _circle.transition().duration(100).attr('r', 25).attr('fill', selectedBirdsong === birdsong ? 'green' : 'hsl(24, 100%, 50%)');
+              })
+              .on('click', () => {
+                if (selectedBirdsong === birdsong) {
+                  selectedCircle && selectedCircle.transition().duration(100).attr('r', 10).attr('fill', 'hsl(200, 50%, 25%)')
+                  selectedBirdsong = null;
+                } else {
+                  selectedCircle && selectedCircle.transition().duration(100).attr('r', 10).attr('fill', 'hsl(200, 50%, 25%)')
+                  selectedPosition = getCirclePosition(_circle.node());
+                  selectedBirdsong = birdsong;
+                  selectedCircle = _circle;
+                  _circle.transition().duration(100).attr('fill', 'green');
+
+                }
+              })
+              .on('mouseleave', () => {
+                // selectedBirdsong = null;
+                if (selectedBirdsong !== birdsong) {
+                  _circle.transition().duration(100).attr('r', 10).attr('fill', 'hsl(200, 50%, 25%)')
+                }
+              })
+          })
+        }).catch(e => {
+          console.log('Birdsong error:', e)
+        })
+  })
 
 </script>
 
 <style>
-    svg {
-        width: 400px;
-        height: 400px;
-        border: 1px solid var(--gray-border);
+
+    #wrapper {
+      grid-column: text;
     }
 
-    path {
-        fill: none;
-        stroke: var(--orange);
-        stroke-width: 1;
+    .bird-container {
+      position: relative;
+      height: 800px;
+    }
+    .bird-container svg {
+      position: absolute;
+    }
+    svg {
+        width: 100%;
+        height: 800px;
+        /* border: 1px solid var(--gray-border); */
+        background: white;
+    }
+
+    svg :global(path) {
+        fill: #efefef;
+        stroke: #333;
+        stroke-width: 0.5;
+    }
+    svg :global(circle) {
+      cursor: pointer;
+    }
+
+    .tooltip-text {
+      border: solid 1px var(--gray-border);
+      font-size: 14px;
+      line-height: 16px;
+      position: absolute;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      border-radius: var(--border-radius);
+
+      /* from distill */
+      background-color: rgba(250, 250, 250, 0.95);
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+
+    }
+
+    .birdname {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .text-container {
+      padding: 0.5em;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
     }
 </style>
 
-<div class="interactive-container">
+<figure class="subgrid">
+  <div id="wrapper" class="interactive-container">
 
-    <Title
-        titleText="[TK]."
-        subtitleText="[TK]."
-    />
-    <svg>
-        <g id="wrapper">
-            <path d={linePath}>
-        </g>
-    </svg>
+      <Title
+          titleText="Birdsongs on demand."
+          subtitleText="Click on a circle below to call up a field recording of a birdsong."
+      />
 
-</div>
+      <div class="bird-container">
+        <svg
+          bind:this={_svg}
+          viewBox={`0 0 ${width} ${height}`}
+        ></svg>
+
+
+        {#if selectedBirdsong}
+          <div class="tooltip-text" style={`left: ${selectedPosition.x - 100}px; top: ${selectedPosition.y + 40}px;`}>
+            <div class="text-container">
+              <div class="birdname">
+                {selectedBirdsong.english_cname}
+              </div>
+              <div>
+                Type: {selectedBirdsong.type}
+              </div>
+              <div>
+                Recording provided by {selectedBirdsong.who_provided_recording}
+              </div>
+            </div>
+            <audio controls>
+              <source src={`british-birdsong-dataset/songs/songs/xc${selectedBirdsong.file_id}.flac`} type="audio/flac" >
+            </audio>
+          </div>
+        {/if}
+      </div>
+  </div>
+
+  <figcaption style="grid-column: text;"><a class="figure-number" href="#details-vis">5</a>: <span class="tk">figcaption</span>.</figcaption>
+</figure>

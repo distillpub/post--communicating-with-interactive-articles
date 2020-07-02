@@ -47,15 +47,14 @@
 
 <style>
 	.tabs {
-		/* background-color: var(--gray-bg);
-		border: solid 1px var(--gray-border);
-		border-radius: var(--border-radius); */
-		/* margin-bottom: 40px; */
-		/* margin-top: 10px; */
 		padding-top: 0em;
+		grid-column: page;
 	}
 </style>
 
-<div class="tabs interactive-container">
-	<slot></slot>
-</div>
+<figure class="subgrid">
+	<div class="tabs interactive-container">
+		<slot></slot>
+	</div>
+	<figcaption style="grid-column: text;"><a class="figure-number" href="#applications-tab">1</a>: <span class="tk">figcaption</span>.</figcaption>
+</figure>

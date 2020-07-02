@@ -1,6 +1,6 @@
 :root {
   --gray-bg: hsl(0, 0%, 97%);
-  --gray-border: rgba(0, 0, 0, 0.1);
+  --gray-border: hsla(0, 0%, 0%, 0.1);
   --gray: rgba(0, 0, 0, 0.6);
   --border-radius: 5px;
   --orange: hsl(24, 100%, 50%);
@@ -36,11 +36,29 @@ d-figure>figure {
   margin-bottom: 0;
 }
 
-.shaded-figure {
-  background-color: hsl(0, 0%, 97%);
-  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
-  padding: 30px 0;
+a.figure-number::before {
+  content: "Figure ";
+}
+
+a.table-number::before {
+  content: "Table ";
+}
+
+a.video-number::before {
+  content: "Video ";
+}
+
+a.figure-number, a.table-number, a.video-number {
+  border-bottom-color: hsla(206, 90%, 20%, 0.3);
+  text-transform: uppercase;
+  font-size: .85em;
+  color: hsla(206, 90%, 20%, 0.7);
+}
+
+a.figure-number:hover, a.table-number:hover, a.video-number:hover {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: hsla(206, 90%, 20%, 0.7);
 }
 
 .pointer {
@@ -80,7 +98,7 @@ d-figure>figure {
   border-radius: var(--border-radius);
   /* border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); */
   padding: 1em 1.5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 1178px) {

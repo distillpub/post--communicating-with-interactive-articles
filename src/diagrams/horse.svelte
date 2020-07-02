@@ -42,6 +42,7 @@
         /* border: 1px solid var(--gray-border); */
         /* border-radius: var(--border-radius); */
         /* padding-top: 0em; */
+        grid-column: page;
     }
 
     #frames {
@@ -147,33 +148,36 @@
 
 </style>
 
-<div id="wrapper" class="interactive-container">
-    <div id="horse-wrapper">
-        <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
-        <div id="horse-controls">
-            <Title
-                titleText="Does a horse lift all its feet of the ground?"
-                subtitleText="Control an animation to help illutrate your answer."
-            />
-            <div class="caption">
-                In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
-             </div>
-             <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
-            <!-- <div> -->
-            <!-- <br /> -->
-            <div style="padding-bottom: 5px;">
-                <label>
-                    <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
-                </label>
-            </div>
-            <div>
-                <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:48px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
+<figure class="subgrid">
+    <div id="wrapper" class="interactive-container">
+        <div id="horse-wrapper">
+            <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
+            <div id="horse-controls">
+                <Title
+                    titleText="Does a horse lift all its feet of the ground?"
+                    subtitleText="Control an animation to help illutrate your answer."
+                />
+                <div class="caption">
+                    In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
+                </div>
+                <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
+                <!-- <div> -->
+                <!-- <br /> -->
+                <div style="padding-bottom: 5px;">
+                    <label>
+                        <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
+                    </label>
+                </div>
+                <div>
+                    <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:48px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
+                </div>
             </div>
         </div>
+        <div id="frames">
+            {#each frameIntArray as frameInt, i}
+                    <img src="images/horse/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
+            {/each}
+        </div>
     </div>
-    <div id="frames">
-        {#each frameIntArray as frameInt, i}
-                <img src="images/horse/{frameInt}.jpg" alt="Horse running." class='{frameInt === frameNumber ? "frame active-frame": "frame"}' on:mouseover={() => changeFrame(i+1)}/>
-        {/each}
-    </div>
-</div>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#horse">2</a>: <span class="tk">figcaption</span>.</figcaption>
+</figure>

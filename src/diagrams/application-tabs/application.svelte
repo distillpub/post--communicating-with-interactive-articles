@@ -5,8 +5,8 @@
 <style>
 
 	.application {
-		padding-top: 1.5em;
-		padding-bottom: 1.5em;
+		padding-top: 1.25em;
+		padding-bottom: 0.5em;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-column-gap: 2em;

@@ -52,6 +52,7 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1em;
         padding-bottom: 20px;
+        grid-column: page;
     }
 
     img {
@@ -68,18 +69,24 @@
         margin-top: 0;
     }
 
+    figcaption {
+        grid-column: text;
+    }
+
 </style>
 
-<figure id="jam-wrapper">
-    {#each explorables as explorable}
-        <figure class="explorable">
-            <a class="screenshot" href={explorable.url}>
-                <img src="images/jam/{explorable.image}" alt="" />
-            </a>
-            <figcaption><a href={explorable.url}>{explorable.title}</a></figcaption>
-        </figure>
-    {/each}
-    <figcaption>
-        Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a>.
+<figure class="subgrid">
+    <div id="jam-wrapper">
+        {#each explorables as explorable}
+            <figure class="explorable">
+                <a class="screenshot" href={explorable.url}>
+                    <img src="images/jam/{explorable.image}" alt="" />
+                </a>
+                <figcaption><a href={explorable.url}>{explorable.title}</a></figcaption>
+            </figure>
+        {/each}
+    </div>
+    <figcaption style="grid-column: text;">
+        <a class="figure-number" href="#jam">10</a>: Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
     </figcaption>
 </figure>
