@@ -90,6 +90,7 @@ a.figure-number:hover, a.table-number:hover, a.video-number:hover {
   width: 450px;
   padding-left: 1em;
   margin-bottom: 0em !important;
+  padding-bottom: 1em;
 }
 
 .interactive-container {
