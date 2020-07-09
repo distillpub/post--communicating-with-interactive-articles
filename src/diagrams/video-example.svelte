@@ -21,7 +21,6 @@
                 // Show paused UI.
                 });
             }
-            
         }
     }
 
@@ -48,6 +47,15 @@
     function showLongVideo() {
         shortVideo = false;
         hideShortVideoOverlay();
+    }
+
+    function switchVideo() {
+        console.log('click')
+        if (shortVideo === true) {
+            showLongVideo()
+        } else {
+            showShortVideo()
+        }
     }
 
 </script>
@@ -148,7 +156,7 @@
 
 <figure id={example.bibtex}>
 
-    <div class="video-wrap" on:mouseover={play} on:mouseout={pause}>
+    <div class="video-wrap" on:mouseover={play} on:mouseout={pause} on:click={switchVideo}>
         
         <div class="play-button" bind:this={playButton}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.69 311.69"><path d="M155.84,0A155.85,155.85,0,1,0,311.69,155.84,155.84,155.84,0,0,0,155.84,0Zm0,296.42A140.58,140.58,0,1,1,296.42,155.84,140.58,140.58,0,0,1,155.84,296.42Z"></path><polygon points="218.79 155.84 119.22 94.34 119.22 217.34 218.79 155.84"></polygon></svg>
