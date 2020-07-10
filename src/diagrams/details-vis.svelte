@@ -210,5 +210,5 @@
       </div>
   </div>
 
-  <figcaption style="grid-column: text;"><a class="figure-number" href="#details-vis">5</a>: <span class="tk">figcaption</span>.</figcaption>
+  <figcaption style="grid-column: text;"><a class="figure-number" href="#details-vis">5</a>: Click any point to listen to a different bird's chirp.</figcaption>
 </figure>

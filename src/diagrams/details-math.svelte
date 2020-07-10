@@ -55,6 +55,7 @@
         margin-left: 5px;
         margin-right: 5px;
         border-radius: var(--border-radius);
+        background-color: var(--gray-bg);
     }
 
     #notation-button {
@@ -164,5 +165,5 @@
             <button type="button" id="variable-button" on:click={toggleVariables}>Toggle Variables</button>
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-math">7</a>: <span class="tk">figcaption</span>.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-math">7</a>: Click to reveal, or remind yourself, what each mark of notation or variable represents in the equation.</figcaption>
 </figure>

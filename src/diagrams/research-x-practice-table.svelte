@@ -61,6 +61,6 @@
   </table>
 
     <figcaption style="grid-column: text;">
-        <a class="table-number" href="#research-x-practice">1</a>: <span>figcaption.</span>
+        <a class="table-number" href="#research-x-practice">1</a>: Interactive communication opportunities from both research and practice.
     </figcaption>
 </figure>
