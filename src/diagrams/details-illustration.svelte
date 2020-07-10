@@ -225,5 +225,5 @@
             </div>
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: <span class="tk">figcaption</span>.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region.</figcaption>
 </figure>
