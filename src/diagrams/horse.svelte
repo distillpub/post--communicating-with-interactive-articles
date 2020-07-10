@@ -154,15 +154,13 @@
             <img id="horse" src="images/horse/{frameNumber}.jpg" alt="Horse running."/>
             <div id="horse-controls">
                 <Title
-                    titleText="Does a horse lift all its feet of the ground?"
-                    subtitleText="Control an animation to help illutrate your answer."
+                    titleText="Multiple representations give multiple perspectives."
+                    subtitleText="Complementing views, like user-controled animation and small multiples, help engage and connect readers."
                 />
                 <div class="caption">
                     In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
                 </div>
                 <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
-                <!-- <div> -->
-                <!-- <br /> -->
                 <div style="padding-bottom: 5px;">
                     <label>
                         <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
