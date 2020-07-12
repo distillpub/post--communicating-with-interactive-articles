@@ -87,5 +87,5 @@
         <p>{texts[level]}</p>
 
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-text">8</a>: <span class="tk">figcaption</span>.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-text">8</a>: Drag the slider to display the theorem's statement in increasing levels of detail.</figcaption>
 </figure>
