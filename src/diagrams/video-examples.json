@@ -4,6 +4,7 @@
         "title": "Extensive Data Shows Punishing Reach of Racism for Black Boys",
         "caption": "the use of unit animation carries the main visualization of the story to highlight real people’s lives changing over time.",
         "url": "https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html",
+        "teaser": "videos/1-720p-short.m4v",
         "video": "videos/1-720p.m4v",
         "bibtex": "badger2018extensive"
     },
@@ -12,6 +13,7 @@
         "title": "Cutthroat Capitalism: The Game",
         "caption": "readers play the role of a pirate commander, giving them a unique look at the economics that led to rise in piracy off the coast of Somalia.",
         "url": "https://www.wired.com/2009/07/cutthroat-capitalism-the-game/",
+        "teaser": "videos/2-720p-short.m4v",
         "video": "videos/2-720p.m4v",
         "bibtex": "webworks2009cutthroat"
     },
@@ -20,6 +22,7 @@
         "title": "Teachable Machines",
         "caption": "a reader uses their own live video camera to train a machine learning image classifier in-browser without any extra computational resources.",
         "url": "https://design.google/library/designing-and-learning-teachable-machine/",
+        "teaser": "videos/3-720p-short.m4v",
         "video": "videos/3-720p.m4v",
         "bibtex": "barron2018designing"
     },
@@ -28,6 +31,7 @@
         "title": "Visualizing Quaternions",
         "caption": "a viewer can take control of an interactive video while narration continues in the background.",
         "url": "https://eater.net/quaternions",
+        "teaser": "videos/4-720p-short.m4v",
         "video": "videos/4-720p.m4v",
         "bibtex": "sanderson2018visualizing"
     },
@@ -36,6 +40,7 @@
         "title": "The Gyllenhaal Experiment",
         "caption": "readers are tasked to type the names of celebrities with challenging spellings. After submitting a guess, a visualization shows the reader’s entry against everyone else’s, scaled by the frequency of different spellings.",
         "url": "https://pudding.cool/2019/02/gyllenhaal/",
+        "teaser": "videos/5-720p-short.m4v",
         "video": "videos/5-720p.m4v",
         "bibtex": "goldenberg2019you"
     },
@@ -44,6 +49,7 @@
         "title": "How To Remember Anything Forever-ish",
         "caption": "readers use spaced repetition to learn about spaced repetition.",
         "url": "https://ncase.me/remember/",
+        "teaser": "videos/6-720p-short.m4v",
         "video": "videos/6-720p.m4v",
         "bibtex": "case2014how"
     },
@@ -52,6 +58,7 @@
         "title": "How Much Hotter Is Your Hometown Than When You Were Born?",
         "caption": "a reader enters their birthplace and birth year and is shown multiple visualizations describing the impact of climate on their hometown.",
         "url": "https://www.nytimes.com/interactive/2018/08/30/climate/how-much-hotter-is-your-hometown.html",
+        "teaser": "videos/7-720p-short.m4v",
         "video": "videos/7-720p.m4v",
         "bibtex": "popovich2018how"
     },
@@ -60,6 +67,7 @@
         "title": "Quantum Country",
         "caption": "the interactive textbook uses spaced repetition and allows a reader to opt-in and save their progress while reading through dense material and mathematical notion over time.",
         "url": "https://quantum.country/",
+        "teaser": "videos/8-720p-short.m4v",
         "video": "videos/8-720p.m4v",
         "bibtex": "matuschak2019quantum"
     }

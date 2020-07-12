@@ -204,5 +204,5 @@
     </div>
   </div>
 
-	<figcaption style="grid-column: text;"><a class="figure-number" href="#simulation-vis">3</a>: <span class="tk">figcaption</span>.</figcaption>
+	<figcaption style="grid-column: text;"><a class="figure-number" href="#simulation-vis">3</a>: At the top, drag the slider to change the number of boids in the simulation. Underneath, adjust the different parameters to find interesting configurations.</figcaption>
 </figure>
