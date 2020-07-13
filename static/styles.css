@@ -122,3 +122,10 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .interactive-container {
+    border-radius: 0;
+    padding: 1em;
+  }
+}
