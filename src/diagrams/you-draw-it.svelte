@@ -146,6 +146,14 @@
     font-size: 0.9em;
     text-align: center;
   }
+
+  @media(max-width: 768px) {
+
+    #wrapper {
+      grid-column: screen;
+		}
+		
+	}
 </style>
 
 <figure class="subgrid">

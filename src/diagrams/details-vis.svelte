@@ -172,6 +172,12 @@
       display: block;
       width: 100%;
     }
+
+    @media(max-width: 768px) {
+      #wrapper {
+          grid-column: screen;
+      }
+    }
 </style>
 
 <figure class="subgrid">

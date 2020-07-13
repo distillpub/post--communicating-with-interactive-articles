@@ -66,6 +66,12 @@
         padding-top: 5px;
     }
 
+    @media(max-width: 768px) {
+      #wrapper {
+          grid-column: screen;
+      }
+    }
+
 </style>
 
 <figure class="subgrid">
