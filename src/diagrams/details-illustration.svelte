@@ -169,9 +169,11 @@
     }
 
     .caption {
-        border-left: 1px solid var(--gray-border);
+        /* border-left: 1px solid var(--gray-border); */
         padding: 5px 10px;
         /* border-radius: var(--border-radius); */
+        /* font-size: 0.85rem; */
+        color: var(--gray)
     }
 
     /* :global(#background) {
