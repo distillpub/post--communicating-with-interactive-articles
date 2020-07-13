@@ -69,6 +69,7 @@
     video {
         width: 100%;
         display: block;
+        cursor: pointer;
     }
     
     .overlay {
