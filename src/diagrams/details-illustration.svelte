@@ -211,12 +211,16 @@
             padding-left: 0;
         }
 
+        #wrapper {
+          grid-column: screen;
+        }
+
     }
 
-    @media(max-width: 768px) {
-      #wrapper {
-          grid-column: screen;
-      }
+    @media(max-width: 1000px) {
+        #wrapper {
+            grid-column: page;
+        }
     }
 
 </style>
