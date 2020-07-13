@@ -35,17 +35,17 @@
 
     const annotations = [
         "Straight hair looks painted.",
-        "Abnormal teeth size, position, and quantity.",
+        "Unexpected teeth size, position, and quantity.",
         "Missing earing, and ear fringes are blurry, especially with overlapping hair.",
         "Asymmetric facial hair.",
-        "Abnormal hairline and hair looks painted.",
+        "Unexpected hairline and hair looks painted.",
         "Mismatched decision between missing earing and its shadow.",
         "Unresolved earing with breaks in continuity.",
         "Smoothed noise and out of place skin tones in skin tones in a shadow.",
         "Unresolved decision between skin wrinkles and eyelashes.",
-        "Inhuman eye characteristics in second person.",
+        "Unexpected eye characteristics in second person.",
         "Unresolved decision between skin wrinkles and eyelashes.",
-        "Inhuman mouth characteristics in third person."
+        "Unexpected mouth characteristics in third person."
     ]
 
     const karras2018 = "ICLR 2018"
@@ -114,6 +114,10 @@
 </script>
 
 <style>
+
+    #wrapper {
+        grid-column: text;
+    }
 
     #thumbnail-wrapper {
         display: grid;
@@ -192,31 +196,34 @@
 
 </style>
 
-<div class="interactive-container">
-    <Title
-        titleText="What gives away a machine-generated image?"
-        subtitleText="Interactivity on illustrations can help people get more context around certain objects that may not have clear and seperable boundaries."
-    />
+<figure class="subgrid">
+    <div id="wrapper" class="interactive-container">
+        <Title
+            titleText="What gives away a machine-generated image?"
+            subtitleText="Interactivity on illustrations can help people get more context around certain objects that may not have clear and seperable boundaries."
+        />
 
-    <div id="grid-wrapper">
-        <div>
+        <div id="grid-wrapper">
             <div>
-                {@html fakeImages[selectedImage-1]}
+                <div>
+                    {@html fakeImages[selectedImage-1]}
+                </div>
             </div>
-        </div>
-        <div id="side-wrapper">
-            <div id="caption-wrapper">
-                <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
-            </div>
-            <div>
-                <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
-                <div id="thumbnail-wrapper">
-                    <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
-                    <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
+            <div id="side-wrapper">
+                <div id="caption-wrapper">
+                    <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
+                </div>
+                <div>
+                    <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+                    <div id="thumbnail-wrapper">
+                        <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region.</figcaption>
+</figure>
