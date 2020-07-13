@@ -152,10 +152,6 @@
 	}
 
     @media(max-width: 1000px) {
-
-        #wrapper {
-            grid-column: screen;
-        }
         
         #horse-controls {
             grid-column-start: 1;
@@ -174,6 +170,12 @@
             justify-content: center;
         }
 
+    }
+
+    @media(max-width: 768px) {
+        #wrapper {
+            grid-column: screen;
+        }
     }
 
 </style>
