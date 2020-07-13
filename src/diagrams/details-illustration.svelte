@@ -31,7 +31,7 @@
         assignAnnotations()
     })
 
-    const noAnnotationMessage = "Hover for more information."
+    const noAnnotationMessage = "Select region for more information."
 
     const annotations = [
         "Straight hair looks painted.",
@@ -194,6 +194,23 @@
 
     :global(.remove) {
         opacity: 0;
+    }
+
+    
+    @media(max-width: 768px) {
+
+        #grid-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        #thumbnail-wrapper {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .caption {
+            padding-left: 0;
+        }
+
     }
 
 </style>
