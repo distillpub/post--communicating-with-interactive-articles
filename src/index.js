@@ -9,7 +9,7 @@ import Horse from "./diagrams/horse.svelte"
 import ExampleTable from "./diagrams/example-table.svelte"
 import examples from "./diagrams/video-examples.json"
 import VideoExample from "./diagrams/video-example.svelte"
-import DetailsVis from "./diagrams/details-birds.svelte"
+import DetailsVis from "./diagrams/details-vis.svelte"
 import DetailsIllustration from "./diagrams/details-illustration.svelte"
 import DetailsMath from "./diagrams/details-math.svelte"
 import DetailsText from "./diagrams/details-text.svelte"
@@ -17,6 +17,7 @@ import SimulationVis from "./diagrams/simulation-vis.svelte"
 import YouDrawIt from "./diagrams/you-draw-it.svelte"
 import Jam from "./diagrams/jam.svelte"
 import Parametric from "./diagrams/parametric.svelte"
+import Teaser from "./diagrams/teaser.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 // const exampleTag = document.getElementById("svelte-example-dfigure");
@@ -76,6 +77,10 @@ const jam = new Jam({
 
 const parametric = new Parametric({
 	target: document.getElementById('parametric')
+});
+
+const teaser = new Teaser({
+	target: document.getElementById('teaser')
 });
 
 // video examples
