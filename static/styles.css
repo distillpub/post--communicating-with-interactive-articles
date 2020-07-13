@@ -36,15 +36,15 @@ d-figure>figure {
   margin-bottom: 0;
 }
 
-a.figure-number::before {
+a.figure-number::before, a.figure-number-text::before {
   content: "Figure ";
 }
 
-a.table-number::before {
+a.table-number::before, a.table-number-text::before {
   content: "Table ";
 }
 
-a.video-number::before {
+a.video-number::before, a.video-number-text::before {
   content: "Video ";
 }
 
@@ -56,6 +56,17 @@ a.figure-number, a.table-number, a.video-number {
 }
 
 a.figure-number:hover, a.table-number:hover, a.video-number:hover {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: hsla(206, 90%, 20%, 0.7);
+}
+
+a.figure-number-text, a.table-number-text, a.video-number-text {
+  border-bottom-color: hsla(206, 90%, 20%, 0.3);
+  color: hsla(206, 90%, 20%, 0.7);
+}
+
+a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: hsla(206, 90%, 20%, 0.7);
