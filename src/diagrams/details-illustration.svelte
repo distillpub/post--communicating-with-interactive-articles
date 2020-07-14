@@ -212,7 +212,7 @@
         }
 
         #wrapper {
-          grid-column: screen;
+          grid-column: screen !important;
         }
 
     }
