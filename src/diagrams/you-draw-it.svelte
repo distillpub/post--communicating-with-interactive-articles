@@ -149,7 +149,7 @@
 
   @media(max-width: 768px) {
     #wrapper {
-      grid-column: screen;
+      grid-column: screen !important;
 		}
   }
   
