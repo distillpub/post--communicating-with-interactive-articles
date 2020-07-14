@@ -72,7 +72,7 @@
         cursor: pointer;
     }
     
-    .overlay {
+    /* .overlay {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -81,7 +81,7 @@
         z-index: 2;
         background: black;
         opacity: 0.2;
-    }
+    } */
 
     .video-wrap {
       position: relative;
@@ -89,7 +89,7 @@
       border: 1px solid var(--gray-border);
     }
 
-    .video-wrap .play-button {
+    /* .video-wrap .play-button {
       position: absolute;
       width: 5rem;
       height: 5rem;
@@ -97,19 +97,19 @@
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
-    }
+    } */
 
-    .video-wrap .play-button svg {
+    /* .video-wrap .play-button svg {
       fill: #ffffff;
-    }
+    } */
 
     /* adjust your icon size, add different breakpoints as needed */
-    @media screen and (max-width: 768px) {
+    /* @media screen and (max-width: 768px) {
       .video-wrap .play-button {
         width: 4rem;
         height: 4rem;
       }
-    }
+    } */
 
     #video-lengths {
         margin-top: 0.35rem;
