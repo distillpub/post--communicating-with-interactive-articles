@@ -68,13 +68,7 @@
 
 <style>
     #example-table-wrapper {
-        /* height: 500px;
-        overflow: scroll; */
-        /* background-color: var(--gray-bg); */
-        /* border: 1px solid var(--gray-border); */
-        /* border-radius: var(--border-radius); */
         margin-bottom: 1em;
-        /* padding: 1.5em; */
         grid-column: page;
     }
 
@@ -128,8 +122,15 @@
         border: none
     } */
 
-    .link-icon:hover {
+    /* .link-icon:hover {
         color: var(--orange);
+    } */
+
+    @media(max-width: 1000px) {
+        td, tr {
+            font-size: 0.85em !important;
+            line-height: 1.35em;
+        }
     }
 </style>
 
@@ -149,7 +150,7 @@
                     <tr>
                         <td style="text-transform: capitalize">
                             <a href={example.entryTags.url}>{example.entryTags.title}</a>
-                            <i class="material-icons link-icon">arrow_forward</i>
+                            <!-- <i class="material-icons link-icon">arrow_forward</i> -->
                             <!-- <d-cite key={example.citationKey}></d-cite> -->
                         </td>
                         <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
