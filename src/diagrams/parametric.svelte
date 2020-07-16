@@ -20,6 +20,14 @@
     .screenshot {
         border: none;
     }
+/* 
+    @media(max-width: 768px) {
+
+        #parametric-wrapper {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    } */
     
 </style>
 

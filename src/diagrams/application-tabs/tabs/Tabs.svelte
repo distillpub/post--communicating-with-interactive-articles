@@ -50,6 +50,14 @@
 		padding-top: 0em;
 		grid-column: page;
 	}
+
+	@media(max-width: 768px) {
+
+        .tabs {
+            grid-column: screen;
+		}
+		
+	}
 </style>
 
 <figure class="subgrid">
