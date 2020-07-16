@@ -31,7 +31,7 @@
         assignAnnotations()
     })
 
-    const noAnnotationMessage = "Hover for more information."
+    const noAnnotationMessage = "Select region for more information."
 
     const annotations = [
         "Straight hair looks painted.",
@@ -169,9 +169,11 @@
     }
 
     .caption {
-        border-left: 1px solid var(--gray-border);
+        /* border-left: 1px solid var(--gray-border); */
         padding: 5px 10px;
         /* border-radius: var(--border-radius); */
+        /* font-size: 0.85rem; */
+        color: var(--gray)
     }
 
     /* :global(#background) {
@@ -192,6 +194,33 @@
 
     :global(.remove) {
         opacity: 0;
+    }
+
+    
+    @media(max-width: 768px) {
+
+        #grid-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        #thumbnail-wrapper {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .caption {
+            padding-left: 0;
+        }
+
+        #wrapper {
+          grid-column: screen !important;
+        }
+
+    }
+
+    @media(max-width: 1000px) {
+        #wrapper {
+            grid-column: page;
+        }
     }
 
 </style>

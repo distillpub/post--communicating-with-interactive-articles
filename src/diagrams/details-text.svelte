@@ -66,6 +66,18 @@
         padding-top: 5px;
     }
 
+    @media(max-width: 768px) {
+      #wrapper {
+          grid-column: screen !important;
+      }
+    }
+
+    @media(max-width: 1000px) {
+        #wrapper {
+            grid-column: page;
+        }
+    }
+
 </style>
 
 <figure class="subgrid">

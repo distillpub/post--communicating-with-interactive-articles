@@ -133,16 +133,48 @@
         background-color: var(--gray-bg);
     }
 
+    #button-wrapper {
+        display: flex;
+    }
+
+    #button-wrapper > * {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
     .caption {
 		font-size: 0.8em;
 		line-height: 1.5em;
 		color: var(--gray);
 	}
 
-    @media(min-width: 768px) {
+    @media(max-width: 1000px) {
+        
         #horse-controls {
-            grid-column-start: 7;
-            /* grid-column-end: 11; */
+            grid-column-start: 1;
+            grid-column-end: 13;
+            order: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        #horse {
+            grid-column-start: 1;
+            grid-column-end: 13;
+            order: 2;
+        }
+
+        #button-wrapper {
+            justify-content: center;
+        }
+
+    }
+
+    @media(max-width: 768px) {
+        #wrapper {
+            grid-column: screen;
         }
     }
 
@@ -161,13 +193,9 @@
                     In 1878, Eadweard Muybridge settled Leland Stanford's hotly debated question of whether all four feet of a horse lifted off the ground during a trot using multiple cameras to capture motion in stop-motion photographs.
                 </div>
                 <!-- These images are from the horse Sallie Gardner, owned by Leland Stanford, running at a 1:40 pace over the Palo Alto track, on June 19th, 1878. -->
-                <div style="padding-bottom: 5px;">
-                    <label>
-                        <input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider">
-                    </label>
-                </div>
-                <div>
+                <div id="button-wrapper">
                     <button on:click={isPlaying ? pause : play}><i class="material-icons" style="font-size:48px;">{isPlaying ? "pause_circle_outline": "play_circle_outline"}</i></button>
+                    <div><input type=range bind:value={frameNumber} min=1 max=11 on:mousedown={pause} class="slider"></div>
                 </div>
             </div>
         </div>
