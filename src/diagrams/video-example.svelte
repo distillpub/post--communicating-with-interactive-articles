@@ -8,8 +8,8 @@
 
     function play() {
         if (shortVideo === true) {
-            playButton.classList.add("hideVideoOverlay")
-            overlay.classList.add("hideVideoOverlay")
+            // playButton.classList.add("hideVideoOverlay")
+            // overlay.classList.add("hideVideoOverlay")
             let playPromise = video.play()
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
@@ -26,8 +26,8 @@
 
     function pause() {
         if (shortVideo === true) {
-            playButton.classList.remove("hideVideoOverlay")
-            overlay.classList.remove("hideVideoOverlay")
+            // playButton.classList.remove("hideVideoOverlay")
+            // overlay.classList.remove("hideVideoOverlay")
             video.pause()
         }
     }
@@ -39,14 +39,14 @@
 
     function hideShortVideoOverlay() {
         if (shortVideo === false) {
-            playButton.classList.add("hideVideoOverlay")
-            overlay.classList.add("hideVideoOverlay")
+            // playButton.classList.add("hideVideoOverlay")
+            // overlay.classList.add("hideVideoOverlay")
         }
     }
     
     function showLongVideo() {
         shortVideo = false;
-        hideShortVideoOverlay();
+        // hideShortVideoOverlay();
     }
 
     function switchVideo() {
@@ -69,9 +69,10 @@
     video {
         width: 100%;
         display: block;
+        cursor: pointer;
     }
     
-    .overlay {
+    /* .overlay {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -80,7 +81,7 @@
         z-index: 2;
         background: black;
         opacity: 0.2;
-    }
+    } */
 
     .video-wrap {
       position: relative;
@@ -88,7 +89,7 @@
       border: 1px solid var(--gray-border);
     }
 
-    .video-wrap .play-button {
+    /* .video-wrap .play-button {
       position: absolute;
       width: 5rem;
       height: 5rem;
@@ -96,19 +97,19 @@
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
-    }
+    } */
 
-    .video-wrap .play-button svg {
+    /* .video-wrap .play-button svg {
       fill: #ffffff;
-    }
+    } */
 
     /* adjust your icon size, add different breakpoints as needed */
-    @media screen and (max-width: 768px) {
+    /* @media screen and (max-width: 768px) {
       .video-wrap .play-button {
         width: 4rem;
         height: 4rem;
       }
-    }
+    } */
 
     #video-lengths {
         margin-top: 0.35rem;
@@ -156,21 +157,21 @@
 
 <figure id={example.bibtex}>
 
-    <div class="video-wrap" on:mouseover={play} on:mouseout={pause} on:click={switchVideo}>
+    <div class="video-wrap" on:click={switchVideo}>
         
-        <div class="play-button" bind:this={playButton}>
+        <!-- <div class="play-button" bind:this={playButton}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.69 311.69"><path d="M155.84,0A155.85,155.85,0,1,0,311.69,155.84,155.84,155.84,0,0,0,155.84,0Zm0,296.42A140.58,140.58,0,1,1,296.42,155.84,140.58,140.58,0,0,1,155.84,296.42Z"></path><polygon points="218.79 155.84 119.22 94.34 119.22 217.34 218.79 155.84"></polygon></svg>
         </div>
 
-        <div class="overlay" bind:this={overlay}></div>
+        <div class="overlay" bind:this={overlay}></div> -->
 
         {#if shortVideo === true}
-            <video class="paused" bind:this={video} muted="muted">
+            <video class="paused" bind:this={video} muted="muted" autoplay="true" controls>
                 <source src={example.teaser} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         {:else if shortVideo === false}
-            <video class="paused" bind:this={video} muted="muted" controls>
+            <video class="paused" bind:this={video} muted="muted"autoplay="true" controls>
                 <source src={example.video} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
@@ -178,13 +179,16 @@
         
     </div>
 
-    <!-- <div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
+    <!-- <div class="example-title"><a href={example.url}>  {example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
 
     <figcaption>
         <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
         <div id="video-lengths">
             <span>
-                <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Short</button> | <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Long</button>
+                Hover for 
+                <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
+                click for 
+                <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Video</button>.
             </span>
         </div>
     </figcaption>

@@ -9,7 +9,8 @@
 		padding-bottom: 0.5em;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-column-gap: 2em;
+		grid-column-gap: 1em;
+		grid-row-gap: 1em;
 	}
 
 	.left {
@@ -74,6 +75,41 @@
 	.example > a {
 		border-bottom: none;
 	}
+
+	@media(max-width: 1000px) {
+		.left, .right {
+			grid-column: 1 / 13;
+		}
+
+		.right {
+			display: flex;
+		}
+
+		.application-opportunities, .application-challenges {
+			flex: 1;
+		}
+		
+		.bottom {
+			grid-template-columns: 1fr;
+		}
+
+		.example {
+			display: grid;
+			grid-template-columns: 2fr 3fr;
+			grid-column-gap: 1em;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.example > a {
+			grid-column: 1 / 2;
+		}
+
+		.example-text {
+			grid-column: 2 / 4 
+		}
+
+    }
 </style>
 
 <div class="application">
@@ -106,14 +142,14 @@
 		</div>
 	</div>
 
-	<br>
-
 	<div class="bottom">
 	{#each applicationData.examples as example}
 		<div class="example">
 			<a href={example.url}><img src="images/application-tabs/{example.image}" alt="Screen capture of example interactive article."/></a>
-			<div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div>
-			<div class="example-description">{example.caption}</div>
+			<div class="example-text">
+				<div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div>
+				<div class="example-description">{example.caption}</div>
+			</div>
 		</div>
 	{/each}
 	</div>

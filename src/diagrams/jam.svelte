@@ -73,6 +73,14 @@
         grid-column: text;
     }
 
+    @media(max-width: 768px) {
+
+        #jam-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
 </style>
 
 <figure class="subgrid">

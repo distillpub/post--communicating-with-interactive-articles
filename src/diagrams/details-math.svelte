@@ -50,7 +50,7 @@
         padding: 12px 24px;
         text-align: center;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1em;
         border: 1px solid;
         margin-left: 5px;
         margin-right: 5px;
@@ -71,6 +71,25 @@
     button:hover {
         cursor: pointer;
         /* background-color: var(--gray-bg); */
+    }
+
+    @media(max-width: 768px) {
+
+        #wrapper {
+            grid-column: screen !important;
+        }
+
+        button {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+    }
+
+    @media(max-width: 1000px) {
+        #wrapper {
+            grid-column: page;
+        }
     }
 
 </style>
