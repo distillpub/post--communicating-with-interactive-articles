@@ -103,6 +103,8 @@
 		height: 100%;
     max-height: 50vh;
     max-width: 100%;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--border-radius);
 	}
 
   .controls {

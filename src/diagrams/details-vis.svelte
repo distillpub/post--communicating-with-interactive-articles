@@ -181,10 +181,12 @@
       right: 0;
       height: 60vh;
     }
+
     svg {
         width: 100%;
-        /* border: 1px solid var(--gray-border); */
         background: white;
+        border: 1px solid var(--gray-border);
+      border-radius: var(--border-radius);
     }
 
     svg :global(path) {
@@ -192,6 +194,7 @@
         stroke: #333;
         stroke-width: 0.5;
     }
+
     svg :global(circle) {
       cursor: pointer;
     }
