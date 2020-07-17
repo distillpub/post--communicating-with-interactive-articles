@@ -166,7 +166,7 @@
         <div class="overlay" bind:this={overlay}></div> -->
 
         {#if shortVideo === true}
-            <video class="paused" bind:this={video} muted="muted" autoplay="true" controls>
+            <video class="paused" bind:this={video} muted="muted" autoplay="true" controls loop>
                 <source src={example.teaser} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
