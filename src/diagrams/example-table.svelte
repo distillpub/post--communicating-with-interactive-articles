@@ -70,7 +70,6 @@
 
 <style>
     #example-table-wrapper {
-        margin-bottom: 1em;
         grid-column: page;
     }
 
@@ -79,6 +78,7 @@
           height: 500px;
           display: block;
           overflow: scroll;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     /* thead {
@@ -165,6 +165,6 @@
     </div>
 
     <figcaption style="grid-column: text;">
-        <a class="table-number" href="#jam">2</a>: A sortable list of the published interactive articles we discussed in our article.
+        <a class="table-number" href="#jam">1</a>: A sortable list of the interactive articles we discuss in this work.
     </figcaption>
 </figure>
