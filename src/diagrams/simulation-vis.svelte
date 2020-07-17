@@ -157,7 +157,7 @@
       grid-column: screen !important;
 		}
   }
-  
+
   @media(max-width: 1000px) {
     #wrapper {
         grid-column: page;
@@ -170,48 +170,51 @@
 
   <div id="wrapper" class="interactive-container">
 
-    <Title
-      titleText="Interact with live simulations—no setup required."
-      subtitleText="This Boids simulation models and visualizes the behavior of a flock of birds, and exposes parameters that a reader can manipulate to change the behavior of the simulation."
-    />
+    <div>
+      <Title
+        titleText="Interact with live simulations—no setup required."
+        subtitleText="This Boids simulation models and visualizes the behavior of a flock of birds, and exposes parameters that a reader can manipulate to change the behavior of the simulation."
+      />
 
-    <div class="controls">
-      <div class="control">
-        Boid Count<br/>
-          <input type=range bind:value={boidCount} min=1 max=500 class="slider" />
+
+      <div class="controls">
+        <div class="control">
+          Boid Count<br/>
+            <input type=range bind:value={boidCount} min=1 max=500 class="slider" />
+        </div>
       </div>
-    </div>
-    <canvas
-      bind:this={canvas}
-      width={CANVAS_WIDTH}
-      height={CANVAS_HEIGHT}
-    ></canvas>
-    <div class="controls">
-      <div class="control">
-        Separation Distance<br/>
-          <input type=range bind:value={separationDistance} min=1 max=500 class="slider" />
+      <canvas
+        bind:this={canvas}
+        width={CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
+      ></canvas>
+      <div class="controls">
+        <div class="control">
+          Separation Distance<br/>
+            <input type=range bind:value={separationDistance} min=1 max=500 class="slider" />
+        </div>
+        <div class="control">
+          Alignment Distance<br/>
+            <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider" />
+        </div>
+        <div class="control">
+          Cohesion Distance<br/>
+            <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider" />
+        </div>
       </div>
-      <div class="control">
-        Alignment Distance<br/>
-          <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider" />
-      </div>
-      <div class="control">
-        Cohesion Distance<br/>
-          <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider" />
-      </div>
-    </div>
-    <div class="controls">
-      <div class="control">
-        Separation Force<br/>
-          <input type=range bind:value={separationForce} min=0.01 max=500 step=0.01 class="slider" />
-      </div>
-      <div class="control">
-        Alignment Force<br/>
-          <input type=range bind:value={alignmentForce} min=0.01 max=500 step=0.01 class="slider" />
-      </div>
-      <div class="control">
-        Cohesion Force<br/>
-          <input type=range bind:value={cohesionForce} min=0.01 max=500 step=0.01 class="slider" />
+      <div class="controls">
+        <div class="control">
+          Separation Force<br/>
+            <input type=range bind:value={separationForce} min=0.01 max=500 step=0.01 class="slider" />
+        </div>
+        <div class="control">
+          Alignment Force<br/>
+            <input type=range bind:value={alignmentForce} min=0.01 max=500 step=0.01 class="slider" />
+        </div>
+        <div class="control">
+          Cohesion Force<br/>
+            <input type=range bind:value={cohesionForce} min=0.01 max=500 step=0.01 class="slider" />
+        </div>
       </div>
     </div>
   </div>
