@@ -113,7 +113,7 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   margin-bottom: 1em;
 }
 
-@media (max-width: 1178px) {
+@media (max-width: 1180px) {
   .video-d-figure {
     float: none;
     left: 0;
