@@ -20,7 +20,7 @@
   <d-title>
     <h1>Communicating with Interactive Articles</h1>
     <p>Examining the design of interactive articles by synthesizing theory from disciplines such as education, journalism, and visualization.</p>
-    <div id="teaser" class="l-body-outset"></div>
+    <div id="teaser" class="subgrid"></div>
   </d-title>
 
   <d-byline></d-byline>
@@ -288,32 +288,35 @@
     <p>
       <i>If interactive articles provide clear benefits over other mediums for communicating complex ideas, then why aren't they more prevalent? </i>
     </p>
+
     <p>
-      Unfortunately, creating interactive articles today is quite challenging. Domain-specific diagrams, the main attraction of many interactive articles, must be individually designed and programmed, often from scratch. Interactions need to be intuitive and performant to achieve a nice experience for the reader. Of course the text also has to be well-written, and, ideally, seamlessly intergrated with the graphics.
+      Unfortunately, creating interactive articles today is difficult. Domain-specific diagrams, the main attraction of many interactive articles, must be individually designed and implemented, often from scratch. Interactions need to be intuitive and performant to achieve a nice reading experience. Needless to say, the text must also be well-written, and, ideally, seamlessly intergrated with the graphics.
     </p>
 
     <p>
-      The act of creating a successful interactive article is closer to building a website than writing a blog post,
-      <!-- Authoring interactive articles  -->
-      often takeing significantly more time and effort than a static article, or even academic publication<d-footnote>As a proxy, see the number of commits on an <a href="https://github.com/distillpub/post--building-blocks">example Distill article</a>.</d-footnote>.  Most interactive articles are created using general purpose web-development frameworks which, while expressive, can be difficult to work with for authors who are not also web developers. Even for expert web developers, current tools offer lower levels of abstraction than may be desired to prototype and iterate on designs.
+      The act of creating a successful interactive article is closer to building a website than writing a blog post, often taking significantly more time and effort than a static article, or even an academic publication<d-footnote>As a proxy, see the number of commits on an <a href="https://github.com/distillpub/post--building-blocks">example Distill article</a>.</d-footnote>. Most interactive articles are created using general purpose web-development frameworks which, while expressive, can be difficult to work with for authors who are not also web developers. Even for expert web developers, current tools offer lower levels of abstraction than may be desired to prototype and iterate on designs.
     </p>
+
     <p>
-      While there are some tools that help with this (cite), they are relatively immature and mainly help with reducing the necessary programming tedium. Tools like Idyll can help authors start writing quickly and even enable rapid iteration through various designs  (for example letting an author quickly comparing between sequencing content using a "scroller" or "stepper" based layout).However, Idyll does not offer any design guidence or help authors think through where interactivity would be most effectively applied, or how their content could be improved to increase its memorability and ease-of-use. For example, Idyll encodes no knowledge of the positive impact of self-explanation, instead it requires authors to be familiar with this research and how to operationalize it.
+      While there are some tools that help with allievating this problem <d-cite key="conlen2018idyll, apparatus, observable, case2017loopy, klokmose2015webstrates"></d-cite>, they are relatively immature and mainly help with reducing the necessary programming tedium. Tools like Idyll <d-cite key="conlen2018idyll"></d-cite> can help authors start writing quickly and even enable rapid iteration through various designs (for example, letting an author quickly compare between sequencing content using a "scroller" or "stepper" based layout). However, Idyll does not offer any design guidence, help authors think through where interactivity would be most effectively applied, nor highlight how their content could be improved to increase its readbaility and memorability. For example, Idyll encodes no knowledge of the positive impact of self-explanation, instead it requires authors to be familiar with this research and how to operationalize it.
     </p>
+
     <p>
-      To design an interactive article successfully requires a diverse set of editorial, design, and programming skills. While some individuals are able to author these articles on their own, many interactive articles are created by a collective team consisting of multiple members with specialized skills, for example, data analysts, scripters, editors, journalists, graphic designers, and typesetters, as outlined in <d-cite key="lee2015more"></d-cite>. The current generation of authoring tools don't acknowledge this collaboration. For example, to edit the text of <i>this article</i> requires one to clone its source code using git, install project-specifiic dependencies using a terminal, and be comfortable editing HTML files. All of this complexity is incidental to task of editing text.
+      To design an interactive article successfully requires a diverse set of editorial, design, and programming skills. While some individuals are able to author these articles on their own, many interactive articles are created by a collective team consisting of multiple members with specialized skills, for example, data analysts, scripters, editors, journalists, graphic designers, and typesetters, as outlined in <d-cite key="lee2015more"></d-cite>. The current generation of authoring tools do not acknowledge this collaboration. For example, to edit only the text of <i>this article</i> requires one to clone its source code using git, install project-specifiic dependencies using a terminal, and be comfortable editing HTML files. All of this complexity is incidental to task of editing text.
     </p>
+
     <p>
       Publishing to the web brings its own challenges: while interactive articles are available to anyone with a browser, they are burdened by rapidly changing web technologies that could break interactive content after just a few years. For this reason, easy and accessible interactive article archival is important for authors to know their work can be confidently preserved indefinitely to support continued readership <d-footnote>This challenge has been <a href="https://twitter.com/redblobgames/status/1168520452634865665">pointed out</a> by the community.</d-footnote>. Authoring interactive articles also requires designing for a diverse set of devices, for example, ensuring bespoke content can be adapted for desktop and mobile screen sizes with varying connection speeds, since accessing interactive content demands more bandwidth.
+    </p>
+
+    <p>
+      There are other non-technical limitations for publishing interactive articles. For example, in non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content: why should a researcher spend time on an "extra" interactive exposition of their work when they could instead publish more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s impact, legitimizing interactive artifacts requires buy-in from a collective of communities.
     </p>
 
     <p>
       Making interactive articles accessible to people with disabilities is an open challenge. The dynamic medium exacerbates this problem compared to traditional static writing, especially when articles combine multiple formats like audio, video, and text. Therefore, ensuring interactive articles are accessible to everyone will require alternative modes of presenting content (e.g. text-to-speech, video captioning, data physicalization, data sonification) and careful interaction design.
     </p>
 
-    <p>
-      There are other non-technical limitations for publishing interactive articles. For example, in non-journalism domains, there is a mis-aligned incentive structure for authoring and publishing interactive content: why should a researcher spend time on an "extra" interactive exposition of their work when they could instead publish more papers, a metric by which their career depends on? While different groups of people seek to maximize their work’s impact, legitimizing interactive artifacts requires buy-in from a collective of communities.
-    </p>
     <p>
       It is also important to remember that not everything needs to be interactive. Authors should consider the audience and context of their work when deciding if use of interactivity would be valuable. In the worst case, interactivity may be distracting to readers or the functionality may go unused, the author having wasted their time implementing it. However, even in a domain where the potential communication improvement is increcremental <d-footnote>In reality, multimedia studies show large effect sizes for improvement of transfer learning in many cases, see Chapter 12 of<d-cite key="mayer2002multimedia"></d-cite>.</d-footnote>, at scale (e.g., delivering via the web), interactive articles can still <a href="https://twitter.com/michael_nielsen/status/1031256363458916352?lang=en">have impact</a><d-cite key="nielsen2015neural"></d-cite>.
     </p>
@@ -381,7 +384,7 @@
     </p>
 
     <p>
-      We believe in the power and untapped potential of interactive articles for sparking reader's desire to learn and making complex ideas accessible and understandable to many people.
+      We believe in the power and untapped potential of interactive articles for sparking reader's desire to learn and making complex ideas accessible and understandable to all.
     </p>
 
     <d-figure id="example-table" class="subgrid"></d-figure>
