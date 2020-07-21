@@ -187,8 +187,8 @@
             <span>
                 Playing 
                 <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
-                click for 
-                <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Video</button>.
+                click to play 
+                <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Full Video</button>.
             </span>
         </div>
     </figcaption>
