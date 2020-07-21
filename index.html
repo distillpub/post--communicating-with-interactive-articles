@@ -136,15 +136,56 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   }
 }
 
-/* square */
+/* vtoc square */
 
-#square {
-  grid-column: kicker;
-  background: #00f260; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top right, #00f260, #0575e6); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top right, #00f260, #0575e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.square-wrapper {
+  grid-column: 3 / 4;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.square {
   height: 30px;
   width: 30px;
+  margin-left: auto;
+  border-radius: var(--border-radius);
+}
+
+.square-inner {
+  height: 24px;
+  width: 24px;
+  background: white;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+@media (max-width: 1000px) {
+  .square-wrapper {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .square-wrapper {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  .square {
+    margin-left: 4px;
+    width: 3px;
+    height: 75%;
+  }
+  
+  .square-inner {
+    height: 0;
+    width: 0;
+    background: none;
+    margin: 0;
+    border-radius: 0;
+  }
 }
   </style>
   <script src="https://distill.pub/template.v2.js"></script>
@@ -240,7 +281,7 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
     <div id="applications-tab" class="subgrid"></div>
 
     <p>
-      Today there is a growing excitement around the use of interactive articles for communication since they offer unique capabilities to help people learn and engage with complex ideas that traditional media lacks. After describing the affordances of interactive articles, we provide critical reflections from our own experience with open-source, interactive publishing at scale. We conclude with open research directions and practical challenges for authoring, designing, and publishing interactive articles.
+      Today there is a growing excitement around the use of interactive articles for communication since they offer unique capabilities to help people learn and engage with complex ideas that traditional media lacks. After describing the affordances of interactive articles, we provide critical reflections from our own experience with open-source, interactive publishing at scale. We conclude with discussing practical challenges and open research directions for authoring, designing, and publishing interactive articles.
     </p>
 
     <p>
@@ -279,7 +320,8 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
       Below, in-line videos and example interactive graphics are presented alongside this discussion to demonstrate specific techniques.
     </p>
 
-    <!-- <div id="square"></div> -->
+    <div class="square-wrapper"><div class="square blue-green"><div class="square-inner"></div></div></div>
+
     <h3 id="connecting-people-and-data">Connecting People and Data</h3>
 
     <p>
@@ -309,18 +351,20 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
       Regarding the format of interactive articles, an ongoing debate within the data journalism community has been whether articles which utilize scroll-based graphics (scrollytelling) are more effective than those which use step-based graphics (slideshows). McKenna et al. <d-cite key="mckenna2017visual"></d-cite> found that their study participants largely preferred content to be displayed with a step- or scroll-based navigation as opposed to traditional static articles, but did not find a significant difference in engagement between the two layouts. In related work, Zhi et al. found that performance on comprehension tasks was better in slideshow layouts than in vertical scroll-based layouts <d-cite key="zhi2019linking"></d-cite>.
     </p>
 
-    <p>
-      As text moves away from author-guided narratives towards more reader-driven ones <d-cite key="segel2010narrative"></d-cite>, the reading experience becomes closer to that of playing a game. For example, the critically acclaimed explorable explanation "Parable of the Polygons" puts play at the center of the story, letting a reader manually run an algorithm that is later simulated in the article to demonstrate how a population of people with slight personal biases against diversity leads to social segregation <d-cite key="hart2016parable"></d-cite>.
-    </p>
-
     <div>
       <p>
         <d-figure class="video-d-figure" id="webworks2009cutthroat"></d-figure>
         The use of games to convey information has been explored in the domains of journalism <d-cite key="bogost2012newsgames"></d-cite> and education <d-cite key="squire2011video"></d-cite>. Designers of newsgames use them to help readers build empathy with their subject, for example in The Financial Times’s "Uber Game <d-cite key="blood2017uber"></d-cite>," and explain complex systems consisting of multiple parts, for example in Wired’s "Cutthroat Capitalism: The Game <d-cite key="webworks2009cutthroat"></d-cite>"). In educational settings the use of games has been shown to motivate students while maintaining or improving learning outcomes <d-cite key="virvou2005combining"></d-cite>.
       </p>
 
-      <h3 id="making-systems-playful">Making Systems Playful</h3>
+      <p>
+        As text moves away from author-guided narratives towards more reader-driven ones <d-cite key="segel2010narrative"></d-cite>, the reading experience becomes closer to that of playing a game. For example, the critically acclaimed explorable explanation "Parable of the Polygons" puts play at the center of the story, letting a reader manually run an algorithm that is later simulated in the article to demonstrate how a population of people with slight personal biases against diversity leads to social segregation <d-cite key="hart2016parable"></d-cite>.
+      </p>
     </div>
+
+    <div class="square-wrapper"><div class="square red-orange"><div class="square-inner"></div></div></div>
+
+    <h3 id="making-systems-playful">Making Systems Playful</h3>
 
     <p>
       Interactive articles utilize an underlying computational infrastructure, allowing authors editorial control over the computational processes happening on a page. This access to computation allows interactive articles to engage readers in an experience they could not have with traditional media. For example, in "Drawing Dynamic Visualizations", Victor demonstrates how an interactive visualization can allow readers to build an intuition about the behavior of a system, leading to a fundamentally different understanding of an underlying system compared to looking at a set of static equations <d-cite key="victor2013drawing"></d-cite>. These articles leverage active learning and reading, combined with critical thinking <d-cite key="adler2014read"></d-cite> to help diverse sets of people learn and explore using sandboxed models and simulations <d-cite key="victor2011explorable"></d-cite>.
@@ -368,6 +412,9 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
       </p>
     </div>
 
+
+    <div class="square-wrapper"><div class="square soft-blue"><div class="square-inner"></div></div></div>
+
     <h3 id="prompting-self-reflection">Prompting Self-Reflection</h3>
 
     <p>
@@ -389,12 +436,14 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
       <p>
         Prompting readers to remember previously presented material, for example through the use of quizzes, can be an effective way to improve their ability to recall it in the future <d-cite key="gates1922recitation"></d-cite>. This result from cognitive psychology, known as the testing effect <d-cite key="roediger2006power"></d-cite>, can be utilized by authors writing for an interactive medium <d-cite key="khanacademy"></d-cite>. While testing may call to mind stressful educational experiences for many, quizzes included in web articles can be low stakes: there is no need to record the results or grade readers. The effect is enhanced if feedback is given to the quiz-takers, for example by providing the correct answer after the user has recorded their response <d-cite key="bangert1991instructional"></d-cite>.
       </p>
+
+      <p>
+        <d-figure class="video-d-figure" id="case2014how"></d-figure>
+        The benefits of the testing effect can be further enhanced if the testing is repeated over a period of time <d-cite key="karpicke2008critical"></d-cite>, assuming readers are willing to participate in the process. The idea of spaced repetition has been a popular foundation for memory building applications, for example in the Anki flash card system. More recently, authors have experimented with building spaced repetition directly into their web-based writing <d-cite key="case2014how, matuschak2019quantum"></d-cite>, giving motivated readers the opportunity to easily opt-in to a repeated testing program over the relevant material.
+      </p>
     </div>
 
-    <p>
-      <d-figure class="video-d-figure" id="case2014how"></d-figure>
-      The benefits of the testing effect can be further enhanced if the testing is repeated over a period of time <d-cite key="karpicke2008critical"></d-cite>, assuming readers are willing to participate in the process. The idea of spaced repetition has been a popular foundation for memory building applications, for example in the Anki flash card system. More recently, authors have experimented with building spaced repetition directly into their web-based writing <d-cite key="case2014how, matuschak2019quantum"></d-cite>, giving motivated readers the opportunity to easily opt-in to a repeated testing program over the relevant material.
-    </p>
+    <div class="square-wrapper"><div class="square argon"><div class="square-inner"></div></div></div>
 
     <h3 id="personalizing-reading">Personalizing Reading</h3>
 
@@ -419,6 +468,9 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
     <p>
       Multiple studies have been conducted showing that learners perform better when information is segmented, whether it be only within an animation <d-cite key="mayer2003multimedia"></d-cite> or within an interface with textual descriptions <d-cite key="mayer2002pictorial"></d-cite>. One excellent example of using segmentation and animation to personalize content delivery is "A Visual Introduction to Machine Learning," which introduces fundamental concepts within machine learning in bite-sized pieces, while transforming a single dataset into a trained machine learning model <d-cite key="yee2015visual"></d-cite>. Extending this idea, in "Quantum Country," an interactive textbook covering quantum computing, the authors implemented a user account system, allowing readers to save their position in the text and consume the content at their own pace <d-cite key="matuschak2019quantum"></d-cite>. This book further utilizes the interactive medium by utilizing spaced repetition that helps improve recall.
     </p>
+
+
+    <div class="square-wrapper"><div class="square sun"><div class="square-inner"></div></div></div>
 
     <h3 id="reducing-cognitive-load">Reducing Cognitive Load</h3>
 
@@ -587,7 +639,7 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   <d-appendix>
     <h3>Acknowledgments</h3>
     <p>
-      We are thankful to <span class="tk">{people}</span> for their helpful feedback on this work, as well as the reviewers.
+      <!-- We are thankful to <span class="tk">{people}</span> for their helpful feedback on this work, as well as the reviewers. -->
       We are grateful to Arvind Satyanarayan for his early encouragement for pursing this work, and Ludwig Schubert for his prompt help in fixing templating issues.
       We also thank the Parametric Press editors and authors for their continued support of the project, and to the Explorables community for their creativity and inspiration.
       This work was supported in part by a NASA Space Technology Fellowship.
