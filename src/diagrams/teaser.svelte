@@ -35,7 +35,7 @@
         height: 150px;
     }
 
-    .blue-green {
+    :global(.blue-green) {
         background: #00f260; /* fallback for old browsers */
         background: -webkit-linear-gradient(to top right, #00f260, #0575e6); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to top right, #00f260, #0575e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -44,7 +44,7 @@
         /* -webkit-text-fill-color: transparent; */
     }
 
-    .red-orange {
+    :global(.red-orange) {
         background: #fc4a1a;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to top, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to top, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -53,7 +53,7 @@
         /* -webkit-text-fill-color: transparent; */
     }
 
-    .soft-blue {
+    :global(.soft-blue) {
         background: #74ebd5; /* fallback for old browsers */
         background: -webkit-linear-gradient(to left, #74ebd5, #acb6e5); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #74ebd5, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -62,7 +62,7 @@
         /* -webkit-text-fill-color: transparent; */
     }
 
-    .argon {
+    :global(.argon) {
         background: #03001e; /* fallback for old browsers */
         background: -webkit-linear-gradient(to bottom right, #03001e, #7303c0, #ec38bc, #fdeff9); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to bottom right, #03001e, #7303c0, #ec38bc, #fdeff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -71,7 +71,7 @@
         /* -webkit-text-fill-color: transparent; */
     }
 
-    .sun {
+    :global(.sun) {
         background: #e1eec3;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
