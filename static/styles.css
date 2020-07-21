@@ -130,13 +130,54 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   }
 }
 
-/* square */
+/* vtoc square */
 
-#square {
-  grid-column: kicker;
-  background: #00f260; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top right, #00f260, #0575e6); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top right, #00f260, #0575e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.square-wrapper {
+  grid-column: 3 / 4;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.square {
   height: 30px;
   width: 30px;
+  margin-left: auto;
+  border-radius: var(--border-radius);
+}
+
+.square-inner {
+  height: 24px;
+  width: 24px;
+  background: white;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+@media (max-width: 1000px) {
+  .square-wrapper {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .square-wrapper {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  .square {
+    margin-left: 4px;
+    width: 3px;
+    height: 75%;
+  }
+  
+  .square-inner {
+    height: 0;
+    width: 0;
+    background: none;
+    margin: 0;
+    border-radius: 0;
+  }
 }
