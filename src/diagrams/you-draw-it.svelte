@@ -58,7 +58,6 @@
       .attr('width', x(cutoffYear) - 2)
       .attr('height', height);
 
-    console.log(clipRect)
 
     const correctSel =  svg.append('g').attr('clip-path', 'url(#clip)')
 
@@ -75,23 +74,36 @@
         return d.year >= cutoffYear;
       })
 
+    const circleData = yourData.slice(1).map((d) => {
+      return d;
+    })
+
+    const circles = svg.selectAll('circle').data(circleData).enter().append('circle')
+      .attr('cx', d => x(d.year))
+      .attr('cy', d => y(5000))
+      .attr('r', 2)
+      .attr('fill', '#ddd')
+      .attr('stroke', 'none');
+
     var Drag = drag()
       .on('drag', function() {
         const pos = mouse(this)
         const year = clamp(cutoffYear+1, endYear, x.invert(pos[0]))
         const total = clamp(0, y.domain()[1], y.invert(pos[1]))
 
-        yourData.forEach((d) => {
+        yourData.forEach((d, i) => {
           if (Math.abs(d.year - year) < .5){
             d.total = total
             d.defined = true
+
+            svg.selectAll('circle').filter((_d) => _d.year === d.year).remove();
           }
         })
+
 
         yourDataSel.attr('d', line.defined(d => d.defined)(yourData) )
 
         if (!completed && mean(yourData, d => d.defined) == 1){
-          console.log('we here')
           completed = true
           clipRect.transition().duration(1000).attr('width', x(endYear))
         }
@@ -111,9 +123,7 @@
 
   svg {
     display: block;
-    margin: 0 auto 1em auto;
     overflow: visible;
-    max-width: 90%;
   }
 
   svg :global(.axis) {
@@ -140,6 +150,18 @@
     font-size: 2em;
   }
 
+  .chartwrap {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto 1em auto;
+    display: block;
+    /* height: 400px; */
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+  }
   .caption-text {
     margin: 2em auto 0 auto;
     max-width: 300px;
@@ -147,12 +169,29 @@
     text-align: center;
   }
 
+  .annotate {
+    display: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #not-completed-anno {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    font-size: 12px;
+    color: #999999;
+    line-height: 1.2;
+  }
+
   @media(max-width: 768px) {
     #wrapper {
       grid-column: screen !important;
 		}
   }
-  
+
   @media(max-width: 1000px) {
     #wrapper {
       grid-column: page;
@@ -166,10 +205,20 @@
       titleText="Complete the trend of CO2 emissions from burning fossil fuels."
       subtitleText="Letting a reader first guess about data and only showing the ground truth afterwards challenges a reader's prior beliefs and has been shown to improve their recall of information."
     />
-    <svg
-      bind:this={_svg}
-      viewBox={`0 0 ${width} ${height}`}
-    ></svg>
+    <div class="chartwrap">
+      <svg
+        bind:this={_svg}
+        viewBox={`0 0 ${width} ${height}`}
+      >
+      </svg>
+      <div class="annotate">
+        {#if !completed}
+          <div id="not-completed-anno">
+            Make a guess for each year up until 2014 to reveal the true trend.
+          </div>
+        {/if}
+      </div>
+    </div>
     <div class="caption-text">
       {#if completed}
         <div>How did you do?</div>
