@@ -30,7 +30,7 @@
         border-radius: var(--outerBorder);
         padding: var(--outerBorder);
         font-weight: 500;
-        font-size: 0.6em;
+        font-size: 0.66em;
         line-height: 1.2;
         min-height: 26px;
         /* color: rgba(0, 0, 0, 0.8); */
