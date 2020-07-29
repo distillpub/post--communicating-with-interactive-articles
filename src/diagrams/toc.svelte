@@ -3,8 +3,8 @@
         :global(d-contents) {
             justify-self: start;
             align-self: start;
-            grid-column-start: 2;
-            grid-column-end: 6;
+            /* grid-column-start: 2; */
+            /* grid-column-end: 6; */
             padding-bottom: 0.5em;
             margin-bottom: 1em;
             padding-left: 0.25em;
