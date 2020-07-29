@@ -32,6 +32,8 @@
   const cutoffYear = 1976;
   const endYear = 2014;
 
+  let _reset = () => {};
+
 	onMount(() => {
 
     const svg = select(_svg);
@@ -65,7 +67,7 @@
     correctSel.append('path').attr('class', 'line').attr('d', line(data));
     const yourDataSel = svg.append('path').attr('class', 'your-line');
 
-    const yourData = data
+    let yourData = data
       .map((d) => {
         return { year: d.year, total: d.total, defined: 0 }
       })
@@ -78,12 +80,40 @@
       return d;
     })
 
-    const circles = svg.selectAll('circle').data(circleData).enter().append('circle')
+    let circles = svg.selectAll('circle').data(circleData).enter().append('circle')
       .attr('cx', d => x(d.year))
       .attr('cy', d => y(5000))
       .attr('r', 2)
       .attr('fill', '#ddd')
       .attr('stroke', 'none');
+
+
+    const reset = () => {
+      completed = false
+      clipRect.transition().duration(1000).attr('width', x(cutoffYear) - 2)
+
+      yourData = data
+      .map((d) => {
+        return { year: d.year, total: d.total, defined: 0 }
+      })
+      .filter((d) => {
+        if (d.year == cutoffYear) d.defined = true
+        return d.year >= cutoffYear;
+      })
+
+      yourDataSel.attr('d', '');
+
+       circles = svg.selectAll('circle').data(circleData).enter().append('circle')
+      .attr('cx', d => x(d.year))
+      .attr('cy', d => y(5000))
+      .attr('r', 2)
+      .attr('fill', '#ddd')
+      .attr('stroke', 'none');
+
+
+    }
+
+    _reset = reset;
 
     var Drag = drag()
       .on('drag', function() {
@@ -124,6 +154,7 @@
   svg {
     display: block;
     overflow: visible;
+    cursor: crosshair;
   }
 
   svg :global(.axis) {
@@ -177,6 +208,11 @@
     right: 0;
   }
 
+  .reset-button {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   #not-completed-anno {
     position: absolute;
     top: 55%;
@@ -221,7 +257,7 @@
     </div>
     <div class="caption-text">
       {#if completed}
-        <div>How did you do?</div>
+        <div class="reset-button" on:click={() => _reset()}>Reset</div>
       {:else}
         <div>Fill in the trend to see the actual data. Measured in metric tons of CO2.</div>
       {/if}
