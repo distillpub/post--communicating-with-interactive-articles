@@ -8,7 +8,7 @@
     #parametric-wrapper {
         grid-column: page;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 1em;
     }
 
@@ -20,27 +20,39 @@
     .screenshot {
         border: none;
     }
-/* 
+
+    #image-1 { order: 1 }
+    #image-2 { order: 2 }
+    #image-3 { order: 3 }
+    #image-4 { order: 4 }
+
     @media(max-width: 768px) {
 
         #parametric-wrapper {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
 
-    } */
+        #image-3 {order: 4}
+
+        #image-4 {order: 3}
+
+    }
     
 </style>
 
 <figure class="subgrid">
     <div id="parametric-wrapper">
-        <a class="screenshot" href={parametricURL}>
+        <a class="screenshot" href={parametricURL} id="image-1">
             <img src="images/parametric/parametric-1.png" alt="" />
         </a>
-        <a class="screenshot" href={parametricURL}>
+        <a class="screenshot" href={parametricURL} id="image-2">
             <img src="images/parametric/parametric-2.png" alt="" />
         </a>
-        <a class="screenshot" href={parametricURL}>
+        <a class="screenshot" href={parametricURL} id="image-3">
             <img src="images/parametric/parametric-3.png" alt="" />
+        </a>
+        <a class="screenshot" href={parametricURL} id="image-4">
+            <img src="images/parametric/parametric-4.png" alt="" />
         </a>
     </div>
     <figcaption style="grid-column: text;">
