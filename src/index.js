@@ -85,7 +85,7 @@ const teaser = new Teaser({
 
 // video examples
 new VideoExample({
-	target: document.getElementById('example-goldenberg2019you'),
+	target: document.getElementById('goldenberg2019you'),
 	props: { example: examples.find(example => example.bibtex === 'goldenberg2019you')}
 })
 
