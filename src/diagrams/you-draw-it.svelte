@@ -177,14 +177,14 @@
     stroke-dasharray: 5 5;
   }
 
-  svg :global(.x.axis text) {
-    font-size: 2em;
+  svg :global(.x.axis text, .y.axis text) {
+    font-size: 1.625em;
   }
 
   .chartwrap {
     position: relative;
     max-width: 90%;
-    margin: 0 auto 1em auto;
+    margin: 0 auto 1em 3em;
     display: block;
     /* height: 400px; */
   }
@@ -195,8 +195,8 @@
   }
   .caption-text {
     margin: 2em auto 0 auto;
-    max-width: 300px;
-    font-size: 0.9em;
+    /* max-width: 300px; */
+    /* font-size: 0.9em; */
     text-align: center;
   }
 
@@ -211,6 +211,7 @@
   .reset-button {
     text-decoration: underline;
     cursor: pointer;
+    /* text-transform: uppercase; */
   }
 
   #not-completed-anno {
@@ -218,7 +219,7 @@
     top: 55%;
     left: 50%;
     font-size: 12px;
-    color: #999999;
+    /* color: #999999; */
     line-height: 1.2;
   }
 
@@ -249,7 +250,7 @@
       </svg>
       <div class="annotate">
         {#if !completed}
-          <div id="not-completed-anno">
+          <div id="not-completed-anno" class="figcaption">
             Make a guess for each year up until 2014 to reveal the true trend.
           </div>
         {/if}
@@ -257,9 +258,12 @@
     </div>
     <div class="caption-text">
       {#if completed}
-        <div class="reset-button" on:click={() => _reset()}>Reset</div>
+        <div on:click={() => _reset()}><span class="reset-button figcaption">Reset</span></div>
       {:else}
-        <div>Fill in the trend to see the actual data. Measured in metric tons of CO2.</div>
+        <div class="figcaption" style="color: black; opacity: 0.5">
+          <!-- Fill in the trend to see the actual data. -->
+          Measured in metric tons of CO2.
+        </div>
       {/if}
     </div>
   </div>
