@@ -47,7 +47,7 @@
 
     button {
         border: none;
-        padding: 12px 24px;
+        padding: 0.75em 1.5em;
         text-align: center;
         text-decoration: none;
         font-size: 1em;
@@ -82,6 +82,7 @@
         button {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
+            font-size: 0.9em;
         }
 
     }
