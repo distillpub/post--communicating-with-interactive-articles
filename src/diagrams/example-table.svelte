@@ -128,11 +128,18 @@
         color: var(--orange);
     } */
 
+    .break { display: none; }
+    .hide-column { display: auto; }
+
     @media(max-width: 1000px) {
         td, tr {
             font-size: 0.85em !important;
             line-height: 1.35em;
         }
+
+        .break { display: inline-block; }
+        .hide-column { display: none; }
+
     }
 </style>
 
@@ -142,8 +149,8 @@
             <thead>
                 <tr>
                 <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
-                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication (or author) <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
-                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
+                <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "journal"; sort()}}>Publication<br class="break"> or Author <i class="material-icons">{sortKey === "journal" ? sortIcon : ""}</i></th>
+                <th class="hide-column" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "tags"; sort()}}>Tags <i class="material-icons">{sortKey === "tags" ? sortIcon : ""}</i></th>
                 <th scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "year"; sort()}}>Year <i class="material-icons">{sortKey === "year" ? sortIcon : ""}</i></th>
                 </tr>
             </thead>
@@ -156,7 +163,7 @@
                             <!-- <d-cite key={example.citationKey}></d-cite> -->
                         </td>
                         <td>{example.entryTags.journal !== "Self published" ? example.entryTags.journal : example.entryTags.author}</td>
-                        <td>{example.entryTags.tags}</td>
+                        <td class="hide-column">{example.entryTags.tags}</td>
                         <td>{example.entryTags.year}</td>
                     </tr>
                 {/each}
