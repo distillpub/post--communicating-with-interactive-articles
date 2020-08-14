@@ -25,6 +25,7 @@
 
     onMount(() => {
         assignAnnotations()
+        tapBackgroundToHideAnnotation()
     })
 
     afterUpdate(() => {
@@ -64,6 +65,10 @@
     function changeAnnotationDisplay() {
         annotationDisplay = false
         showFakeImage()
+    }
+
+    function tapBackgroundToHideAnnotation() {
+        document.getElementById('fake-image').onclick = () => changeAnnotationDisplay()
     }
 
     function hideFakeImage() {
