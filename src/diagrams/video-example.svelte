@@ -166,12 +166,12 @@
         <div class="overlay" bind:this={overlay}></div> -->
 
         {#if shortVideo === true}
-            <video class="paused" bind:this={video} muted="muted" autoplay="true" controls loop>
+            <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
                 <source src={example.teaser} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         {:else if shortVideo === false}
-            <video class="paused" bind:this={video} muted="muted"autoplay="true" controls>
+            <video class="paused" bind:this={video} autoplay controls playsinline muted>
                 <source src={example.video} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>

@@ -133,6 +133,7 @@
 
     @media(max-width: 1000px) {
         th { font-size: 1em !important }
+        
         td, tr {
             font-size: 0.85em !important;
             line-height: 1.35em;
