@@ -25,7 +25,6 @@
 
     onMount(() => {
         assignAnnotations()
-        tapBackgroundToHideAnnotation()
     })
 
     afterUpdate(() => {
@@ -56,20 +55,27 @@
         annotationDisplay = true
         selectedPoint = i-1
         hideFakeImage()
-        tapBackgroundToHideAnnotation();
+        setTimeout(() => {
+            tapBackgroundToHideAnnotation()
+        }, 500)
     }
 
     function changeSelectedImage(i) {
-        selectedImage = i;
+        selectedImage = i
     }
 
     function changeAnnotationDisplay() {
         annotationDisplay = false
         showFakeImage()
+        dontTapBackgroundToHideAnnotation()
     }
 
     function tapBackgroundToHideAnnotation() {
         document.getElementById('fake-image-svg-container').onclick = () => changeAnnotationDisplay()
+    }
+
+    function dontTapBackgroundToHideAnnotation() {
+        document.getElementById('fake-image-svg-container').onclick = () => {}
     }
 
     function hideFakeImage() {
