@@ -165,6 +165,7 @@
       height: 13px;
       background-color: var(--orange);
       cursor: pointer;
+      border-radius: 50%;
   }
 
   .control {
@@ -196,6 +197,19 @@
       width: 25vw;
     }
 
+    .slider::-webkit-slider-thumb {
+        top: -8px;
+        left: -8px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .slider::-moz-range-thumb {
+        top: -8px;
+        left: -8px;
+        width: 19px;
+        height: 19px;
+    }
   }
 
   @media(max-width: 1000px) {
