@@ -56,6 +56,7 @@
         annotationDisplay = true
         selectedPoint = i-1
         hideFakeImage()
+        tapBackgroundToHideAnnotation();
     }
 
     function changeSelectedImage(i) {
@@ -68,7 +69,7 @@
     }
 
     function tapBackgroundToHideAnnotation() {
-        document.getElementById('fake-image').onclick = () => changeAnnotationDisplay()
+        document.getElementById('fake-image-svg-container').onclick = () => changeAnnotationDisplay()
     }
 
     function hideFakeImage() {
@@ -165,7 +166,7 @@
         color: var(--gray);
         padding-bottom: 5px;
     }
-    
+
     #caption-wrapper {
         display: flex;
         /* flex-direction: column; */
@@ -201,7 +202,7 @@
         opacity: 0;
     }
 
-    
+
     @media(max-width: 768px) {
 
         #grid-wrapper {
@@ -239,7 +240,7 @@
 
         <div id="grid-wrapper">
             <div>
-                <div>
+                <div id="fake-image-svg-container">
                     {@html fakeImages[selectedImage-1]}
                 </div>
             </div>

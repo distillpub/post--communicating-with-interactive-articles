@@ -117,6 +117,19 @@
     justify-content: space-around;
   }
 
+  .controls-bottom {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .controls-bottom {
+    margin-bottom: 1.5em;
+  }
   .slider {
       -webkit-appearance: none;
       appearance: none;
@@ -154,10 +167,35 @@
       cursor: pointer;
   }
 
+  .control {
+    line-height: 1.3;
+  }
+
+  .control-label {
+    user-select: none;
+  }
   @media(max-width: 768px) {
     #wrapper {
       grid-column: screen !important;
-		}
+      width: calc(100% - 2em);
+    }
+
+    .control {
+      width: 30vw;
+      /* flex: 1; */
+    }
+
+    .control input {
+      width: 30vw;
+      display: block;
+      margin-top: 0.5em;
+      /* flex: 1; */
+    }
+
+    .control-label {
+      width: 25vw;
+    }
+
   }
 
   @media(max-width: 1000px) {
@@ -190,31 +228,31 @@
         width={CANVAS_WIDTH}
         height={CANVAS_HEIGHT}
       ></canvas>
-      <div class="controls">
+      <div class="controls-bottom">
         <div class="control">
-          Separation Distance<br/>
+          <div class="control-label">Separation Distance</div>
             <input type=range bind:value={separationDistance} min=1 max=500 class="slider" />
         </div>
         <div class="control">
-          Alignment Distance<br/>
+          <div class="control-label">Alignment Distance</div>
             <input type=range bind:value={alignmentDistance} min=1 max=500 class="slider" />
         </div>
         <div class="control">
-          Cohesion Distance<br/>
+          <div class="control-label">Cohesion Distance</div>
             <input type=range bind:value={cohesionDistance} min=1 max=500 class="slider" />
         </div>
       </div>
-      <div class="controls">
+      <div class="controls-bottom">
         <div class="control">
-          Separation Force<br/>
+          <div class="control-label">Separation Force</div>
             <input type=range bind:value={separationForce} min=0.01 max=500 step=0.01 class="slider" />
         </div>
         <div class="control">
-          Alignment Force<br/>
+          <div class="control-label">Alignment Force</div>
             <input type=range bind:value={alignmentForce} min=0.01 max=500 step=0.01 class="slider" />
         </div>
         <div class="control">
-          Cohesion Force<br/>
+          <div class="control-label">Cohesion Force</div>
             <input type=range bind:value={cohesionForce} min=0.01 max=500 step=0.01 class="slider" />
         </div>
       </div>
