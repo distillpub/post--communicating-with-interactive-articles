@@ -1,10 +1,22 @@
 <script>
+    import { onMount } from 'svelte';
+
     export let example;
 
     let playButton;
     let overlay;
     let video;
     let shortVideo = true;
+
+    let isMobile = false;
+    let mounted = false;
+
+    onMount(() => {
+        if (document.documentElement.clientWidth <= 720) {
+            isMobile = true;
+        }
+        mounted = true;
+    })
 
     function play() {
         if (shortVideo === true) {
@@ -43,7 +55,7 @@
             // overlay.classList.add("hideVideoOverlay")
         }
     }
-    
+
     function showLongVideo() {
         shortVideo = false;
         // hideShortVideoOverlay();
@@ -71,7 +83,7 @@
         display: block;
         cursor: pointer;
     }
-    
+
     /* .overlay {
         height: 100%;
         width: 100%;
@@ -142,7 +154,7 @@
 	/* .example > a {
 		border-bottom: none;
     } */
-    
+
     @media (max-width: 1178px) {
         figure {
             padding-bottom: 1em;
@@ -158,25 +170,25 @@
 <figure id={example.bibtex}>
 
     <div class="video-wrap" on:click={switchVideo}>
-        
+
         <!-- <div class="play-button" bind:this={playButton}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.69 311.69"><path d="M155.84,0A155.85,155.85,0,1,0,311.69,155.84,155.84,155.84,0,0,0,155.84,0Zm0,296.42A140.58,140.58,0,1,1,296.42,155.84,140.58,140.58,0,0,1,155.84,296.42Z"></path><polygon points="218.79 155.84 119.22 94.34 119.22 217.34 218.79 155.84"></polygon></svg>
         </div>
 
         <div class="overlay" bind:this={overlay}></div> -->
 
-        {#if shortVideo === true}
+        {#if mounted && (shortVideo === true && !isMobile)}
             <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
                 <source src={example.teaser} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
-        {:else if shortVideo === false}
-            <video class="paused" bind:this={video} autoplay controls playsinline muted>
+        {:else if mounted && (shortVideo === false || isMobile)}
+            <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted>
                 <source src={example.video} type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         {/if}
-        
+
     </div>
 
     <!-- <div class="example-title"><a href={example.url}>  {example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
@@ -185,9 +197,9 @@
         <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
         <div id="video-lengths">
             <span>
-                Playing 
+                Playing
                 <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
-                click to play 
+                click to play
                 <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Full Video</button>.
             </span>
         </div>
