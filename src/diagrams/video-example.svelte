@@ -195,14 +195,16 @@
 
     <figcaption>
         <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
-        <div id="video-lengths">
-            <span>
-                Playing
-                <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
-                click to play
-                <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Full Video</button>.
-            </span>
-        </div>
+        {#if !isMobile}
+            <div id="video-lengths">
+                <span>
+                    Playing
+                    <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
+                    click to play
+                    <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Full Video</button>.
+                </span>
+            </div>
+        {/if}
     </figcaption>
 
 </figure>
