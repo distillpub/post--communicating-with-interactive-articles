@@ -180,6 +180,20 @@
         #wrapper {
             grid-column: screen;
         }
+
+        .slider::-webkit-slider-thumb {
+            top: -8px;
+            left: -8px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .slider::-moz-range-thumb {
+            top: -8px;
+            left: -8px;
+            width: 15px;
+            height: 15px;
+        }
     }
 
 </style>

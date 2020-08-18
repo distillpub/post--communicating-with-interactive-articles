@@ -125,11 +125,14 @@
     text-transform: uppercase;
     text-align: center;
     justify-content: space-between;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 
   .controls-bottom {
     margin-bottom: 1.5em;
   }
+
   .slider {
       -webkit-appearance: none;
       appearance: none;
@@ -175,6 +178,7 @@
   .control-label {
     user-select: none;
   }
+
   @media(max-width: 768px) {
     #wrapper {
       grid-column: screen !important;
@@ -187,28 +191,29 @@
     }
 
     .control input {
-      width: 30vw;
+      width: 27.5vw;
       display: block;
       margin-top: 0.5em;
       /* flex: 1; */
     }
 
     .control-label {
-      width: 25vw;
+      width: 20vw;
+      margin: auto;
     }
 
     .slider::-webkit-slider-thumb {
         top: -8px;
         left: -8px;
-        width: 19px;
-        height: 19px;
+        width: 15px;
+        height: 15px;
     }
 
     .slider::-moz-range-thumb {
         top: -8px;
         left: -8px;
-        width: 19px;
-        height: 19px;
+        width: 15px;
+        height: 15px;
     }
   }
 
@@ -216,6 +221,12 @@
     #wrapper {
         grid-column: page;
     }
+
+    .controls-bottom {
+      margin-left: 0em;
+      margin-right: 0em;
+    }
+
   }
 
 </style>
@@ -227,7 +238,7 @@
     <div>
       <Title
         titleText="Interact with live simulations—no setup required."
-        subtitleText="This Boids simulation models and visualizes the behavior of a flock of birds, and exposes parameters that a reader can manipulate to change the behavior of the simulation."
+        subtitleText="This Boids visualization models the movement of a flock of birds, and exposes parameters that a reader can manipulate to change the behavior of the simulation."
       />
 
 

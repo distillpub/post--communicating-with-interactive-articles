@@ -75,15 +75,15 @@
     .slider::-webkit-slider-thumb {
         top: -8px;
         left: -8px;
-        width: 19px;
-        height: 19px;
+        width: 15px;
+        height: 15px;
     }
 
     .slider::-moz-range-thumb {
         top: -8px;
         left: -8px;
-        width: 19px;
-        height: 19px;
+        width: 15px;
+        height: 15px;
     }
 
     }
