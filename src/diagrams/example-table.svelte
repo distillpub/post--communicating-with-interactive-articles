@@ -28,11 +28,15 @@
         if (citation.entryTags.author) {
             let tempAuthor = citation.entryTags.author
             tempAuthor = tempAuthor.split(' and ')
-            tempAuthor.forEach((author,i) => {
-                author = author.split(',')
-                tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
-            });
-            citation.entryTags.author = tempAuthor.join(', ')
+            if (tempAuthor.length === 1) {
+                citation.entryTags.author = tempAuthor
+            } else {
+                tempAuthor.forEach((author,i) => {
+                    author = author.split(',')
+                    tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
+                });
+                citation.entryTags.author = tempAuthor.join(', ')
+            }
         }
     });
 
