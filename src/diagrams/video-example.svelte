@@ -199,7 +199,7 @@
     <!-- <div class="example-title"><a href={example.url}>  {example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
 
     <figcaption>
-        <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
+        <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a>" <d-cite key={example.bibtex}></d-cite>, {example.caption}
         {#if !isMobile}
             <div id="video-lengths">
                 <span>
