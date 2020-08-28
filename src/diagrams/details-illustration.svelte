@@ -166,12 +166,12 @@
         justify-content: space-between;
     }
 
-    .ref {
+    /* .ref {
 		font-size: 0.8em;
 		line-height: 1.5em;
         color: var(--gray);
         padding-bottom: 5px;
-    }
+    } */
 
     #caption-wrapper {
         display: flex;
@@ -207,7 +207,6 @@
     :global(.remove) {
         opacity: 0;
     }
-
 
     @media(max-width: 768px) {
 
@@ -255,16 +254,16 @@
                     <div class="caption">{annotationDisplay ? annotations[selectedPoint] : noAnnotationMessage}</div>
                 </div>
                 <div>
-                    <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div>
+                    <!-- <div class="ref">Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</div> -->
                     <div id="thumbnail-wrapper">
-                        <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.png" alt="" /></div>
-                        <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.png" alt="" /></div>
-                        <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.png" alt="" /></div>
-                        <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.png" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(1)}><img class={selectedImage === 1 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-1.jpg" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(2)}><img class={selectedImage === 2 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-2.jpg" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(3)}><img class={selectedImage === 3 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-3.jpg" alt="" /></div>
+                        <div on:click={() => changeSelectedImage(4)}><img class={selectedImage === 4 ? "thumbnail-selected thumbnail" : "thumbnail"} src="images/fake-images/fake-image-4.jpg" alt="" /></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region. Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</figcaption>
 </figure>
