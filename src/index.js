@@ -125,12 +125,9 @@ new VideoExample({
 	props: { example: examples.find(example => example.bibtex === 'matuschak2019quantum') }
 })
 
-
-
 const target = document.getElementById('details-illustration');
 target.addEventListener('ready', () => {
 	import('./diagrams/details-illustration.svelte').then(_Element => {
-		console.log(_Element);
 		new _Element.default({ target });
 	});
 })
