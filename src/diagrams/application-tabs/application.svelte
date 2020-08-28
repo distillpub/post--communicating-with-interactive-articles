@@ -88,7 +88,7 @@
 		.application-opportunities, .application-challenges {
 			flex: 1;
 		}
-		
+
 		.bottom {
 			grid-template-columns: 1fr;
 		}
@@ -106,7 +106,7 @@
 		}
 
 		.example-text {
-			grid-column: 2 / 4 
+			grid-column: 2 / 4
 		}
 
     }
@@ -147,7 +147,7 @@
 		<div class="example">
 			<a href={example.url}><img src="images/application-tabs/{example.image}" alt="Screen capture of example interactive article."/></a>
 			<div class="example-text">
-				<div class="example-title"><a href={example.url}>{example.title}</a><d-cite key={example.bibtex}></d-cite></div>
+				<div class="example-title"><a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite></div>
 				<div class="example-description">{example.caption}</div>
 			</div>
 		</div>
