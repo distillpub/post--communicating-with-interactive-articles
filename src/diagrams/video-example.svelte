@@ -181,13 +181,13 @@
         <IntersectionObserver once={true} let:intersecting={intersecting}>
             {#if intersecting}
                 {#if mounted && (shortVideo === true && !isMobile)}
-                        <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
-                            <source src={example.teaser} type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
+                    <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
+                        <source src={example.teaser} type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
                 {:else if mounted && (shortVideo === false || isMobile)}
-                    <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted>
-                        <source src={example.video} type="video/mp4">
+                    <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
+                        <source src={example.teaser} type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
                 {/if}

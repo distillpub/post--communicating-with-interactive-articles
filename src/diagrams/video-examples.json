@@ -6,6 +6,7 @@
         "url": "https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html",
         "teaser": "videos/1-720p-short.m4v",
         "video": "videos/1-720p.m4v",
+        "poster": "videos/1-poster.png",
         "bibtex": "badger2018extensive"
     },
     {
@@ -15,6 +16,7 @@
         "url": "https://www.wired.com/2009/07/cutthroat-capitalism-the-game/",
         "teaser": "videos/2-720p-short.m4v",
         "video": "videos/2-720p.m4v",
+        "poster": "videos/2-poster.png",
         "bibtex": "webworks2009cutthroat"
     },
     {
@@ -24,6 +26,7 @@
         "url": "https://design.google/library/designing-and-learning-teachable-machine/",
         "teaser": "videos/3-720p-short.m4v",
         "video": "videos/3-720p.m4v",
+        "poster": "videos/3-poster.png",
         "bibtex": "barron2018designing"
     },
     {
@@ -33,6 +36,7 @@
         "url": "https://eater.net/quaternions",
         "teaser": "videos/4-720p-short.m4v",
         "video": "videos/4-720p.m4v",
+        "poster": "videos/4-poster.png",
         "bibtex": "sanderson2018visualizing"
     },
     {
@@ -42,6 +46,7 @@
         "url": "https://pudding.cool/2019/02/gyllenhaal/",
         "teaser": "videos/5-720p-short.m4v",
         "video": "videos/5-720p.m4v",
+        "poster": "videos/5-poster.png",
         "bibtex": "goldenberg2019you"
     },
     {
@@ -51,6 +56,7 @@
         "url": "https://ncase.me/remember/",
         "teaser": "videos/6-720p-short.m4v",
         "video": "videos/6-720p.m4v",
+        "poster": "videos/6-poster.png",
         "bibtex": "case2014how"
     },
     {
@@ -60,6 +66,7 @@
         "url": "https://www.nytimes.com/interactive/2018/08/30/climate/how-much-hotter-is-your-hometown.html",
         "teaser": "videos/7-720p-short.m4v",
         "video": "videos/7-720p.m4v",
+        "poster": "videos/7-poster.png",
         "bibtex": "popovich2018how"
     },
     {
@@ -69,6 +76,7 @@
         "url": "https://quantum.country/",
         "teaser": "videos/8-720p-short.m4v",
         "video": "videos/8-720p.m4v",
+        "poster": "videos/8-poster.png",
         "bibtex": "matuschak2019quantum"
     }
 ]
