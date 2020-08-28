@@ -62,15 +62,6 @@
         // hideShortVideoOverlay();
     }
 
-    function switchVideo() {
-        console.log('click')
-        if (shortVideo === true) {
-            showLongVideo()
-        } else {
-            showShortVideo()
-        }
-    }
-
 </script>
 
 <style>
@@ -83,6 +74,7 @@
         width: 100%;
         display: block;
         cursor: pointer;
+        border: 1px solid var(--gray-border);
     }
 
     /* .overlay {
@@ -99,7 +91,8 @@
     .video-wrap {
       position: relative;
       margin-bottom: 0.5rem;
-      border: 1px solid var(--gray-border);
+      /* border: 1px solid var(--gray-border); */
+      min-height: 255px;
     }
 
     /* .video-wrap .play-button {
@@ -157,10 +150,27 @@
     } */
 
     @media (max-width: 1178px) {
+        .video-wrap {
+            min-height: 290px;
+        }
+
         figure {
             padding-bottom: 1em;
         }
     }
+
+    @media(max-width: 1000px) {
+        .video-wrap {
+            min-height: 268px;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .video-wrap {
+            min-height: calc((100vw - 16px) * 9 / 16 + 2px);
+        }
+    }
+
 
     :global(.hideVideoOverlay) {
         display: none;
@@ -170,7 +180,7 @@
 
 <figure id={example.bibtex}>
 
-    <div class="video-wrap" on:click={switchVideo}>
+    <div class="video-wrap">
 
         <!-- <div class="play-button" bind:this={playButton}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.69 311.69"><path d="M155.84,0A155.85,155.85,0,1,0,311.69,155.84,155.84,155.84,0,0,0,155.84,0Zm0,296.42A140.58,140.58,0,1,1,296.42,155.84,140.58,140.58,0,0,1,155.84,296.42Z"></path><polygon points="218.79 155.84 119.22 94.34 119.22 217.34 218.79 155.84"></polygon></svg>
@@ -180,16 +190,32 @@
 
         <IntersectionObserver once={true} let:intersecting={intersecting}>
             {#if intersecting}
-                {#if mounted && (shortVideo === true && !isMobile)}
-                    <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
-                        <source src={example.teaser} type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-                {:else if mounted && (shortVideo === false || isMobile)}
-                    <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
-                        <source src={example.teaser} type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
+                {#if mounted && (!isMobile)}
+                    {#if shortVideo}
+                        <video bind:this={video} autoplay controls playsinline muted loop>
+                            <source src={example.teaser} type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    {:else}
+                        <video bind:this={video} autoplay controls playsinline muted loop>
+                            <source src={example.video} type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    {/if}
+
+                {:else if mounted && (isMobile)}
+                    {#if shortVideo}
+                        <video bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
+                            <source src={example.teaser} type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    {:else}
+                        <video bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
+                            <source src={example.video} type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    {/if}
+
                 {/if}
             {/if}
         </IntersectionObserver>
@@ -200,16 +226,14 @@
 
     <figcaption>
         <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a>" <d-cite key={example.bibtex}></d-cite>, {example.caption}
-        {#if !isMobile}
             <div id="video-lengths">
                 <span>
                     Playing
-                    <button class={shortVideo === true ? "video-selected" : ""} on:click={showShortVideo}>Preview</button>,
+                    <button class={shortVideo === true ? "video-selected" : ""} on:click={() => { pause(); shortVideo = true }}>Preview</button>,
                     click to play
-                    <button class={shortVideo === false ? "video-selected" : ""} on:click={showLongVideo}>Full Video</button>.
+                    <button class={shortVideo === false ? "video-selected" : ""} on:click={() => { pause(); shortVideo = false }}>Full Video</button>.
                 </span>
             </div>
-        {/if}
     </figcaption>
 
 </figure>
