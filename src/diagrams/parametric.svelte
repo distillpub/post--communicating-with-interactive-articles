@@ -37,7 +37,7 @@
         #image-4 {order: 3}
 
     }
-    
+
 </style>
 
 <figure class="subgrid">

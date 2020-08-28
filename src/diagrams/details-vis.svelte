@@ -9,9 +9,7 @@
     import Title from "./title.svelte";
 
     import uk from '../data/uk.json'
-    import * as topojson from 'topojson';
-
-    // import * as d3 from 'd3';
+    import { feature, mesh }  from 'topojson';
     import { geoAlbers, geoPath } from 'd3-geo';
 
     let _svg;
@@ -52,18 +50,18 @@
     //     .attr("height", height);
 
       svg.selectAll(".subunit")
-          .data(topojson.feature(uk, uk.objects.europe).features)
+          .data(feature(uk, uk.objects.europe).features)
         .enter().append("path")
           .attr("class", function(d) { return "subunit " + d.id; })
           .attr("d", path);
 
       svg.append("path")
-          .datum(topojson.mesh(uk, uk.objects.europe, function(a, b) { return a !== b && a.id !== "IRL"; }))
+          .datum(mesh(uk, uk.objects.europe, function(a, b) { return a !== b && a.id !== "IRL"; }))
           .attr("d", path)
           .attr("class", "subunit-boundary");
 
       svg.append("path")
-          .datum(topojson.mesh(uk, uk.objects.europe, function(a, b) { return a === b && a.id === "IRL"; }))
+          .datum(mesh(uk, uk.objects.europe, function(a, b) { return a === b && a.id === "IRL"; }))
           .attr("d", path)
           .attr("class", "subunit-boundary IRL");
 

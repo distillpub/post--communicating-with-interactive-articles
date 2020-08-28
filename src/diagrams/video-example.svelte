@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import IntersectionObserver from './intersection-observer.svelte';
 
     export let example;
 
@@ -177,24 +178,28 @@
 
         <div class="overlay" bind:this={overlay}></div> -->
 
-        {#if mounted && (shortVideo === true && !isMobile)}
-            <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
-                <source src={example.teaser} type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-        {:else if mounted && (shortVideo === false || isMobile)}
-            <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
-                <source src={example.teaser} type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-        {/if}
+        <IntersectionObserver once={true} let:intersecting={intersecting}>
+            {#if intersecting}
+                {#if mounted && (shortVideo === true && !isMobile)}
+                    <video class="paused" bind:this={video} autoplay controls playsinline muted loop>
+                        <source src={example.teaser} type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                {:else if mounted && (shortVideo === false || isMobile)}
+                    <video class="paused" bind:this={video} autoplay={!isMobile} controls playsinline muted poster={example.poster} preload="meta">
+                        <source src={example.teaser} type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                {/if}
+            {/if}
+        </IntersectionObserver>
 
     </div>
 
     <!-- <div class="example-title"><a href={example.url}>  {example.title}</a><d-cite key={example.bibtex}></d-cite></div> -->
 
     <figcaption>
-        <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a> <d-cite key={example.bibtex}></d-cite>," {example.caption}
+        <a class="video-number" href="#{example.bibtex}">{example.id}</a>: In "<a href={example.url}>{example.title}</a>" <d-cite key={example.bibtex}></d-cite>, {example.caption}
         {#if !isMobile}
             <div id="video-lengths">
                 <span>
