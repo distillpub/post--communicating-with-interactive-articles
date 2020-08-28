@@ -30,6 +30,7 @@
 	{#each applicationData as application}
 		{#each application.examples as example}
 			<d-cite key={example.bibtex}></d-cite>
+			<img src="images/application-tabs/{example.image}" alt="" />
 		{/each}
 	{/each}
 </div>
