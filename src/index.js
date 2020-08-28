@@ -1,5 +1,5 @@
 // Hot reloading
-import * as _unused from "raw-loader!./index.ejs";
+// import * as _unused from "raw-loader!./index.ejs";
 // TODO: disable before publishing
 
 import ResearchPracticeTable from "./diagrams/research-x-practice-table.svelte"
@@ -10,7 +10,7 @@ import ExampleTable from "./diagrams/example-table.svelte"
 import examples from "./diagrams/video-examples.json"
 import VideoExample from "./diagrams/video-example.svelte"
 import DetailsVis from "./diagrams/details-vis.svelte"
-import DetailsIllustration from "./diagrams/details-illustration.svelte"
+// import DetailsIllustration from "./diagrams/details-illustration.svelte"
 import DetailsMath from "./diagrams/details-math.svelte"
 import DetailsText from "./diagrams/details-text.svelte"
 import SimulationVis from "./diagrams/simulation-vis.svelte"
@@ -51,9 +51,10 @@ const detailsVis = new DetailsVis({
 	target: document.getElementById('details-vis')
 });
 
-const detailsIllustration = new DetailsIllustration({
-	target: document.getElementById('details-illustration')
-});
+// const detailsIllustration = new DetailsIllustration({
+// 	target: document.getElementById('details-illustration')
+// });
+
 
 const detailsMath = new DetailsMath({
 	target: document.getElementById('details-math')
@@ -124,3 +125,12 @@ new VideoExample({
 	props: { example: examples.find(example => example.bibtex === 'matuschak2019quantum') }
 })
 
+
+
+const target = document.getElementById('details-illustration');
+target.addEventListener('ready', () => {
+	import('./diagrams/details-illustration.svelte').then(_Element => {
+		console.log(_Element);
+		new _Element.default({ target });
+	});
+})
