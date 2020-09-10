@@ -157,7 +157,7 @@
 
   </div>
 
-  <figcaption style="grid-column: text;"><a class="figure-number" href="#details-vis">5</a>: Click any point to listen to a different bird's chirp.</figcaption>
+  <figcaption style="grid-column: text;"><a class="figure-number" href="#details-vis">6</a>: Click any point to listen to a different bird's chirp.</figcaption>
 </figure>
 
 

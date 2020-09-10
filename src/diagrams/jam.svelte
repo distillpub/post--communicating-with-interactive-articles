@@ -95,6 +95,6 @@
         {/each}
     </div>
     <figcaption style="grid-column: text;">
-        <a class="figure-number" href="#jam">10</a>: Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
+        <a class="figure-number" href="#jam">11</a>: Example explorable explanations made in three weeks during the <a href="https://explorabl.es/jam/">Explorables Jam</a> covering topics from math, astronomy, computer graphics, and music.
     </figcaption>
 </figure>

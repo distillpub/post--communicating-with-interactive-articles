@@ -56,6 +56,6 @@
         </a>
     </div>
     <figcaption style="grid-column: text;">
-        <a class="figure-number" href="#parametric">9</a>: The "<a href={parametricURL}>Myth of the Impartial Machine</a>" <d-cite key="feng2019myth"></d-cite> was one of five articles published in <i>The Parametric Press</i>. The article used techniques like animation, data visualizations, explanatory diagrams, margin notes, and interactive simulations to explain how biases occur in machine learning systems.
+        <a class="figure-number" href="#parametric">10</a>: The "<a href={parametricURL}>Myth of the Impartial Machine</a>" <d-cite key="feng2019myth"></d-cite> was one of five articles published in <i>The Parametric Press</i>. The article used techniques like animation, data visualizations, explanatory diagrams, margin notes, and interactive simulations to explain how biases occur in machine learning systems.
     </figcaption>
 </figure>
