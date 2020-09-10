@@ -213,7 +213,7 @@ h3.affordance.sun {
 }
 
 #affordances {
-  grid-column: 4/7;
+  /* grid-column: 4/7; */
 }
 
 #affordances>ul {
@@ -268,12 +268,12 @@ h3.affordance.sun {
 
 @media (max-width: 1180px) {
   #affordances {
-    grid-column: text;
+    /* grid-column: text; */
     /* grid-column: 2/7; */
   }
   #message {
     /* grid-column: 7/14; */
-    grid-column: text;
+    /* grid-column: text; */
   }
 }
 
