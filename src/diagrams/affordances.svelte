@@ -10,10 +10,11 @@
         grid-gap: 1em;
         
         padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     a {
-        text-decoration: none;
+        text-decoration: none !important;
         transition: box-shadow 0.35s, transform 0.35s;
         transform: scale(1.0);
     }
@@ -21,6 +22,7 @@
     a:hover {
         /* transform: scale(1.04); */
         /* box-shadow: 0px 1px 4px rgba(0,0,0,0.05); */
+        text-decoration: none !important;
     }
 
     .item {
@@ -47,11 +49,12 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-decoration: none !important;
     }
 
-    .item:hover {
+    /* .item:hover {
         color: #222222;
-    }
+    } */
 
     .blue-green {
         /* background: #00f260; fallback for old browsers */
@@ -129,19 +132,19 @@
 
     @media (max-width: 1000px) {
         #wrapper {
-            grid-template-columns: repeat(12, 1fr);
-            grid-column: page;
+            grid-template-columns: repeat(10, 1fr);
+            grid-column: text;
         }
 
-        .one { grid-column: 1/5;}
-        .two { grid-column: 5/9;}
-        .three { grid-column: 9/13;}
-        .four { grid-column: 1/7;}
-        .five { grid-column: 7/13;}
+        .one { grid-column: 1/4;}
+        .two { grid-column: 4/7;}
+        .three { grid-column: 7/11;}
+        .four { grid-column: 1/6;}
+        .five { grid-column: 6/11;}
 
-        .item {
-            /* height: 100px; */
-        }
+        /* .item {
+            height: 100px;
+        } */
 
         .inner {
             display: flex;
@@ -158,10 +161,23 @@
         .item {
             height: auto;
         }
+
+        #wrapper {
+            grid-template-columns: repeat(12, 1fr);
+            grid-column: page;
+        }
+
+        .one { grid-column: 1/5;}
+        .two { grid-column: 5/9;}
+        .three { grid-column: 9/13;}
+        .four { grid-column: 1/7;}
+        .five { grid-column: 7/13;}
+
+        
     }
 
     .inner {
-        text-decoration: none;
+        text-decoration: none !important;
         /* display: none; */
         /* background: white; */
         /* padding: var(--innerBorder);
@@ -169,19 +185,17 @@
         /* border-radius: calc(var(--border-radius) - var(--outerBorder)); */
     }
 
-    #hero {
-        grid-column: text;
-        width: 100%;
-    }
-
 </style>
 
-<img src="thumbnail.png" id="hero" alt="Interactive articles.">
-
 <div id="wrapper">
-    <a class="one" href="#connecting-people-and-data"><div class="item blue-green"><div class="inner">Connecting People and Data</div></div></a>
+    <!-- <a class="one" href="#connecting-people-and-data"><div class="item blue-green"><div class="inner">Connecting People and Data</div></div></a>
     <a class="two" href="#making-systems-playful"><div class="item red-orange"><div class="inner">Making Systems Playful</div></div></a>
     <a class="three" href="#prompting-self-reflection"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection</div></div></a>
     <a class="four" href="#personalizing-reading"><div class="item argon"><div class="inner">Personalizing Reading</div></div></a>
-    <a class="five" href="#reducing-cognitive-load"><div class="item sun"><div class="inner">Reducing Cognitive Load</div></div></a>
+    <a class="five" href="#reducing-cognitive-load"><div class="item sun"><div class="inner">Reducing Cognitive Load</div></div></a> -->
+    <div class="item one blue-green"><div class="inner">Connecting People and Data</div></div>
+    <div class="item two red-orange"><div class="inner">Making Systems Playful</div></div>
+    <div class="item three soft-blue"><div class="inner">Prompting Self-Reflection</div></div>
+    <div class="item four argon"><div class="inner">Personalizing Reading</div></div>
+    <div class="item five sun"><div class="inner">Reducing Cognitive Load</div></div>
 </div>
