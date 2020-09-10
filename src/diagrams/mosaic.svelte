@@ -1,14 +1,24 @@
 <script>
+    import { onMount } from 'svelte';
     import { getBibtexEntries } from "../util.js";
     
     let examples = getBibtexEntries()
     
     let hoverExampleIndex = -1;
     let hoverTitle = "Examplary Interactive Articles From Around the Web."
-    let hoverAuthor = "Hover over an article for more information."
+    let hoverAuthor = "Select an article for more information."
     let hoverJournal = ""
     let hoverYear = ""
     let hoverURL = ""
+
+    let isMobile = false;
+    let mounted = false;
+    onMount(() => {
+        if (document.documentElement.clientWidth <= 720) {
+            isMobile = true;
+        }
+        mounted = true;
+    })
 
     function changeHoverIndex(i) {
         hoverExampleIndex = i
@@ -17,7 +27,7 @@
 
     function changeHoverExampleData() {
         if (examples[hoverExampleIndex].entryTags.title !== undefined) {
-            hoverTitle = examples[hoverExampleIndex].entryTags.title + '.'
+            hoverTitle = '"' + examples[hoverExampleIndex].entryTags.title + '."'
         } else {
             hoverTitle = ""
         }
@@ -52,9 +62,9 @@
     }
 
     function resetHoverExampleData() {
-        let hoverExampleIndex = -1;
+        hoverExampleIndex = -1;
         hoverTitle = "Examplary Interactive Articles From Around the Web."
-        hoverAuthor = "Hover over an article for more information."
+        hoverAuthor = "Select an article for more information."
         hoverJournal = ""
         hoverYear = ""
     }
@@ -63,7 +73,7 @@
 
 <style>
 
-    #wrapper {
+    #mosaic-wrapper {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-gap: 0.5rem;
@@ -73,6 +83,14 @@
     figure {
         margin-top: 1rem;
         margin-bottom: 0rem;
+    }
+
+    figcaption {
+        margin-top: 0.75rem;
+        /* margin-bottom: 0.75rem; */
+        /* overflow: hidden; */
+        height: 2rem;
+        grid-column: text;
     }
 
     .screenshot {
@@ -96,17 +114,6 @@
 		z-index: 1000;
 	}
 
-    #example-info {
-        grid-column: text;
-        /* padding-top: 1.5rem; */
-        height: 2rem;
-    }
-
-    #example-info > p {
-        margin: 0;
-        font-size: 1rem;
-    }
-
     #hover-title {
         text-transform: capitalize;
         font-weight: 700
@@ -116,46 +123,80 @@
         font-style: italic;
     }
 
-    .ellipsis {
+    /* .ellipsis {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
 
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+    } */
+
     @media (max-width: 1180px) {
-        #wrapper {
+        #mosaic-wrapper {
             grid-column: screen;
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        
+        figcaption {
+            height: 3rem;
+        }
     }
 
     @media (max-width: 1000px) {
-        #wrapper {
+    }
+
+    @media(max-width: 768px) {
+        #mosaic-wrapper {
             grid-template-columns: repeat(6, 1fr);
             grid-column: screen;
             grid-gap: 0.325rem;
             padding-left: 16px;
             padding-right: 16px;
         }
-    }
 
-    @media(max-width: 768px) {
-
+        figcaption {
+            height: 3.75rem;
+        }
     }
 
 </style>
 
-<div id="wrapper">
-    {#each examples as example, i}
-        <a href={hoverURL} target="_blank">
-            <img class='screenshot' src={example.entryTags.image} on:mouseover={() => changeHoverIndex(i)} on:mouseout={() => resetHoverExampleData()} alt={example.entryTags.title}>
-        </a>
-    {/each}
-</div>
+<figure class="subgrid">
 
-<figure id="example-info">
-    <!-- <figcaption><p id="hover-title" class="ellipsis"></p><b>{hoverTitle}</b></p></figcaption> -->
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#mosaic">1</a>: <span id="hover-title">{hoverTitle}</span> <span id="hover-author">{hoverAuthor}</span> <span id="hover-journal">{hoverJournal}</span> <span id="hover-year">{hoverYear}</span></figcaption>
-    <!-- <p class="ellipsis"><span id="hover-author">{hoverAuthor}</span> <i>{hoverJournal} {hoverYear}</i></p> -->
+    <div id="mosaic-wrapper">
+
+        {#if mounted && (!isMobile)}
+            
+            {#each examples as example, i}
+                <a href={hoverURL} target="_blank">
+                    <img class='screenshot' src={example.entryTags.image} on:mouseover={() => changeHoverIndex(i)} on:mouseout={() => resetHoverExampleData()} alt={example.entryTags.title}>
+                </a>
+            {/each}
+
+        {:else if mounted && (isMobile)}
+
+            {#each examples as example, i}
+                <img class='screenshot' src={example.entryTags.image} on:mouseover={() => changeHoverIndex(i)} on:mouseout={() => resetHoverExampleData()} alt={example.entryTags.title}>
+            {/each}
+
+        {/if}
+
+    </div>
+
+    <figcaption>
+        {#if mounted && (!isMobile)}
+            <a class="figure-number" href="#mosaic">1</a>: <span id="hover-title">{hoverTitle}</span> <span id="hover-author">{hoverAuthor}</span> <span id="hover-journal">{hoverJournal}</span> <span id="hover-year">{hoverYear}</span>
+        {:else if mounted && (isMobile)}
+            <a class="figure-number" href="#mosaic">1</a>: <span id="hover-title">{hoverTitle}</span> <span id="hover-author">{hoverAuthor}</span> <span id="hover-journal">{hoverJournal}</span> <span id="hover-year">{hoverYear}</span>
+            {#if hoverExampleIndex > -1}
+                <a href={hoverURL} target="_blank">View article &#8599;</a>
+            {/if}
+        {/if}
+    </figcaption>
+    
 </figure>
