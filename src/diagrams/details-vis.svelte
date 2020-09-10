@@ -122,7 +122,7 @@
   <div id="wrapper" class="interactive-container">
 
       <Title
-          titleText="Birdsongs on demand."
+          titleText="Listen to details-on-demand."
           subtitleText="Click on a circle below to call up a field recording of a birdsong."
       />
       <div>
