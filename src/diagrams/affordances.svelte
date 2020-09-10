@@ -41,7 +41,7 @@
         /* color: #222222; */
         /* border: none; */
         /* border-radius: 25px; */
-        padding: 0.25em 0.5em;
+        padding: 0.6em 0.6em;
         /* background: hsl(0, 0%, 97%); */
         /* color: #666666; */
         /* transition: 0.35s color; */
@@ -53,8 +53,9 @@
     }
 
     .item .caption {
-        color: #999999;
+        color: var(--gray);
         font-weight: 400;
+        padding-top: 0.25rem;
     }
 
     /* .item:hover {
@@ -133,7 +134,8 @@
             grid-template-columns: repeat(10, 1fr);
         }
         .item {
-            min-height: 100px;
+            min-height: 80px;
+            padding: 0.8rem;
         }
 
         .one { grid-column: 1/4;}
@@ -174,6 +176,7 @@
         .item {
             height: auto;
             min-height: 150px;
+            padding: 0.5rem;
         }
 
         #wrapper {
@@ -214,6 +217,7 @@
     <div class="three"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection. <div class="caption">Help readers learn by asking them to reflect in a low pressure enviroment. </div></div></div></div>
     <div class="four" ><div class="item argon"><div class="inner">Personalizing Reading. <div class="caption">Let readers choose the content that is relevant to their own experience.</div></div></div></div>
     <div class="five"><div class="item sun"><div class="inner">Reducing Cognitive Load. <div class="caption">Use effective representations to make complex topics more intuitive.</div></div></div></div>
+    
     <!-- <div class="item one blue-green"><div class="inner">Connecting People and Data</div></div>
     <div class="item two red-orange"><div class="inner">Making Systems Playful</div></div>
     <div class="item three soft-blue"><div class="inner">Prompting Self-Reflection</div></div>
