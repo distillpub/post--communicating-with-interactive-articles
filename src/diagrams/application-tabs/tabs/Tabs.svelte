@@ -51,6 +51,10 @@
 		grid-column: page;
 	}
 
+	figure {
+		margin-bottom: 1.5em;
+	}
+
 	@media(max-width: 768px) {
 
         .tabs {

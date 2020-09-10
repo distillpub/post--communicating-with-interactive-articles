@@ -103,6 +103,10 @@
     .break { display: none; }
     .hide-column { display: auto; }
 
+    figure {
+		margin-bottom: 1.5em;
+    }
+    
     @media(max-width: 1000px) {
         th { font-size: 1em !important }
         
