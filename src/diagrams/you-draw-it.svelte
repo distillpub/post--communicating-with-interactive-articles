@@ -267,5 +267,5 @@
       {/if}
     </div>
   </div>
-  <figcaption style="grid-column: text;"><a class="figure-number" href="#you-draw-it">4</a>: Click and drag to make your guess of the data's trend over time. Afterward, the real data will be revealed.</figcaption>
+  <figcaption style="grid-column: text;"><a class="figure-number" href="#you-draw-it">5</a>: Click and drag to make your guess of the data's trend over time. Afterward, the real data will be revealed.</figcaption>
 </figure>

@@ -265,5 +265,5 @@
             </div>
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">6</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region. Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details=illustration">7</a>: Choose between 1 of 4 machine-generated images and brush over the circle callouts to display a short message about each region. Generated images from <d-cite key="karras2018progressive,karras2019style"></d-cite>.</figcaption>
 </figure>

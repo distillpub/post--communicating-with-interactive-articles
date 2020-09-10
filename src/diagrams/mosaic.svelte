@@ -4,7 +4,7 @@
     let examples = getBibtexEntries()
     
     let hoverExampleIndex = -1;
-    let hoverTitle = "Examplary Interactive Articles From Around the Web"
+    let hoverTitle = "Examplary Interactive Articles From Around the Web."
     let hoverAuthor = "Hover over an article for more information."
     let hoverJournal = ""
     let hoverYear = ""
@@ -17,7 +17,7 @@
 
     function changeHoverExampleData() {
         if (examples[hoverExampleIndex].entryTags.title !== undefined) {
-            hoverTitle = examples[hoverExampleIndex].entryTags.title
+            hoverTitle = examples[hoverExampleIndex].entryTags.title + '.'
         } else {
             hoverTitle = ""
         }
@@ -53,7 +53,7 @@
 
     function resetHoverExampleData() {
         let hoverExampleIndex = -1;
-        hoverTitle = "Examplary Interactive Articles From Around the Web"
+        hoverTitle = "Examplary Interactive Articles From Around the Web."
         hoverAuthor = "Hover over an article for more information."
         hoverJournal = ""
         hoverYear = ""
@@ -68,6 +68,11 @@
         grid-template-columns: repeat(10, 1fr);
         grid-gap: 0.5rem;
         grid-column: page;
+    }
+
+    figure {
+        margin-top: 1rem;
+        margin-bottom: 0rem;
     }
 
     .screenshot {
@@ -93,7 +98,8 @@
 
     #example-info {
         grid-column: text;
-        padding-top: 1.5rem;
+        /* padding-top: 1.5rem; */
+        height: 2rem;
     }
 
     #example-info > p {
@@ -103,6 +109,11 @@
 
     #hover-title {
         text-transform: capitalize;
+        font-weight: 700
+    }
+
+    #hover-year, #hover-journal {
+        font-style: italic;
     }
 
     .ellipsis {
@@ -143,7 +154,8 @@
     {/each}
 </div>
 
-<div id="example-info">
-    <p id="hover-title" class="ellipsis"><b>{hoverTitle}</b></p>
-    <p class="ellipsis"><span id="hover-author">{hoverAuthor}</span> <i>{hoverJournal} {hoverYear}</i></p>
-</div>
+<figure id="example-info">
+    <!-- <figcaption><p id="hover-title" class="ellipsis"></p><b>{hoverTitle}</b></p></figcaption> -->
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#mosaic">1</a>: <span id="hover-title">{hoverTitle}</span> <span id="hover-author">{hoverAuthor}</span> <span id="hover-journal">{hoverJournal}</span> <span id="hover-year">{hoverYear}</span></figcaption>
+    <!-- <p class="ellipsis"><span id="hover-author">{hoverAuthor}</span> <i>{hoverJournal} {hoverYear}</i></p> -->
+</figure>

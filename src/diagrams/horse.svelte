@@ -223,5 +223,5 @@
             {/each}
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#horse">2</a>: Click the play button or scrub over the video frames to watch and control the animation.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#horse">3</a>: Click the play button or scrub over the video frames to watch and control the animation.</figcaption>
 </figure>

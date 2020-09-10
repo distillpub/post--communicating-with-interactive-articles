@@ -64,5 +64,5 @@
 	<div class="tabs interactive-container">
 		<slot></slot>
 	</div>
-	<figcaption style="grid-column: text;"><a class="figure-number" href="#applications-tab">1</a>: Interactive articles are applicable to variety of domains, such as research dissemination, journalism, education, and policy and decision making.</figcaption>
+	<figcaption style="grid-column: text;"><a class="figure-number" href="#applications-tab">2</a>: Interactive articles are applicable to variety of domains, such as research dissemination, journalism, education, and policy and decision making.</figcaption>
 </figure>

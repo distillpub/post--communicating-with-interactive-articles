@@ -185,5 +185,5 @@
             <button type="button" id="variable-button" on:click={toggleVariables}>Toggle Variables</button>
         </div>
     </div>
-    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-math">7</a>: Click to reveal, or remind yourself, what each mark of notation or variable represents in the equation.</figcaption>
+    <figcaption style="grid-column: text;"><a class="figure-number" href="#details-math">8</a>: Click to reveal, or remind yourself, what each mark of notation or variable represents in the equation.</figcaption>
 </figure>
