@@ -7,8 +7,8 @@
         grid-column: text;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-gap: 1em;
-        
+        grid-gap: 0.5em;
+
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
@@ -17,6 +17,7 @@
         text-decoration: none !important;
         transition: box-shadow 0.35s, transform 0.35s;
         transform: scale(1.0);
+        border-bottom: none;
     }
 
     a:hover {
@@ -27,22 +28,20 @@
 
     .item {
         /* border: 1px solid var(--gray-border); */
-        border-radius: var(--outerBorder);
+        /* border-radius: var(--outerBorder); */
         padding: var(--outerBorder);
         font-weight: 500;
-        font-size: 0.66em;
+        font-size: 0.8em;
         line-height: 1.2;
-        min-height: 26px;
         /* color: rgba(0, 0, 0, 0.8); */
         /* height: 50px; */
-        text-align: center;
+        /* text-align: center; */
         /* border: solid 2px #999999; */
-        padding: 0.5em;
 
         /* color: #222222; */
         /* border: none; */
-        border-radius: 25px;
-        padding: 0.5em 1em;
+        /* border-radius: 25px; */
+        padding: 0.25em 0.5em;
         /* background: hsl(0, 0%, 97%); */
         /* color: #666666; */
         /* transition: 0.35s color; */
@@ -50,6 +49,12 @@
         flex-direction: column;
         justify-content: center;
         text-decoration: none !important;
+        color: #222222 !important;
+    }
+
+    .item .caption {
+        color: #999999;
+        font-weight: 400;
     }
 
     /* .item:hover {
@@ -125,15 +130,23 @@
     @media (max-width: 1180px) {
         #wrapper {
             grid-column: page;
-            padding-left: 0;
-            padding-right: 0;
+            grid-template-columns: repeat(10, 1fr);
         }
+        .item {
+            min-height: 100px;
+        }
+
+        .one { grid-column: 1/4;}
+        .two { grid-column: 4/7;}
+        .three { grid-column: 7/11;}
+        .four { grid-column: 1/6;}
+        .five { grid-column: 6/11;}
     }
 
     @media (max-width: 1000px) {
         #wrapper {
             grid-template-columns: repeat(10, 1fr);
-            grid-column: text;
+            grid-column: page;
         }
 
         .one { grid-column: 1/4;}
@@ -142,9 +155,9 @@
         .four { grid-column: 1/6;}
         .five { grid-column: 6/11;}
 
-        /* .item {
+        .item {
             height: 100px;
-        } */
+        }
 
         .inner {
             display: flex;
@@ -160,6 +173,7 @@
 
         .item {
             height: auto;
+            min-height: 150px;
         }
 
         #wrapper {
@@ -173,7 +187,7 @@
         .four { grid-column: 1/7;}
         .five { grid-column: 7/13;}
 
-        
+
     }
 
     .inner {
@@ -188,14 +202,21 @@
 </style>
 
 <div id="wrapper">
-    <!-- <a class="one" href="#connecting-people-and-data"><div class="item blue-green"><div class="inner">Connecting People and Data</div></div></a>
-    <a class="two" href="#making-systems-playful"><div class="item red-orange"><div class="inner">Making Systems Playful</div></div></a>
-    <a class="three" href="#prompting-self-reflection"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection</div></div></a>
-    <a class="four" href="#personalizing-reading"><div class="item argon"><div class="inner">Personalizing Reading</div></div></a>
-    <a class="five" href="#reducing-cognitive-load"><div class="item sun"><div class="inner">Reducing Cognitive Load</div></div></a> -->
-    <div class="item one blue-green"><div class="inner">Connecting People and Data</div></div>
+
+    <!-- <a class="one" href="#connecting-people-and-data"><div class="item blue-green"><div class="inner">Connecting People and Data. <span class="caption">More text here.</span></div></div></a>
+    <a class="two" href="#making-systems-playful"><div class="item red-orange"><div class="inner">Making Systems Playful. <span class="caption">More text here.</span></div></div></a>
+    <a class="three" href="#prompting-self-reflection"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection. <span class="caption">More text here.</span></div></div></a>
+    <a class="four" href="#personalizing-reading"><div class="item argon"><div class="inner">Personalizing Reading. <span class="caption">More text here.</span></div></div></a>
+    <a class="five" href="#reducing-cognitive-load"><div class="item sun"><div class="inner">Reducing Cognitive Load. <span class="caption">More text here.</span></div></div></a> -->
+
+    <div class="one"><div class="item blue-green"><div class="inner">Connecting People and Data. <div class="caption">Make data pleasant to work with. Happy readers are engaged readers.</div></div></div></div>
+    <div class="two"><div class="item red-orange"><div class="inner">Making Systems Playful. <div class="caption">Run interactive simulations directly in the browser. No setup required.</div></div></div></div>
+    <div class="three"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection. <div class="caption">Help readers learn by asking them to reflect in a low pressure enviroment. </div></div></div></div>
+    <div class="four" ><div class="item argon"><div class="inner">Personalizing Reading. <div class="caption">Let readers choose the content that is relevant to their own experience.</div></div></div></div>
+    <div class="five"><div class="item sun"><div class="inner">Reducing Cognitive Load. <div class="caption">Use effective representations to make complex topics more intuitive.</div></div></div></div>
+    <!-- <div class="item one blue-green"><div class="inner">Connecting People and Data</div></div>
     <div class="item two red-orange"><div class="inner">Making Systems Playful</div></div>
     <div class="item three soft-blue"><div class="inner">Prompting Self-Reflection</div></div>
     <div class="item four argon"><div class="inner">Personalizing Reading</div></div>
-    <div class="item five sun"><div class="inner">Reducing Cognitive Load</div></div>
+    <div class="item five sun"><div class="inner">Reducing Cognitive Load</div></div> -->
 </div>
