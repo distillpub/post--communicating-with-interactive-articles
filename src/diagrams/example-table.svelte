@@ -1,44 +1,12 @@
 <script>
-    import bibtexParse from 'bibtex-parse-js';
-    import bibString from '../../static/bibliography.bib';
+
+    import { getBibtexEntries } from "../util.js";
 
     let sortAsc = true;
     let sortKey = "title"
     let lastSortKey = ""
 
-    let bibliography = bibtexParse.toJSON(bibString);
-
-    // filter out all bibtex entries except interactive article examples
-    let examples =  bibliography.filter(function(bibEntry) {
-        return bibEntry.entryTags.howpublished === "web";
-    });
-
-    console.log('examples length', examples.length);
-
-    examples.forEach(citation => {
-        // coerice tag string into array of strings
-        citation.entryTags.tags = citation.entryTags.tags.split(',')
-
-        // give examples with no jounal string with space
-        if (!citation.entryTags.journal) {
-            citation.entryTags.journal = "Self published"
-        }
-
-        // publication/author format for table
-        if (citation.entryTags.author) {
-            let tempAuthor = citation.entryTags.author
-            tempAuthor = tempAuthor.split(' and ')
-            if (tempAuthor.length === 1) {
-                citation.entryTags.author = tempAuthor
-            } else {
-                tempAuthor.forEach((author,i) => {
-                    author = author.split(',')
-                    tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
-                });
-                citation.entryTags.author = tempAuthor.join(', ')
-            }
-        }
-    });
+    let examples = getBibtexEntries()
 
     let sortIcon;
     function updateSortIcon() {
