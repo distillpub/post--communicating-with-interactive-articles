@@ -85,9 +85,9 @@ const mosaic = new Mosaic({
 	target: document.getElementById('mosaic')
 });
 
-const affordances = new Affordances({
-	target: document.getElementById('affordances')
-});
+// const affordances = new Affordances({
+// 	target: document.getElementById('affordances')
+// });
 
 // video examples
 new VideoExample({
