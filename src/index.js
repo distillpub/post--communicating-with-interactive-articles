@@ -18,6 +18,7 @@ import YouDrawIt from "./diagrams/you-draw-it.svelte"
 import Jam from "./diagrams/jam.svelte"
 import Parametric from "./diagrams/parametric.svelte"
 import Teaser from "./diagrams/teaser.svelte"
+import Affordances from "./diagrams/affordances.svelte"
 
 // lazily initialize any diagram below the fold. E.G:
 // const exampleTag = document.getElementById("svelte-example-dfigure");
@@ -82,6 +83,10 @@ const parametric = new Parametric({
 
 const teaser = new Teaser({
 	target: document.getElementById('teaser')
+});
+
+const affordances = new Affordances({
+	target: document.getElementById('affordances')
 });
 
 // video examples
