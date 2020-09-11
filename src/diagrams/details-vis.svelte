@@ -122,8 +122,8 @@
   <div id="wrapper" class="interactive-container">
 
       <Title
-          titleText="Listen to details-on-demand."
-          subtitleText="Click on a circle below to call up a field recording of a birdsong."
+          titleText="Multimodal details-on-demand."
+          subtitleText="Select a circle below to call up a field recording of a birdsong."
       />
       <div>
         <div class="bird-container">
@@ -148,7 +148,7 @@
                 </div>
               </div>
               <audio controls bind:this={_audio}>
-                <source src={`british-birdsong-dataset/songs/songs/xc${selectedBirdsong.file_id}.flac`} type="audio/flac" >
+                <source src={`british-birdsong-dataset/songs/xc${selectedBirdsong.file_id}.mp3`} type="audio/flac" >
               </audio>
             </div>
           {/if}
