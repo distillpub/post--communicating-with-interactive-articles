@@ -2,7 +2,9 @@
 
 *Examining the design of interactive articles by synthesizing theory from disciplines such as education, journalism, and visualization.*
 
-[Fred Hohman](https://fredhohman.com), [Matthew Conlen](https://mathisonian.com/), [Jeffrey Heer](https://homes.cs.washington.edu/~jheer/), and [Duen Horng (Polo) Chau](https://poloclub.github.io/polochau/)
+![Communicating with Interactive Articles](public/thumbnail.png)
+
+By: [Fred Hohman](https://fredhohman.com), [Matthew Conlen](https://mathisonian.com/), [Jeffrey Heer](https://homes.cs.washington.edu/~jheer/), and [Duen Horng (Polo) Chau](https://poloclub.github.io/polochau/)
 
 Read the interactive article: https://distill.pub/2020/communicating-with-interactive-articles/
 
