@@ -239,7 +239,7 @@
 <figure class="subgrid">
   <div id="wrapper" class="interactive-container">
     <Title
-      titleText="Complete the trend of CO2 emissions from burning fossil fuels."
+      titleText="Complete the trend of CO₂ emissions from burning fossil fuels."
       subtitleText="Letting a reader first guess about data and only showing the ground truth afterwards challenges a reader's prior beliefs and has been shown to improve their recall of information."
     />
     <div class="chartwrap">
@@ -262,7 +262,7 @@
       {:else}
         <div class="figcaption" style="color: black; opacity: 0.5">
           <!-- Fill in the trend to see the actual data. -->
-          Measured in metric tons of CO2.
+          Measured in metric tons of CO₂.
         </div>
       {/if}
     </div>
