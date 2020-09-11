@@ -84,6 +84,10 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   color: red;
 }
 
+#hidden-citations {
+  display: none;
+}
+
 /* TOC */
 
 #contents {
