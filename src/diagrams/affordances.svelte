@@ -213,7 +213,7 @@
 
     <div class="one"><div class="item blue-green"><div class="inner">Connecting People and Data. <div class="caption">Make data pleasant to work with. Happy readers are engaged readers.</div></div></div></div>
     <div class="two"><div class="item red-orange"><div class="inner">Making Systems Playful. <div class="caption">Run interactive simulations directly in the browser. No setup required.</div></div></div></div>
-    <div class="three"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection. <div class="caption">Help readers learn by asking them to reflect in a low pressure enviroment. </div></div></div></div>
+    <div class="three"><div class="item soft-blue"><div class="inner">Prompting Self-Reflection. <div class="caption">Help readers learn by asking them to reflect in a low pressure environment. </div></div></div></div>
     <div class="four" ><div class="item argon"><div class="inner">Personalizing Reading. <div class="caption">Let readers choose the content that is relevant to their own experience.</div></div></div></div>
     <div class="five"><div class="item sun"><div class="inner">Reducing Cognitive Load. <div class="caption">Use effective representations to make complex topics more intuitive.</div></div></div></div>
     
