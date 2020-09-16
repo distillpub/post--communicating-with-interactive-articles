@@ -5,7 +5,7 @@
     let examples = getBibtexEntries()
     
     let hoverExampleIndex = -1;
-    let hoverTitle = "Exemplary Interactive Articles From Around the Web."
+    let hoverTitle = "Exemplary interactive articles from around the web."
     let hoverAuthor = "Select an article for more information."
     let hoverJournal = ""
     let hoverYear = ""
@@ -63,7 +63,7 @@
 
     function resetHoverExampleData() {
         hoverExampleIndex = -1;
-        hoverTitle = "Exemplary Interactive Articles From Around the Web."
+        hoverTitle = "Exemplary interactive articles from around the web."
         hoverAuthor = "Select an article for more information."
         hoverJournal = ""
         hoverYear = ""

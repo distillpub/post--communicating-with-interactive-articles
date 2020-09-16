@@ -23,14 +23,32 @@ export function getBibtexEntries() {
     if (citation.entryTags.author) {
       let tempAuthor = citation.entryTags.author
       tempAuthor = tempAuthor.split(' and ')
+
       if (tempAuthor.length === 1) {
-        citation.entryTags.author = tempAuthor
+
+        // single author
+        tempAuthor = tempAuthor[0].split(',')
+        if (tempAuthor.length > 1) {
+
+          // single author with first name and last name
+          citation.entryTags.author = tempAuthor[1].trim() + ' ' + tempAuthor[0].trim()
+
+        } else {
+
+          // single author with one name (e.g., organization)
+          citation.entryTags.author = tempAuthor[0]
+          
+        }
+
       } else {
+
+        // multiple authors
         tempAuthor.forEach((author, i) => {
           author = author.split(',')
           tempAuthor[i] = author[1].trim() + ' ' + author[0].trim()
         });
         citation.entryTags.author = tempAuthor.join(', ')
+
       }
     }
   });
