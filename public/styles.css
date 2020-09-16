@@ -84,7 +84,7 @@ a.figure-number-text:hover, a.table-number-text:hover, a.video-number-text:hover
   color: red;
 }
 
-#hidden-citations {
+.hidden-citations {
   display: none;
 }
 
