@@ -123,7 +123,7 @@
 
 <figure class="subgrid">
     <div id="example-table-wrapper">
-        <table id="research-x-practice-table">
+        <table id="example-table">
             <thead>
                 <tr>
                 <th id="title-col" scope="col" on:click={() => {lastSortKey = sortKey; sortKey = "title"; sort()}}>Title <i class="material-icons">{sortKey === "title" ? sortIcon : ""}</i></th>
@@ -150,6 +150,6 @@
     </div>
 
     <figcaption style="grid-column: text;">
-        <a class="table-number" href="#jam">1</a>: A sortable list of the interactive articles we discuss in this work.
+        <a class="table-number" href="#example-table">1</a>: A sortable list of the interactive articles we discuss in this work.
     </figcaption>
 </figure>
