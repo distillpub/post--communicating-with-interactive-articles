@@ -1,10 +1,10 @@
 <script>
 
     import Title from "./title.svelte";
-    import fakeImage1 from "../../static/images/fake-images/fake-image-1.svg";
-    import fakeImage2 from "../../static/images/fake-images/fake-image-2.svg";
-    import fakeImage3 from "../../static/images/fake-images/fake-image-3.svg";
-    import fakeImage4 from "../../static/images/fake-images/fake-image-4.svg";
+    import fakeImage1 from "../../public/images/fake-images/fake-image-1.svg";
+    import fakeImage2 from "../../public/images/fake-images/fake-image-2.svg";
+    import fakeImage3 from "../../public/images/fake-images/fake-image-3.svg";
+    import fakeImage4 from "../../public/images/fake-images/fake-image-4.svg";
     import { onMount, afterUpdate } from 'svelte';
 
     const fakeImages = [fakeImage1, fakeImage2, fakeImage3, fakeImage4]
