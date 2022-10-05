@@ -1,5 +1,5 @@
 import bibtexParse from 'bibtex-parse-js';
-import bibString from '../static/bibliography.bib';
+import bibString from '../public/bibliography.bib';
 
 export function getBibtexEntries() {
 
